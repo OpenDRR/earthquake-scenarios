@@ -299,7 +299,6 @@ def calculate_consequences(job_id='-1'):
                     ])
 
 
-calculate_consequences(sys.argv[1])
 
 if __name__ == "__main__":
-    calculate_consequences.callfunc()
+    calculate_consequences(sys.argv[1])

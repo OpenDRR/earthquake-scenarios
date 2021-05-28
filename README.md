@@ -1,10 +1,13 @@
 # Canada's National Earthquake Scenario Catalogue
-Tiegan E. Hobbs | Last update: 28 May 2021
+Last update: 28 May 2021
 
 ## Overview of this Repository
 This is an active working directory used for the development of the National Earthquake Scenario Catalogue, which models the probable shaking, damage, loss and consequences from earthquakes that impact Canadians. It considers only damage to buildings and their inhabitants from earthquake shaking, and therefore does notinclude infrastructure or vehicle damages, nor losses from secondary hazards like aftershocks, liquefaction, landslides, or fire following. This project is run by the Geological Survey of Canada's Public Safety Geoscience Program. For all inquiries, please contact Tiegan E. Hobbs at tiegan.hobbs@canada.ca. 
 
 For those looking for completed scenarios, please use the ['FINISHED'](./FINISHED/) directory. It contains markdown (.md) files for every published scenario, each containing some high level results, a map of the scenario location, and links to all the output/result csv files. These markdown files can be previewed in your web browser, for easy inspection of scenarios. As more scenarios are published they will be added. A web application is currently being developed to facilitate interaction with these data for non-technical users. It is set to launch in approximately March 2022, andis tentatively titled 'RiskProfiler'.
+
+## Technical Use
+It is possible to download individual files from the web, by clicking on either 'Raw' or 'Download' from the top right corner of a file preview page. For those wishing to clone this repository in its entirety, please ensure you have [Git LFS](https://git-lfs.github.com/) enabled on your machine prior to cloning. Runs herein are completed using the [OpenQuake Engine](https://www.globalquakemodel.org/openquake) which can be cloned [here](https://github.com/gem/oq-engine). Any input files which are housed outside of this repository will be made public as soon as requisite supporting documentation is available, including the hazard source model, site response, exposure, vulnerability and fragility functions. 
 
 ## Documentation
 As more documentation is published it will be added here. Currently, a Geological Survey of Canada Open File Report has been accepted for publication and is in press. It contains basic information about how these models are produced and then provides several examples/tutorials. These are aimed at a user who wishes to inspect details of scenarios and has some minimal experience with GIS, Tableau, or Python. For example, emergency managers may find this tutorial is enough to help them identify the impacts of a scenario in their region of interest. Ultimately, this is a gap-filler until RiskProfiler comes online. 

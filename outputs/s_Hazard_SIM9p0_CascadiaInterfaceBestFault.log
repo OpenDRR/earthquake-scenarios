@@ -1,0 +1,27 @@
+[2021-03-24 21:19:25 #11 INFO] thobbs running /Users/thobbs/Documents/GitHub/scenario-catalogue/deterministic/initializations/s_Hazard_SIM9p0_CascadiaInterfaceBestFault.ini [--hc=None]
+[2021-03-24 21:19:25 #11 INFO] Using engine version 3.11.0-gitcb65d5247c
+[2021-03-24 21:19:26 #11 WARNING] Version v3.11.3 of the engine is available, but you are still using version 3.11.0-gitcb65d5247c
+[2021-03-24 21:19:26 #11 WARNING] Using 16 cores on L-VAN-AC02ZW7L4MD6N.local
+[2021-03-24 21:19:26 #11 INFO] Checksum of the input files: 3237861233
+[2021-03-24 21:19:26 #11 INFO] Reading the risk model if present
+[2021-03-24 21:19:26 #11 INFO] Extracting the hazard sites from the site model
+[2021-03-24 21:19:28 #11 INFO] Read N=136702 hazard sites and L=8 hazard levels
+[2021-03-24 21:19:28 #11 INFO] gzipping the input files
+[2021-03-24 21:19:29 #11 WARNING] The GMFs are not filtered: you may want to set a minimum_intensity
+[2021-03-24 21:19:30 #11 INFO] There are 4 realization(s)
+[2021-03-24 21:19:30 #11 INFO] Reordering the ruptures and storing the events
+[2021-03-24 21:19:30 #11 INFO] Associating event_id -> rlz_id for 4 events and 1 ruptures
+[2021-03-24 21:19:30 #11 INFO] Reading 1 ruptures
+here:  /Users/thobbs/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+[2021-03-24 21:20:15 #11 INFO] compute_gmfs 100% [1 submitted, 0 queued]
+[2021-03-24 21:20:15 #11 INFO] Received {'gmfdata': '18.54 MB', 'sig_eps': '1013 B', 'times': '338 B', 'hcurves': '14 B'} in 43 seconds
+[2021-03-24 21:20:15 #11 INFO] Checking GMFs
+[2021-03-24 21:20:15 #11 INFO] Exposing the outputs to the database
+[2021-03-24 21:20:15 #11 INFO] Stored 26.4 MB on /Users/thobbs/oqdata/calc_11.hdf5 in 48 seconds
+here:  /Users/thobbs/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+  id | name
+  50 | Events
+  51 | Full Report
+  52 | Ground Motion Fields
+  53 | Input Files
+  54 | Realizations

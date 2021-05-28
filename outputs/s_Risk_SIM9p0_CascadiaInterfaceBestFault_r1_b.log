@@ -1,0 +1,411 @@
+[2021-04-01 02:08:15 #320 INFO] root running /root/storage/scenario-catalogue/deterministic/initializations/s_Risk_SIM9p0_CascadiaInterfaceBestFault_r1_b.ini [--hc=None]
+[2021-04-01 02:08:15 #320 INFO] Using engine version 3.11.0-git213801bb4d
+[2021-04-01 02:08:16 #320 WARNING] An error occurred while calling https://api.openquake.org/engine/latest to check if the installed version of the engine is up to date.
+{"message":"API rate limit exceeded for 195.201.39.154. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)","documentation_url":"https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"}
+
+[2021-04-01 02:08:16 #320 WARNING] Using 96 cores on ip-10-70-136-95
+[2021-04-01 02:08:16 #320 INFO] Checksum of the input files: 3967968446
+[2021-04-01 02:08:16 #320 INFO] Reading the risk model if present
+[2021-04-01 02:08:30 #320 INFO] Reading /root/storage/openquake-inputs/exposure/general-building-stock/oqBldgExp_BC.xml
+[2021-04-01 02:09:01 #320 INFO] Extracting the hazard sites from the site model
+[2021-04-01 02:09:05 #320 INFO] Associated 274630 assets to 20013 sites
+[2021-04-01 02:09:22 #320 INFO] Reducing risk model from 7260 to 726 taxonomies
+[2021-04-01 02:09:25 #320 INFO] gzipping the input files
+[2021-04-01 02:09:31 #320 INFO] Storing risk model
+[2021-04-01 02:09:34 #320 INFO] minimum_intensity={'SA(1.0)': 0.05, 'SA(0.5)': 0.05, 'SA(0.6)': 0.05, 'SA(0.3)': 0.0, 'SA(2.0)': 0.05}
+[2021-04-01 02:09:37 #320 INFO] There are 4 realization(s)
+[2021-04-01 02:09:37 #320 INFO] Reordering the ruptures and storing the events
+[2021-04-01 02:09:37 #320 INFO] Associating event_id -> rlz_id for 800 events and 200 ruptures
+[2021-04-01 02:09:37 #320 INFO] Reading 200 ruptures
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+[2021-04-01 02:09:42 #320 INFO] Sent 200 tasks, 3.34 MB in 0 seconds
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   1% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   2% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   3% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   4% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   5% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   6% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   7% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   8% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs   9% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  10% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  11% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  12% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  13% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  14% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  15% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  16% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  17% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  18% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  19% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  20% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  21% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  22% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  23% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  24% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  25% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  26% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  27% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  28% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  29% [200 submitted, 0 queued]
+[2021-04-01 02:09:58 #320 INFO] compute_gmfs  30% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  31% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  32% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  33% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  34% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  35% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  36% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  37% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  38% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  39% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  40% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  41% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  42% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  43% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  44% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  45% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  46% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  47% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  48% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  49% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  50% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  51% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  52% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  53% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  54% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  55% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  56% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  57% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  58% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  59% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  60% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  61% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  62% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  63% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  64% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  65% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  66% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  67% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  68% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  69% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  70% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  71% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  72% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  73% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  74% [200 submitted, 0 queued]
+[2021-04-01 02:09:59 #320 INFO] compute_gmfs  75% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  76% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  77% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  78% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  79% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  80% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  81% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  82% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  83% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  84% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  85% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  86% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  87% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  88% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  89% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  90% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  91% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  92% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  93% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  94% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  95% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  96% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  97% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  98% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs  99% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] compute_gmfs 100% [200 submitted, 0 queued]
+[2021-04-01 02:10:00 #320 INFO] Received {'gmfdata': '485.14 MB', 'sig_eps': '147.27 KB', 'times': '66.02 KB', 'hcurves': '2.73 KB'} in 18 seconds
+[2021-04-01 02:10:00 #320 INFO] Checking GMFs
+[2021-04-01 02:10:03 #320 INFO] Building risk inputs from 4 realization(s)
+[2021-04-01 02:10:11 #320 INFO] Grouped the GMFs by site ID
+[2021-04-01 02:10:30 #320 INFO] Built 20014 risk inputs
+[2021-04-01 02:10:37 #320 INFO] Sent 198 tasks, 588.91 MB in 7 seconds
+[2021-04-01 02:10:47 #320 INFO] scenario_risk   1% [198 submitted, 0 queued]
+[2021-04-01 02:10:48 #320 INFO] scenario_risk   2% [198 submitted, 0 queued]
+[2021-04-01 02:10:48 #320 INFO] scenario_risk   3% [198 submitted, 0 queued]
+[2021-04-01 02:10:49 #320 INFO] scenario_risk   4% [198 submitted, 0 queued]
+[2021-04-01 02:10:51 #320 INFO] scenario_risk   5% [198 submitted, 0 queued]
+[2021-04-01 02:10:52 #320 INFO] scenario_risk   6% [198 submitted, 0 queued]
+[2021-04-01 02:10:52 #320 INFO] scenario_risk   7% [198 submitted, 0 queued]
+[2021-04-01 02:10:52 #320 INFO] scenario_risk   8% [198 submitted, 0 queued]
+[2021-04-01 02:10:53 #320 INFO] scenario_risk   9% [198 submitted, 0 queued]
+[2021-04-01 02:10:54 #320 INFO] scenario_risk  10% [198 submitted, 0 queued]
+[2021-04-01 02:10:56 #320 INFO] scenario_risk  11% [198 submitted, 0 queued]
+[2021-04-01 02:10:56 #320 INFO] scenario_risk  12% [198 submitted, 0 queued]
+[2021-04-01 02:10:56 #320 INFO] scenario_risk  13% [198 submitted, 0 queued]
+[2021-04-01 02:10:56 #320 INFO] scenario_risk  14% [198 submitted, 0 queued]
+[2021-04-01 02:10:58 #320 INFO] scenario_risk  15% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  16% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  17% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  18% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  19% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  20% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  21% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  22% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  23% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  24% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  25% [198 submitted, 0 queued]
+[2021-04-01 02:11:07 #320 INFO] scenario_risk  26% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  27% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  28% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  29% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  30% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  31% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  32% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  33% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  34% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  35% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  36% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  37% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  38% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  39% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  40% [198 submitted, 0 queued]
+[2021-04-01 02:11:08 #320 INFO] scenario_risk  41% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  42% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  43% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  44% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  45% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  46% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  47% [198 submitted, 0 queued]
+[2021-04-01 02:11:09 #320 INFO] scenario_risk  48% [198 submitted, 0 queued]
+[2021-04-01 02:11:15 #320 INFO] scenario_risk  49% [198 submitted, 0 queued]
+[2021-04-01 02:11:15 #320 INFO] scenario_risk  50% [198 submitted, 0 queued]
+[2021-04-01 02:11:16 #320 INFO] scenario_risk  51% [198 submitted, 0 queued]
+[2021-04-01 02:11:17 #320 INFO] scenario_risk  52% [198 submitted, 0 queued]
+[2021-04-01 02:11:18 #320 INFO] scenario_risk  53% [198 submitted, 0 queued]
+[2021-04-01 02:11:19 #320 INFO] scenario_risk  54% [198 submitted, 0 queued]
+[2021-04-01 02:11:20 #320 INFO] scenario_risk  55% [198 submitted, 0 queued]
+[2021-04-01 02:11:20 #320 INFO] scenario_risk  56% [198 submitted, 0 queued]
+[2021-04-01 02:11:20 #320 INFO] scenario_risk  57% [198 submitted, 0 queued]
+[2021-04-01 02:11:21 #320 INFO] scenario_risk  58% [198 submitted, 0 queued]
+[2021-04-01 02:11:22 #320 INFO] scenario_risk  59% [198 submitted, 0 queued]
+[2021-04-01 02:11:22 #320 INFO] scenario_risk  60% [198 submitted, 0 queued]
+[2021-04-01 02:11:22 #320 INFO] scenario_risk  61% [198 submitted, 0 queued]
+[2021-04-01 02:11:28 #320 INFO] scenario_risk  62% [198 submitted, 0 queued]
+[2021-04-01 02:11:29 #320 INFO] scenario_risk  63% [198 submitted, 0 queued]
+[2021-04-01 02:11:29 #320 INFO] scenario_risk  64% [198 submitted, 0 queued]
+[2021-04-01 02:11:29 #320 INFO] scenario_risk  65% [198 submitted, 0 queued]
+[2021-04-01 02:11:29 #320 INFO] scenario_risk  66% [198 submitted, 0 queued]
+[2021-04-01 02:11:29 #320 INFO] scenario_risk  67% [198 submitted, 0 queued]
+[2021-04-01 02:11:29 #320 INFO] scenario_risk  68% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  69% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  70% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  71% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  72% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  73% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  74% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  75% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  76% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  77% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  78% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  79% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  80% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  81% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  82% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  83% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  84% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  85% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  86% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  87% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  88% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  89% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  90% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  91% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  92% [198 submitted, 0 queued]
+[2021-04-01 02:11:30 #320 INFO] scenario_risk  93% [198 submitted, 0 queued]
+[2021-04-01 02:11:31 #320 INFO] scenario_risk  94% [198 submitted, 0 queued]
+[2021-04-01 02:11:31 #320 INFO] scenario_risk  95% [198 submitted, 0 queued]
+[2021-04-01 02:11:31 #320 INFO] scenario_risk  96% [198 submitted, 0 queued]
+[2021-04-01 02:11:33 #320 INFO] scenario_risk  97% [198 submitted, 0 queued]
+[2021-04-01 02:11:39 #320 INFO] scenario_risk  98% [198 submitted, 0 queued]
+[2021-04-01 02:11:47 #320 INFO] scenario_risk  99% [198 submitted, 0 queued]
+[2021-04-01 02:11:49 #320 INFO] scenario_risk 100% [198 submitted, 0 queued]
+[2021-04-01 02:11:49 #320 INFO] Received {'ael': '4.08 GB', 'avg': '116.33 MB', 'agg': '1.84 MB'} in 71 seconds
+[2021-04-01 02:11:49 #320 CRITICAL] 
+Traceback (most recent call last):
+  File "/root/storage/openquake/src/oq-engine/openquake/calculators/base.py", line 248, in run
+    self.post_execute(self.result)
+  File "/root/storage/openquake/src/oq-engine/openquake/calculators/scenario_risk.py", line 192, in post_execute
+    rtol=1E-5)
+  File "/root/storage/openquake/oqenv/lib/python3.6/site-packages/numpy/testing/_private/utils.py", line 1503, in assert_allclose
+    verbose=verbose, header=header, equal_nan=equal_nan)
+  File "/root/storage/openquake/oqenv/lib/python3.6/site-packages/numpy/testing/_private/utils.py", line 829, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-05, atol=0
+
+Mismatch: 100%
+Max absolute difference: 3463168.
+Max relative difference: 0.00034897
+ x: array([[2.973065e+09, 1.281112e+10, 9.920374e+09],
+       [1.753956e+09, 7.737232e+09, 7.392078e+09],
+       [2.773267e+09, 1.187683e+10, 8.858716e+09],
+       [4.691444e+09, 1.984115e+10, 1.412192e+10]], dtype=float32)
+ y: array([[2.973389e+09, 1.281367e+10, 9.923837e+09],
+       [1.754048e+09, 7.737678e+09, 7.392652e+09],
+       [2.773454e+09, 1.187793e+10, 8.860385e+09],
+       [4.692020e+09, 1.984444e+10, 1.412436e+10]], dtype=float32)
+[2021-04-01 02:11:49 #320 CRITICAL] Traceback (most recent call last):
+  File "/root/storage/openquake/src/oq-engine/openquake/engine/engine.py", line 308, in run_calc
+    calc.run(exports=exports, **kw)
+  File "/root/storage/openquake/src/oq-engine/openquake/calculators/base.py", line 248, in run
+    self.post_execute(self.result)
+  File "/root/storage/openquake/src/oq-engine/openquake/calculators/scenario_risk.py", line 192, in post_execute
+    rtol=1E-5)
+  File "/root/storage/openquake/oqenv/lib/python3.6/site-packages/numpy/testing/_private/utils.py", line 1503, in assert_allclose
+    verbose=verbose, header=header, equal_nan=equal_nan)
+  File "/root/storage/openquake/oqenv/lib/python3.6/site-packages/numpy/testing/_private/utils.py", line 829, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-05, atol=0
+
+Mismatch: 100%
+Max absolute difference: 3463168.
+Max relative difference: 0.00034897
+ x: array([[2.973065e+09, 1.281112e+10, 9.920374e+09],
+       [1.753956e+09, 7.737232e+09, 7.392078e+09],
+       [2.773267e+09, 1.187683e+10, 8.858716e+09],
+       [4.691444e+09, 1.984115e+10, 1.412192e+10]], dtype=float32)
+ y: array([[2.973389e+09, 1.281367e+10, 9.923837e+09],
+       [1.754048e+09, 7.737678e+09, 7.392652e+09],
+       [2.773454e+09, 1.187793e+10, 8.860385e+09],
+       [4.692020e+09, 1.984444e+10, 1.412436e+10]], dtype=float32)
+
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+here:  /root/storage/openquake/src/oq-engine/openquake/hazardlib/gsim/NBCC2020_tables/BC17/BC17_2k_V2.hdf5
+Traceback (most recent call last):
+  File "/root/storage/openquake/oqenv/bin/oq", line 11, in <module>
+    load_entry_point('openquake.engine', 'console_scripts', 'oq')()
+  File "/root/storage/openquake/src/oq-engine/openquake/commands/__main__.py", line 54, in oq
+    parser.callfunc()
+  File "/root/storage/openquake/src/oq-engine/openquake/baselib/sap.py", line 181, in callfunc
+    return self.func(**vars(namespace))
+  File "/root/storage/openquake/src/oq-engine/openquake/baselib/sap.py", line 251, in main
+    return func(**kw)
+  File "/root/storage/openquake/src/oq-engine/openquake/commands/engine.py", line 148, in engine
+    run_jobs(job_inis, log_level, log_file, exports, **pars)
+  File "/root/storage/openquake/src/oq-engine/openquake/engine/engine.py", line 441, in run_jobs
+    run_calc(*args)
+  File "/root/storage/openquake/src/oq-engine/openquake/engine/engine.py", line 308, in run_calc
+    calc.run(exports=exports, **kw)
+  File "/root/storage/openquake/src/oq-engine/openquake/calculators/base.py", line 248, in run
+    self.post_execute(self.result)
+  File "/root/storage/openquake/src/oq-engine/openquake/calculators/scenario_risk.py", line 192, in post_execute
+    rtol=1E-5)
+  File "/root/storage/openquake/oqenv/lib/python3.6/site-packages/numpy/testing/_private/utils.py", line 1503, in assert_allclose
+    verbose=verbose, header=header, equal_nan=equal_nan)
+  File "/root/storage/openquake/oqenv/lib/python3.6/site-packages/numpy/testing/_private/utils.py", line 829, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=1e-05, atol=0
+
+Mismatch: 100%
+Max absolute difference: 3463168.
+Max relative difference: 0.00034897
+ x: array([[2.973065e+09, 1.281112e+10, 9.920374e+09],
+       [1.753956e+09, 7.737232e+09, 7.392078e+09],
+       [2.773267e+09, 1.187683e+10, 8.858716e+09],
+       [4.691444e+09, 1.984115e+10, 1.412192e+10]], dtype=float32)
+ y: array([[2.973389e+09, 1.281367e+10, 9.923837e+09],
+       [1.754048e+09, 7.737678e+09, 7.392652e+09],
+       [2.773454e+09, 1.187793e+10, 8.860385e+09],
+       [4.692020e+09, 1.984444e+10, 1.412436e+10]], dtype=float32)

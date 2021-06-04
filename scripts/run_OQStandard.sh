@@ -84,7 +84,7 @@ if [[ $LAPTOP == 'True' ]]; then
     SCRIPTS_LOC="/Users/thobbs/Documents/GitHub/earthquake-scenarios/scripts/"
     CONSQ_LOC=${SCRIPTS_LOC}"consequences-v3.10.0_Laptop.py"
 else
-    SCRIPTS_LOC="/root/storage/earthquake-scenarios/scripts/"
+    SCRIPTS_LOC="/mnt/storage/earthquake-scenarios/scripts/"
     CONSQ_LOC=${SCRIPTS_LOC}"consequences-v3.10.0.py"
 fi
 AVGHAZLOC=${SCRIPTS_LOC}"weightHAZ.py"

@@ -23,7 +23,7 @@ import pandas as pd
 from tqdm import tqdm
 import sys
 
-params_file = "/root/storage/earthquake-scenarios/scripts/Hazus_Consequence_Parameters.xlsx"
+params_file = "/mnt/storage/earthquake-scenarios/scripts/Hazus_Consequence_Parameters.xlsx"
 
 def read_square_footage(xlsx):
     square_footage_df = pd.read_excel(xlsx, sheet_name="Square Footage", skiprows=1, index_col=0)

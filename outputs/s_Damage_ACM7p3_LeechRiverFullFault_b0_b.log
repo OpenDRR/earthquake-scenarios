@@ -1,0 +1,123 @@
+[2021-07-02 01:34:27 #108 INFO] thobbs running /Users/thobbs/Documents/GitHub/earthquake-scenarios/initializations/s_Damage_ACM7p3_LeechRiverFullFault_b0_b.ini [--hc=None]
+[2021-07-02 01:34:27 #108 INFO] Using engine version 3.11.3-git0cccb86798
+[2021-07-02 01:34:28 #108 WARNING] Using 16 cores on L-VAN-AC02ZW7L4MD6N.local
+[2021-07-02 01:34:28 #108 INFO] Checksum of the input files: 3215837928
+[2021-07-02 01:34:28 #108 INFO] Reading the risk model if present
+[2021-07-02 01:34:30 #108 INFO] Reading /Users/thobbs/Documents/GitHub/openquake-inputs/exposure/general-building-stock/oqBldgExp_BC.xml
+[2021-07-02 01:34:54 #108 INFO] Extracting the hazard sites from the site model
+[2021-07-02 01:34:56 #108 INFO] Associated 274630 assets to 20013 sites
+[2021-07-02 01:35:08 #108 INFO] Reducing risk model from 4224 to 1396 taxonomies
+[2021-07-02 01:35:09 #108 INFO] minimum_asset_loss={'structural': 0}
+[2021-07-02 01:35:09 #108 INFO] gzipping the input files
+[2021-07-02 01:35:12 #108 INFO] Storing risk model
+[2021-07-02 01:35:12 #108 INFO] minimum_intensity={'SA(1.0)': 1e-10, 'SA(0.6)': 1e-10, 'SA(0.3)': 1e-10}
+[2021-07-02 01:35:13 #108 INFO] There are 4 realization(s)
+[2021-07-02 01:35:13 #108 INFO] Reordering the ruptures and storing the events
+[2021-07-02 01:35:13 #108 INFO] Associating event_id -> rlz_id for 1_600 events and 400 ruptures
+[2021-07-02 01:35:13 #108 INFO] Reading 400 ruptures
+[2021-07-02 01:36:00 #108 INFO] compute_gmfs   2% [17 submitted, 17 queued]
+[2021-07-02 01:36:01 #108 INFO] compute_gmfs   5% [18 submitted, 16 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs   8% [19 submitted, 15 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  11% [20 submitted, 14 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  14% [21 submitted, 13 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  17% [22 submitted, 12 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  20% [23 submitted, 11 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  23% [24 submitted, 10 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  26% [25 submitted, 9 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  29% [26 submitted, 8 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  32% [27 submitted, 7 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  35% [28 submitted, 6 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  38% [29 submitted, 5 queued]
+[2021-07-02 01:36:05 #108 INFO] compute_gmfs  41% [30 submitted, 4 queued]
+[2021-07-02 01:36:06 #108 INFO] compute_gmfs  44% [31 submitted, 3 queued]
+[2021-07-02 01:36:06 #108 INFO] compute_gmfs  47% [32 submitted, 2 queued]
+[2021-07-02 01:36:40 #108 INFO] compute_gmfs  50% [33 submitted, 1 queued]
+[2021-07-02 01:36:41 #108 INFO] compute_gmfs  52% [34 submitted, 0 queued]
+[2021-07-02 01:36:51 #108 INFO] compute_gmfs  55% [34 submitted, 0 queued]
+[2021-07-02 01:36:52 #108 INFO] compute_gmfs  58% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  61% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  64% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  67% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  70% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  73% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  76% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  79% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  82% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  85% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  88% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  91% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  94% [34 submitted, 0 queued]
+[2021-07-02 01:36:55 #108 INFO] compute_gmfs  97% [34 submitted, 0 queued]
+[2021-07-02 01:37:05 #108 INFO] compute_gmfs 100% [34 submitted, 0 queued]
+[2021-07-02 01:37:05 #108 INFO] Mean time per core=92s, std=4.3s, min=89s, max=107s
+[2021-07-02 01:37:05 #108 INFO] Received {'gmfdata': '589.24 MB', 'sig_eps': '61.38 KB', 'times': '14.81 KB', 'hcurves': '170 B'} in 111 seconds
+[2021-07-02 01:37:05 #108 INFO] Stored 368.38 MB of GMFs
+[2021-07-02 01:37:15 #108 INFO] Checking seed dependency
+[2021-07-02 01:37:18 #108 INFO] Building risk inputs from 4 realization(s)
+[2021-07-02 01:37:21 #108 INFO] Grouping the GMFs by site ID
+[2021-07-02 01:37:40 #108 INFO] Built 20014 risk inputs
+[2021-07-02 01:37:49 #108 INFO] Sent 33 tasks, 766.91 MB in 8 seconds
+[2021-07-02 01:48:35 #108 INFO] scenario_damage   3% [33 submitted, 0 queued]
+[2021-07-02 01:51:05 #108 INFO] scenario_damage   6% [33 submitted, 0 queued]
+[2021-07-02 01:53:00 #108 INFO] scenario_damage   9% [33 submitted, 0 queued]
+[2021-07-02 01:55:07 #108 INFO] scenario_damage  12% [33 submitted, 0 queued]
+[2021-07-02 01:55:19 #108 INFO] scenario_damage  15% [33 submitted, 0 queued]
+[2021-07-02 01:56:05 #108 INFO] scenario_damage  18% [33 submitted, 0 queued]
+[2021-07-02 01:57:00 #108 INFO] scenario_damage  21% [33 submitted, 0 queued]
+[2021-07-02 01:57:24 #108 INFO] scenario_damage  24% [33 submitted, 0 queued]
+[2021-07-02 01:57:43 #108 INFO] scenario_damage  27% [33 submitted, 0 queued]
+[2021-07-02 01:57:47 #108 INFO] scenario_damage  30% [33 submitted, 0 queued]
+[2021-07-02 01:57:50 #108 INFO] scenario_damage  33% [33 submitted, 0 queued]
+[2021-07-02 01:57:50 #108 INFO] scenario_damage  36% [33 submitted, 0 queued]
+[2021-07-02 01:58:08 #108 INFO] scenario_damage  39% [33 submitted, 0 queued]
+[2021-07-02 01:58:15 #108 INFO] scenario_damage  42% [33 submitted, 0 queued]
+[2021-07-02 01:58:33 #108 INFO] scenario_damage  45% [33 submitted, 0 queued]
+[2021-07-02 01:59:10 #108 INFO] scenario_damage  48% [33 submitted, 0 queued]
+[2021-07-02 02:09:05 #108 INFO] scenario_damage  51% [33 submitted, 0 queued]
+[2021-07-02 02:09:23 #108 INFO] scenario_damage  54% [33 submitted, 0 queued]
+[2021-07-02 02:09:36 #108 INFO] scenario_damage  57% [33 submitted, 0 queued]
+[2021-07-02 02:09:58 #108 INFO] scenario_damage  60% [33 submitted, 0 queued]
+[2021-07-02 02:10:24 #108 INFO] scenario_damage  63% [33 submitted, 0 queued]
+[2021-07-02 02:10:53 #108 INFO] scenario_damage  66% [33 submitted, 0 queued]
+[2021-07-02 02:11:22 #108 INFO] scenario_damage  69% [33 submitted, 0 queued]
+[2021-07-02 02:11:47 #108 INFO] scenario_damage  72% [33 submitted, 0 queued]
+[2021-07-02 02:12:36 #108 INFO] scenario_damage  75% [33 submitted, 0 queued]
+[2021-07-02 02:12:51 #108 INFO] scenario_damage  78% [33 submitted, 0 queued]
+[2021-07-02 02:12:52 #108 INFO] scenario_damage  81% [33 submitted, 0 queued]
+[2021-07-02 02:12:55 #108 INFO] scenario_damage  84% [33 submitted, 0 queued]
+[2021-07-02 02:13:09 #108 INFO] scenario_damage  87% [33 submitted, 0 queued]
+[2021-07-02 02:13:17 #108 INFO] scenario_damage  90% [33 submitted, 0 queued]
+[2021-07-02 02:13:32 #108 INFO] scenario_damage  93% [33 submitted, 0 queued]
+[2021-07-02 02:13:49 #108 INFO] scenario_damage  96% [33 submitted, 0 queued]
+[2021-07-02 02:13:58 #108 INFO] scenario_damage 100% [33 submitted, 0 queued]
+[2021-07-02 02:13:58 #108 INFO] Mean time per core=2054s, std=91.2s, min=1889s, max=2171s
+[2021-07-02 02:13:58 #108 INFO] Received {'aed': '1.1 GB', 'd_asset': '95.37 MB', 'd_event': '2.84 MB'} in 2168 seconds
+[2021-07-02 02:13:58 #108 INFO] Saving 1.1 GB in dd_data (instead of 1.64 GB)
+[2021-07-02 02:14:01 #108 INFO] Portfolio damage
+==== ========== ========= =========
+kind loss_type  dmg_state value    
+==== ========== ========= =========
+avg  structural no_damage 1_120_947
+avg  structural slight    52_795   
+avg  structural moderate  10_749   
+avg  structural extensive 4_157    
+avg  structural complete  6_861    
+std  structural no_damage 22_503   
+std  structural slight    14_883   
+std  structural moderate  3_806    
+std  structural extensive 1_666    
+std  structural complete  2_640    
+==== ========== ========= =========
+[2021-07-02 02:14:01 #108 INFO] Due to rounding errors inherent in floating-point arithmetic, the total number of assets is not exact: {'expected': 1195508.0, 'structural': 1195721.6}
+[2021-07-02 02:14:02 #108 INFO] Exposing the outputs to the database
+[2021-07-02 02:14:02 #108 INFO] Stored 468.47 MB on /Users/thobbs/oqdata/calc_108.hdf5 in 2374 seconds
+[2021-07-02 02:14:04 #108 INFO] Stopping the workers
+  id | name
+ 638 | Aggregate Event Damages
+ 636 | Asset Damage Distributions
+ 637 | Asset Damage Statistics
+ 639 | Events
+ 640 | Full Report
+ 641 | Ground Motion Fields
+ 642 | Input Files
+ 643 | Realizations

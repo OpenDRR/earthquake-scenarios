@@ -1,0 +1,27 @@
+[2021-07-02 01:33:00 #107 INFO] thobbs running /Users/thobbs/Documents/GitHub/earthquake-scenarios/initializations/s_Hazard_ACM7p3_LeechRiverFullFault.ini [--hc=None]
+[2021-07-02 01:33:00 #107 INFO] Using engine version 3.11.3-git0cccb86798
+[2021-07-02 01:33:01 #107 WARNING] Using 16 cores on L-VAN-AC02ZW7L4MD6N.local
+[2021-07-02 01:33:01 #107 INFO] Checksum of the input files: 3215837928
+[2021-07-02 01:33:01 #107 INFO] Reading the risk model if present
+[2021-07-02 01:33:01 #107 INFO] Extracting the hazard sites from the site model
+[2021-07-02 01:33:02 #107 INFO] Read N=136702 hazard sites and L=8 hazard levels
+[2021-07-02 01:33:03 #107 INFO] gzipping the input files
+[2021-07-02 01:33:03 #107 INFO] minimum_intensity={}
+[2021-07-02 01:33:03 #107 INFO] There are 4 realization(s)
+[2021-07-02 01:33:03 #107 INFO] Reordering the ruptures and storing the events
+[2021-07-02 01:33:03 #107 INFO] Associating event_id -> rlz_id for 4 events and 1 ruptures
+[2021-07-02 01:33:03 #107 INFO] Reading 1 ruptures
+[2021-07-02 01:33:07 #107 INFO] compute_gmfs 100% [1 submitted, 0 queued]
+[2021-07-02 01:33:07 #107 INFO] Received {'gmfdata': '6.48 MB', 'sig_eps': '989 B', 'times': '317 B', 'hcurves': '5 B'} in 3 seconds
+[2021-07-02 01:33:07 #107 INFO] Stored 5.51 MB of GMFs
+[2021-07-02 01:33:15 #107 INFO] Checking seed dependency
+[2021-07-02 01:33:15 #107 WARNING] Your results are expected to have a large dependency from ses_seed
+[2021-07-02 01:33:15 #107 INFO] Exposing the outputs to the database
+[2021-07-02 01:33:15 #107 INFO] Stored 25.72 MB on /Users/thobbs/oqdata/calc_107.hdf5 in 13 seconds
+[2021-07-02 01:33:15 #107 INFO] Stopping the workers
+  id | name
+ 631 | Events
+ 632 | Full Report
+ 633 | Ground Motion Fields
+ 634 | Input Files
+ 635 | Realizations

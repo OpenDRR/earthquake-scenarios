@@ -1,0 +1,115 @@
+[2021-07-02 06:17:43 #110 INFO] thobbs running /Users/thobbs/Documents/GitHub/earthquake-scenarios/initializations/s_Risk_ACM7p3_LeechRiverFullFault_b0_b.ini [--hc=None]
+[2021-07-02 06:17:43 #110 INFO] Using engine version 3.11.3-git0cccb86798
+[2021-07-02 06:17:44 #110 WARNING] Using 16 cores on L-VAN-AC02ZW7L4MD6N.local
+[2021-07-02 06:17:44 #110 INFO] Checksum of the input files: 3215837928
+[2021-07-02 06:17:44 #110 INFO] Reading the risk model if present
+[2021-07-02 06:17:57 #110 INFO] Reading /Users/thobbs/Documents/GitHub/openquake-inputs/exposure/general-building-stock/oqBldgExp_BC.xml
+[2021-07-02 06:18:17 #110 INFO] Extracting the hazard sites from the site model
+[2021-07-02 06:18:20 #110 INFO] Associated 274630 assets to 20013 sites
+[2021-07-02 06:18:31 #110 INFO] Reducing risk model from 7260 to 1396 taxonomies
+[2021-07-02 06:18:32 #110 INFO] minimum_asset_loss={'contents': 0, 'nonstructural': 0, 'occupants': 0, 'structural': 0}
+[2021-07-02 06:18:32 #110 INFO] gzipping the input files
+[2021-07-02 06:18:35 #110 INFO] Storing risk model
+[2021-07-02 06:18:36 #110 INFO] minimum_intensity={'SA(1.0)': 0.05, 'SA(0.5)': 0.05, 'SA(0.3)': 0.0, 'SA(0.6)': 0.05, 'SA(2.0)': 0.05}
+[2021-07-02 06:18:37 #110 INFO] There are 4 realization(s)
+[2021-07-02 06:18:37 #110 INFO] Reordering the ruptures and storing the events
+[2021-07-02 06:18:37 #110 INFO] Associating event_id -> rlz_id for 1_600 events and 400 ruptures
+[2021-07-02 06:18:37 #110 INFO] Reading 400 ruptures
+[2021-07-02 06:19:37 #110 INFO] compute_gmfs   2% [17 submitted, 17 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs   5% [18 submitted, 16 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs   8% [19 submitted, 15 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  11% [20 submitted, 14 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  14% [21 submitted, 13 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  17% [22 submitted, 12 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  20% [23 submitted, 11 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  23% [24 submitted, 10 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  26% [25 submitted, 9 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  29% [26 submitted, 8 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  32% [27 submitted, 7 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  35% [28 submitted, 6 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  38% [29 submitted, 5 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  41% [30 submitted, 4 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  44% [31 submitted, 3 queued]
+[2021-07-02 06:19:43 #110 INFO] compute_gmfs  47% [32 submitted, 2 queued]
+[2021-07-02 06:20:29 #110 INFO] compute_gmfs  50% [33 submitted, 1 queued]
+[2021-07-02 06:20:42 #110 INFO] compute_gmfs  52% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  55% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  58% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  61% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  64% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  67% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  70% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  73% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  76% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  79% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  82% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  85% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  88% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  91% [34 submitted, 0 queued]
+[2021-07-02 06:20:48 #110 INFO] compute_gmfs  94% [34 submitted, 0 queued]
+[2021-07-02 06:20:51 #110 INFO] compute_gmfs  97% [34 submitted, 0 queued]
+[2021-07-02 06:21:01 #110 INFO] compute_gmfs 100% [34 submitted, 0 queued]
+[2021-07-02 06:21:01 #110 INFO] Mean time per core=120s, std=5.5s, min=117s, max=140s
+[2021-07-02 06:21:01 #110 INFO] Received {'gmfdata': '736.54 MB', 'sig_eps': '90.1 KB', 'times': '14.81 KB', 'hcurves': '170 B'} in 144 seconds
+[2021-07-02 06:21:01 #110 INFO] Stored 515.71 MB of GMFs
+[2021-07-02 06:21:11 #110 INFO] Checking seed dependency
+[2021-07-02 06:21:14 #110 INFO] Building risk inputs from 4 realization(s)
+[2021-07-02 06:21:18 #110 INFO] Grouping the GMFs by site ID
+[2021-07-02 06:21:35 #110 INFO] Built 20014 risk inputs
+[2021-07-02 06:21:44 #110 INFO] Sent 33 tasks, 914.43 MB in 7 seconds
+[2021-07-02 06:21:57 #110 INFO] event_based_risk   3% [33 submitted, 0 queued]
+[2021-07-02 06:21:59 #110 INFO] event_based_risk   6% [33 submitted, 0 queued]
+[2021-07-02 06:22:05 #110 INFO] event_based_risk   9% [33 submitted, 0 queued]
+[2021-07-02 06:22:18 #110 INFO] event_based_risk  12% [33 submitted, 0 queued]
+[2021-07-02 06:22:26 #110 INFO] event_based_risk  15% [33 submitted, 0 queued]
+[2021-07-02 06:22:31 #110 INFO] event_based_risk  18% [33 submitted, 0 queued]
+[2021-07-02 06:22:35 #110 INFO] event_based_risk  21% [33 submitted, 0 queued]
+[2021-07-02 06:22:37 #110 INFO] event_based_risk  24% [33 submitted, 0 queued]
+[2021-07-02 06:22:40 #110 INFO] event_based_risk  27% [33 submitted, 0 queued]
+[2021-07-02 06:22:41 #110 INFO] event_based_risk  30% [33 submitted, 0 queued]
+[2021-07-02 06:22:42 #110 INFO] event_based_risk  33% [33 submitted, 0 queued]
+[2021-07-02 06:22:44 #110 INFO] event_based_risk  36% [33 submitted, 0 queued]
+[2021-07-02 06:22:47 #110 INFO] event_based_risk  39% [33 submitted, 0 queued]
+[2021-07-02 06:22:48 #110 INFO] event_based_risk  42% [33 submitted, 0 queued]
+[2021-07-02 06:22:49 #110 INFO] event_based_risk  45% [33 submitted, 0 queued]
+[2021-07-02 06:22:50 #110 INFO] event_based_risk  48% [33 submitted, 0 queued]
+[2021-07-02 06:23:14 #110 INFO] event_based_risk  51% [33 submitted, 0 queued]
+[2021-07-02 06:23:14 #110 INFO] event_based_risk  54% [33 submitted, 0 queued]
+[2021-07-02 06:23:24 #110 INFO] event_based_risk  57% [33 submitted, 0 queued]
+[2021-07-02 06:23:33 #110 INFO] event_based_risk  60% [33 submitted, 0 queued]
+[2021-07-02 06:23:34 #110 INFO] event_based_risk  63% [33 submitted, 0 queued]
+[2021-07-02 06:23:40 #110 INFO] event_based_risk  66% [33 submitted, 0 queued]
+[2021-07-02 06:23:47 #110 INFO] event_based_risk  69% [33 submitted, 0 queued]
+[2021-07-02 06:23:49 #110 INFO] event_based_risk  72% [33 submitted, 0 queued]
+[2021-07-02 06:23:49 #110 INFO] event_based_risk  75% [33 submitted, 0 queued]
+[2021-07-02 06:23:51 #110 INFO] event_based_risk  78% [33 submitted, 0 queued]
+[2021-07-02 06:23:54 #110 INFO] event_based_risk  81% [33 submitted, 0 queued]
+[2021-07-02 06:23:56 #110 INFO] event_based_risk  84% [33 submitted, 0 queued]
+[2021-07-02 06:23:57 #110 INFO] event_based_risk  87% [33 submitted, 0 queued]
+[2021-07-02 06:24:04 #110 INFO] event_based_risk  90% [33 submitted, 0 queued]
+[2021-07-02 06:24:12 #110 INFO] event_based_risk  93% [33 submitted, 0 queued]
+[2021-07-02 06:24:27 #110 INFO] event_based_risk  96% [33 submitted, 0 queued]
+[2021-07-02 06:25:14 #110 INFO] event_based_risk 100% [33 submitted, 0 queued]
+[2021-07-02 06:25:14 #110 INFO] Mean time per core=132s, std=25.8s, min=93s, max=207s
+[2021-07-02 06:25:14 #110 INFO] Received {'losses_by_asset': '124.76 MB', 'alt': '3.03 MB'} in 210 seconds
+[2021-07-02 06:25:15 #110 INFO] Saving the agg_loss_table
+[2021-07-02 06:25:15 #110 INFO] Total portfolio loss
+==== =============== ================= ========= =================
+loss contents        nonstructural     occupants structural       
+==== =============== ================= ========= =================
+avg  932_565_723_856 4_057_491_570_432 99_479    2_823_371_557_824
+==== =============== ================= ========= =================
+[2021-07-02 06:25:15 #110 WARNING] Due to rounding errors inherent in floating-point arithmetic, agg_losses != sum(avg_losses): 4883393000.0 != 4882696000.0
+see https://docs.openquake.org/oq-engine/advanced/addition-is-non-associative.html
+[2021-07-02 06:25:15 #110 INFO] Exposing the outputs to the database
+[2021-07-02 06:25:15 #110 INFO] Stored 489.33 MB on /Users/thobbs/oqdata/calc_110.hdf5 in 451 seconds
+[2021-07-02 06:25:15 #110 INFO] Stopping the workers
+  id | name
+ 652 | Aggregate Event Losses
+ 653 | Aggregate Losses Statistics
+ 654 | Average Asset Losses Statistics
+ 655 | Events
+ 656 | Full Report
+ 657 | Ground Motion Fields
+ 658 | Input Files
+ 659 | Realizations

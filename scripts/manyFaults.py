@@ -21,6 +21,7 @@ def main():
     runName = configParser.get('General', 'RunName')
     tectoRegion = configParser.get('General', 'tectoRegion')
     taxonomy_mapping_csv_baseline = configParser.get('File Paths', 'taxonomy_mapping_csv_baseline')
+    taxonomy_mapping_csv_retrofit = configParser.get('File Paths', 'taxonomy_mapping_csv_retrofit')
 
     # Save config  file as {runName}.ini for future reference
     if not os.path.exists('manyFaults'):
@@ -38,7 +39,8 @@ def main():
         #retroList = ['b0','r1','r2']
         retroList = ['b0','r1']
         taxoMapDict = {retroList[0]:taxonomy_mapping_csv_baseline,
-                       retroList[1]:taxonomy_mapping_csv_retrofit}
+                       retroList[1]:taxonomy_mapping_csv_retrofit
+                      }
     else:
         retroList = ['b0']
         taxoMapDict = {retroList[0]:taxonomy_mapping_csv_baseline}
@@ -47,7 +49,7 @@ def main():
     if configParser.get('General', 'generate_ruptures') == 'True':
         magnitudeList = list(np.float_(configParser.get('Moment Magnitude', 'mag')[1:-2].split(':')))
         if len(magnitudeList) >= 2:
-            magnitudeList = np.linspace(magnitudeList[0], magnitudeList[2], endpoint=True, num=round((magnitudeList[2]-magnitudeList[0])/magnitudeList[1])+1)
+            magnitudeList = np.linspace(magnitudeList[0], magnitudeList[2], endpoint=True, num=int(round((magnitudeList[2]-magnitudeList[0])/magnitudeList[1])+1))
             magnitudeList = ["%.1f" % e for e in magnitudeList] #Set Floating point precision
 
         strikeList = list(np.float_(configParser.get('Strike', 'strike')[1:-2].split(':')))
@@ -260,7 +262,7 @@ def get_config_params(args):
     Parse Input/Output columns from supplied *.ini file
     """
     configParser = configparser.ConfigParser()
-    configParser.read("manyFaults.ini")  #args.manyFaultsINI)
+    configParser.read("scripts/manyFaults.ini")  #args.manyFaultsINI)
     return configParser
 
 def parse_args():

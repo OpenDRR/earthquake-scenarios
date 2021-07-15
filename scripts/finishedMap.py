@@ -1,9 +1,9 @@
 #!python3
 
 import pandas as pd
-from mpl_toolkits.basemap import Basemap
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
 import matplotlib.pyplot as plt
-from itertools import chain
 from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 
@@ -13,31 +13,62 @@ data = pd.read_csv('tempmap.txt', header=None)
 data.columns = ['mag','lat','lon','name']
 data['mag'] = data['mag'].str.replace('p','.')
 data = data.sort_values('mag', ascending=False).drop_duplicates()
-   
+
+# Load data for testing
+'''data = pd.read_table("../finished/finishedscenarios.md",
+                        skiprows=[0,2], sep='|',
+                        skipinitialspace=True,
+                        usecols=[1,2,3,4])
+data.columns = data.columns.str.strip()'''
+
 # Generate a map
-fig = plt.figure()
+extent = [-130, -55, 36.5, 75] # Map bounds
+central_lon = np.mean(extent[:2]) # Longitude midpoint
+central_lat = np.mean(extent[2:]) # Latitude midpoint
+
+fig = plt.figure(figsize=(9, 6))
+
+# Create map and set bounds
+ax = plt.axes(projection=ccrs.AlbersEqualArea(central_lon, central_lat))
+ax.set_extent(extent)
+
+# Add map features
+resol = '50m'
+states_provinces = cfeature.NaturalEarthFeature(
+    category='cultural',
+    name='admin_1_states_provinces_lines',
+    scale=resol,
+    facecolor='none')
+
+ax.add_feature(cfeature.OCEAN)
+ax.add_feature(cfeature.LAND)
+ax.add_feature(cfeature.LAKES)
+ax.add_feature(cfeature.RIVERS)
+ax.add_feature(cfeature.BORDERS)
+ax.add_feature(states_provinces, edgecolor='gray')
+
+# Colourmap for magnitude representation
 cmap = LinearSegmentedColormap.from_list('name', ['yellow', 'red'])
-m = Basemap(projection='lcc', resolution='l',
-            width=6E6, height=4E6,
-            lat_0=60, lon_0=-95)
-m.shadedrelief(scale=0.2)
-m.drawcountries()
-m.drawstates()
-x,y=m(data['lon'].values,data['lat'].values) 
-plt.scatter(x, y, marker = '*', edgecolors='k',
-          c=data['mag'].astype(float).values, 
-          s=np.dot(18,data['mag'].astype(float).values),
-          cmap=cmap, alpha=0.7)
+
+# Add quake locations
+mags =np.array([float(x) for x in data['mag']])
+plt.scatter(x=data['lon'], y=data['lat'],
+            transform=ccrs.PlateCarree(), # Plots points to Plate Carree and projects to Albers
+            marker = '*',
+            c=mags, # Value for colour on colourmap
+            edgecolors='k',
+            alpha=0.7, # Transparency
+            cmap=cmap, # Maps colours to colourmap
+            s=mags*18)
 
 # Add a legend
-plt.colorbar(label='magnitude')
+plt.colorbar(label='magnitude', shrink=0.5, pad=0.01)
 plt.clim(6, 9)
 for a in [6.0, 7.0, 8.0, 9.0]:
-    plt.scatter([], [], marker='*', c='k', alpha=0.7, s=np.dot(18,a),
-                label='M '+str(a))
-#plt.scatter(xa, ya, marker = '*', edgecolors='k', c=a, cmap=cmap, alpha=0.7, s=a, label=str(a))
+    plt.scatter([], [], marker='*', c='k', alpha=0.7,
+                s=np.dot(18,a), label='M '+str(a))
 plt.legend(scatterpoints=1, frameon=False,
-           labelspacing=1, loc='upper right');
+           labelspacing=1, loc='upper right')
 
 # Save map
 plt.savefig('FinishedScenarios.png')

@@ -307,8 +307,8 @@ def link_markdown(link):
     # Markdown for link - [link text](link url)
     md_link = f'[{link}]({gh_link})'
     # HTML button for download link
-    button = f'<form action="{download_link}"><button type="submit">Download</button></form>'
-    return md_link + button
+    button = f'<a href="{download_link}" download><button type="button">Download</button></a>'
+    return md_link + '<br/>' + button
 
 # Generate markdown for all files
 sm_file = link_markdown(shakename)

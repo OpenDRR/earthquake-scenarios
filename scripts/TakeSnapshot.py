@@ -11,11 +11,9 @@
 import pandas as pd
 import sys
 import configparser
-import argparse
 import os
 from xml.dom import minidom
 import cartopy.crs as ccrs
-import cartopy
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import cartopy.feature as cfeature
@@ -307,7 +305,7 @@ def link_markdown(link):
     # Markdown for link - [link text](link url)
     md_link = f'[{link}]({gh_link})'
     # HTML button for download link
-    button = f'<a href="{download_link}" download><button type="button">Download</button></a>'
+    button = f'[<kbd>Download</kbd>]({download_link})'
     return md_link + '<br/>' + button
 
 # Generate markdown for all files

@@ -295,15 +295,19 @@ else:
 def link_markdown(link):
     if link.startswith('../../openquake-inputs'):
         gh_link = link.replace('../../openquake-inputs', 'https://github.com/OpenDRR/openquake-inputs/blob/main')
+        display_link = link.replace('../', '', 2)
     elif link.startswith('../../CanadaSHM6'):
         gh_link = link.replace('../../CanadaSHM6', 'https://github.com/OpenDRR/CanadaSHM6/blob/master')
+        display_link = link.replace('../', '', 2)
     elif link.startswith('../'):
         gh_link = link.replace('..', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master', 1)
+        display_link = link.replace('../', '', 1)
     elif link.startswith('.'):
         gh_link = link.replace('.', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED', 1)
+        display_link = link.replace('./', '', 1)
     download_link = gh_link.replace('blob', 'raw', 1)
     # Markdown for link - [link text](link url)
-    md_link = f'[{link}]({gh_link})'
+    md_link = f'[{display_link}]({gh_link})'
     # HTML button for download link
     button = f'[<kbd>Download</kbd>]({download_link})'
     return md_link + '<br/>' + button

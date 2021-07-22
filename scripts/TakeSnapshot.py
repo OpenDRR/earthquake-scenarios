@@ -313,7 +313,7 @@ def link_markdown(link):
     return md_link + '<br/>' + button
 
 # Generate markdown for all files
-sm_file = link_markdown(shakename)
+sh_file = link_markdown(shakename)
 db_file = link_markdown(dmg_basename)
 dr_file = link_markdown(dmg_retroname)
 cb_file = link_markdown(cons_basename)
@@ -344,7 +344,7 @@ metadata = {
     "critical_injuries_and_entrapments": '{0:,.0f} people'.format(critical),
     "all_hospitalizations": '{0:,.0f} people'.format(hospital),
     "epicentre_map": '![Epicentre]({}.png)'.format(NAME),
-    "shakemap_file": sm_file,
+    "shakemap_file": sh_file,
     "damage_baseline_file": db_file,
     "damage_retrofitted_file": dr_file,
     "consequence_baseline_file": cb_file,

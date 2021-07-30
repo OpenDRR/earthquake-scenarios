@@ -127,7 +127,6 @@ fi
 echo "All initialization files exist - You're ready to go."
 
 
-
 #TESTFLAG=`ps aux | grep -v grep | grep "oq-webui" | wc | awk '$1=="1" {print "TRUE"}'`
 #if [ "${TESTFLAG}" = "TRUE" ]; then
 #echo "Webui running."
@@ -148,7 +147,7 @@ if [[ $HAZFLAG == "1" ]]; then
     python3 $AVGHAZLOC $NAME $CALCID
     SMSFILE="${OUTDIR}/s_sitemesh_${NAME}_${CALCID}.csv"
     mv temp/*sitemesh* ${SMSFILE}
-    rm -f temp/sigma_epsilon_* temp/*gmf*.csv
+    rm -f temp/sigma_epsilon_* temp/*gmf*.csv temp/realizations_${CALCID}.csv
 fi
 
 
@@ -156,19 +155,43 @@ if [[ $DMGFLAG == "1" ]]; then
     echo "------------------------------------------------"
     echo "RUNNING DAMAGE & CONSEQUENCE CALCULATIONS"
     echo "------------------------------------------------"
-    for retro in "${arr[@]}"
-    do
-        oq engine --run ${JOBDIR}/s_Damage_${NAME}_${retro}_${expoSuffix}.ini &> ./${OUTDIR}/s_Damage_${NAME}_${retro}_${expoSuffix}.log;
+    if [[ $RETROFLAG == "1" ]]; then 
+        # RUN TWO CALCS WITH SHARED HAZ CALC
+        oq engine --run ${JOBDIR}/s_Damage_${NAME}_${arr[0]}_${expoSuffix}.ini ${JOBDIR}/s_Damage_${NAME}_${arr[1]}_${expoSuffix}.ini &> ./${OUTDIR}/s_Damage_${NAME}_b0r1_${expoSuffix}.log;
+        
+        # EXPORT BASELINE, WHICH IS SECOND TO LAST CALC
+        oq export damages-rlzs -2 -e csv -d temp
+        oq export realizations -2 -e csv -d temp
+        CALCID=` ls -t temp/avg_damages-rlz-???_* | head -1 | awk -F'[_.]' '{print $(NF-1)}'`
+        python3 $AVG_LOC $NAME ${arr[0]} $CALCID $expoSuffix damage
+        python3 $CONSQ_LOC -2
+        declare -a files=(`ls consequences-rlz-???_-2.csv`) #conseq script doesn't know real calc id, so need to replace the "-2"
+        for file in $files; do mv $file "temp/"`basename $file "-2.csv"`${CALCID}".csv"; done
+        python3 $AVG_LOC $NAME ${arr[0]} $CALCID $expoSuffix consequence
+        rm -f temp/consequences-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv temp/avg_damages-rlz-???_${CALCID}.csv #clear temp dir
+        
+        # EXPORT RETROFIT 1, LAST CALC
         oq export damages-rlzs -1 -e csv -d temp
         oq export realizations -1 -e csv -d temp
         CALCID=` ls -t temp/avg_damages-rlz-???_* | head -1 | awk -F'[_.]' '{print $(NF-1)}'`
-        #NUMREALZ=`ls temp/avg_damages* | wc | awk '{print $1-1}'`
-        python3 $AVG_LOC $NAME $retro $CALCID $expoSuffix damage
+        python3 $AVG_LOC $NAME ${arr[1]} $CALCID $expoSuffix damage
         python3 $CONSQ_LOC -1
         mv consequences-rlz-???_${CALCID}.csv temp/
-        python3 $AVG_LOC $NAME $retro $CALCID $expoSuffix consequence
-        rm -f temp/consequences-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv temp/avg_damages-???_${CALCID}.csv
-    done
+        python3 $AVG_LOC $NAME ${arr[1]} $CALCID $expoSuffix consequence
+        rm -f temp/consequences-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv temp/avg_damages-rlz-???_${CALCID}.csv #clear temp dir
+        
+    else
+        # RUN A SINGLE CALC
+        oq engine --run ${JOBDIR}/s_Damage_${NAME}_${arr[0]}_${expoSuffix}.ini > ./${OUTDIR}/s_Damage_${NAME}_${arr[0]}_${expoSuffix}.log
+        oq export damages-rlzs -1 -e csv -d temp
+        oq export realizations -1 -e csv -d temp
+        CALCID=` ls -t temp/avg_damages-rlz-???_* | head -1 | awk -F'[_.]' '{print $(NF-1)}'`
+        python3 $AVG_LOC $NAME ${arr[0]} $CALCID $expoSuffix damage
+        python3 $CONSQ_LOC -1
+        mv consequences-rlz-???_${CALCID}.csv temp/
+        python3 $AVG_LOC $NAME ${arr[0]} $CALCID $expoSuffix consequence
+        rm -f temp/consequences-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv temp/avg_damages-rlz-???_${CALCID}.csv #clear temp dir
+    fi
 fi
 
 
@@ -176,15 +199,32 @@ if [[ $RSKFLAG == "1" ]]; then
     echo "------------------------------------------------"
     echo "RUNNING RISK CALCULATION"
     echo "------------------------------------------------"
-    for retro in "${arr[@]}"
-    do
-        oq engine --run ${JOBDIR}/s_Risk_${NAME}_${retro}_${expoSuffix}.ini &> ./${OUTDIR}/s_Risk_${NAME}_${retro}_${expoSuffix}.log;
+    if [[ $RETROFLAG == "1" ]]; then
+        # RUN TWO CALCS WITH SHARED HAZ CALC
+        oq engine --run ${JOBDIR}/s_Risk_${NAME}_${arr[0]}_${expoSuffix}.ini ${JOBDIR}/s_Risk_${NAME}_${arr[1]}_${expoSuffix}.ini &> ./${OUTDIR}/s_Risk_${NAME}_b0r1_${expoSuffix}.log;
+        
+        # EXPORT BASELINE, WHICH IS SECOND TO LAST CALC
+        oq export avg_losses-rlzs -2 -e csv -d temp;
+        CALCID=`ls -t temp/avg_losses* | head -1 | awk -F'[_.]' '{print $(NF-1)}'`
+        #Run weighted average script, save only that
+        python3 $AVG_LOC $NAME ${arr[0]} $CALCID $expoSuffix loss
+        rm -f temp/avg_losses-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv
+        
+        # EXPORT RETROFIT 1, LAST CALC
         oq export avg_losses-rlzs -1 -e csv -d temp;
         CALCID=`ls -t temp/avg_losses* | head -1 | awk -F'[_.]' '{print $(NF-1)}'`
         #Run weighted average script, save only that
-        python3 $AVG_LOC $NAME $retro $CALCID $expoSuffix loss
+        python3 $AVG_LOC $NAME ${arr[1]} $CALCID $expoSuffix loss
         rm -f temp/avg_losses-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv
-    done
+    else
+        # RUN A SINGLE CALC
+        oq engine --run ${JOBDIR}/s_Risk_${NAME}_${arr[0]}_${expoSuffix}.ini &> ./${OUTDIR}/s_Risk_${NAME}_${arr[0]}_${expoSuffix}.log;
+        oq export avg_losses-rlzs -1 -e csv -d temp;
+        CALCID=`ls -t temp/avg_losses* | head -1 | awk -F'[_.]' '{print $(NF-1)}'`
+        #Run weighted average script, save only that
+        python3 $AVG_LOC $NAME ${arr[0]} $CALCID $expoSuffix loss
+        rm -f temp/avg_losses-rlz-???_${CALCID}.csv temp/realizations_${CALCID}.csv
+    fi
 fi
 
 

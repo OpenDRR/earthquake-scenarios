@@ -23,7 +23,7 @@ import pandas as pd
 from tqdm import tqdm
 import sys
 
-params_file = "/mnt/storage/earthquake-scenarios/scripts/Hazus_Consequence_Parameters.xlsx"
+params_file = "scripts/Hazus_Consequence_Parameters.xlsx" #/mnt/storage/earthquake-scenarios/scripts/Hazus_Consequence_Parameters.xlsx"
 
 def read_square_footage(xlsx):
     square_footage_df = pd.read_excel(xlsx, sheet_name="Square Footage", skiprows=1, index_col=0)
@@ -223,7 +223,7 @@ def calculate_consequences(job_id='-1'):
                 debris_concrete_steel = debris_concrete_steel_str + debris_concrete_steel_nst
 
                 # Estimate number of displaced occupants based on heuristics provided by Murray
-                sc_Displ3 = asset["occupants_night"] if recovery_time > 3 and recovery_time < 30 else 0
+                sc_Displ3 = asset["occupants_night"] if recovery_time > 3 else 0
                 sc_Displ30 = asset["occupants_night"] if recovery_time > 30 else 0
                 sc_Displ90 = asset["occupants_night"] if recovery_time > 90 else 0
                 sc_Displ180 = asset["occupants_night"] if recovery_time > 180 else 0

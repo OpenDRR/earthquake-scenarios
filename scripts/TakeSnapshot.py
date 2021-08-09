@@ -215,7 +215,7 @@ if 'Cascadia' in NAME:
 elif 'LeechRiver' in NAME:
     wRR = 7500
 else:
-    filepath = "../Documents/GitHub/CanadaSHM6/source_summary_csv/simplifiedModel/"
+    filepath = "../../CanadaSHM6/source_summary_csv/simplifiedModel/"
     W = pd.read_csv(filepath+"W_CANADA_UPDATED_simplified_collapsedRates.csv"); W['regWt'] = 1; W['regName'] = 'W'
     SE_R2 = pd.read_csv(filepath+"SE_CANADA_R2_simplified_collapsedRates.csv"); SE_R2['regWt'] = 0.2; SE_R2['regName'] = 'SE_R2'
     SE_H2 = pd.read_csv(filepath+"SE_CANADA_H2_simplified_collapsedRates.csv"); SE_H2['regWt'] = 0.4; SE_H2['regName'] ='SE_H2'
@@ -277,6 +277,7 @@ else:
 
     # find weighted average between regions
     print("Weighted recurrence rate is "+str(sum(wRR)))
+    wRRprint = sum(wRR) #not sure this always works..
 
 
 # unanswered pieces
@@ -335,7 +336,7 @@ metadata = {
     "latitude": '{0:.3f} degrees'.format(float(lat)),
     "longitude": '{0:.3f} degrees'.format(float(lon)),
     "maximum_peak_ground_acceleration": '{0:.3f} g'.format(max_PGA),
-    "recurrence rate": '{0:,.0f} years*'.format(wRR),
+    "recurrence rate": '{0:,.0f} years*'.format(wRRprint),
     "": '*For Cascadia, Leech River, and Devil\'s Mountain Faults these are characteristic earthquakes, else they are recurrence interval for an event of equal or greater magnitude in the scenario source region.',
     "cost": '${0:,.0f}'.format(cost),
     "redtag": '{0:,.0f} buildings'.format(redtag),

@@ -223,7 +223,7 @@ def calculate_consequences(job_id='-1'):
                 debris_concrete_steel = debris_concrete_steel_str + debris_concrete_steel_nst
 
                 # Estimate number of displaced occupants based on heuristics provided by Murray
-                sc_Displ3 = asset["occupants_night"] if recovery_time > 3 and recovery_time < 30 else 0
+                sc_Displ3 = asset["occupants_night"] if recovery_time > 3 else 0
                 sc_Displ30 = asset["occupants_night"] if recovery_time > 30 else 0
                 sc_Displ90 = asset["occupants_night"] if recovery_time > 90 else 0
                 sc_Displ180 = asset["occupants_night"] if recovery_time > 180 else 0

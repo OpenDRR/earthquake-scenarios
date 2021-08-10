@@ -1,4 +1,4 @@
-![All Scenarios To Date](FinishedScenarios.png)
+[All Scenarios To Date](FinishedScenarios.geojson)
 |   mag |    lat |      lon | name                              |
 |------:|-------:|---------:|:----------------------------------|
 |   9   | 48.25  | -125.217 | SIM9p0_CascadiaInterfaceBestFault |

@@ -13,7 +13,7 @@ mag=`ls *_*.md | awk -F'(_|M)' '{print $2}'`
 name=`ls *_*.md | awk -F'.' '{print $1}'`
 
 paste -d"," <(echo "$mag") <(echo "$lat") <(echo "$lon") <(echo "$cost") <(echo "$redtag") <(echo "$name") > tempmap.txt
-echo "![All Scenarios To Date](FinishedScenarios.png)" > FinishedScenarios.md
+echo "[All Scenarios To Date](FinishedScenarios.geojson)" > FinishedScenarios.md
 python3 ../scripts/finishedMap.py
 
 rm -f tempmap.txt

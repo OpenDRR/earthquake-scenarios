@@ -211,9 +211,9 @@ tectonicRegion = tectregionnames[gsim_logic_tree_file.split('NGASa0p3weights_')[
 
 ### Find scenario source region and determine rate
 if 'Cascadia' in NAME:
-    wRR = 433
+    wRR = [433]
 elif 'LeechRiver' in NAME:
-    wRR = 7500
+    wRR = [7500]
 else:
     filepath = "../../CanadaSHM6/source_summary_csv/simplifiedModel/"
     W = pd.read_csv(filepath+"W_CANADA_UPDATED_simplified_collapsedRates.csv"); W['regWt'] = 1; W['regName'] = 'W'
@@ -277,7 +277,7 @@ else:
 
     # find weighted average between regions
     print("Weighted recurrence rate is "+str(sum(wRR)))
-    wRRprint = sum(wRR) #not sure this always works..
+wRRprint = sum(wRR)
 
 
 # unanswered pieces
@@ -376,11 +376,6 @@ with open(md_file, 'w') as f:
     f.write(
         df.to_markdown(index=False)
     )    
-
-
-
-
-
 
 
 ################################################## OLD SCRAPS

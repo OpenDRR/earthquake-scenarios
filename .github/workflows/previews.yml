@@ -14,7 +14,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: '/FINISHED/previews.html'
+        source_file: './FINISHED/previews.html'
         destination_repo: 'DamonU2/data'
         destination_folder: '_pages/en/'
         user_email: 'damon_ulmi@hotmail.com'

@@ -312,6 +312,7 @@ def link_markdown(link):
     button = f'[<kbd>Download</kbd>]({download_link})'
     return md_link + '<br/>' + button
 
+
 # Generate markdown for all files
 sh_file = link_markdown(shakename)
 db_file = link_markdown(dmg_basename)
@@ -376,6 +377,7 @@ with open(md_file, 'w') as f:
         df.to_markdown(index=False)
     )    
 
+
 # Function to generate name in sentence form
 def name_to_sentence(name):
     end = name.split('_')[1]
@@ -384,6 +386,7 @@ def name_to_sentence(name):
     return title + ' - Magnitude ' + mag
 
 long_name = name_to_sentence(NAME)
+
 
 # Generate HTML for previews
 html = f'''<h2 id={NAME}>{long_name}</h2>
@@ -419,6 +422,7 @@ html = f'''<h2 id={NAME}>{long_name}</h2>
 </div>\n'''
 
 preview_file = FINISHEDdir + '/' + 'previews.html'
+
 
 # Removes scenario from html if it has already been run
 with open(preview_file, 'r') as f:

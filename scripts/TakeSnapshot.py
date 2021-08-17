@@ -439,6 +439,7 @@ with open(preview_file, 'r') as f:
 with open(preview_file, 'a') as f:
     f.write(html)
 
+
 ################################################## OLD SCRAPS
 
 # Print statements

@@ -15,5 +15,6 @@ name=`ls *_*.md | awk -F'.' '{print $1}'`
 paste -d"," <(echo "$mag") <(echo "$lat") <(echo "$lon") <(echo "$cost") <(echo "$redtag") <(echo "$name") > tempmap.txt
 echo "[All Scenarios To Date](FinishedScenarios.geojson)" > FinishedScenarios.md
 python3 ../scripts/finishedMap.py
+python3 ../scripts/generate_yml.py
 
 rm -f tempmap.txt

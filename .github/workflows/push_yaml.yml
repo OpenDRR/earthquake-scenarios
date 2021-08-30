@@ -1,4 +1,4 @@
-name: Push previews.html to data repo
+name: Push dsra.yml to data repo
 
 on: push
 
@@ -9,14 +9,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Pushes test file
+    - name: Pushes changed file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source_file: './FINISHED/previews.html'
+        source_file: './scripts/dsra.yml'
         destination_repo: 'DamonU2/data'
-        destination_folder: '_pages/en/'
+        destination_folder: '_data/'
         user_email: 'damon_ulmi@hotmail.com'
         user_name: 'DamonU2'
-        commit_message: 'Update to previews.html'
+        commit_message: 'Update to dsra.yml'

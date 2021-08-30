@@ -1,0 +1,27 @@
+collection:
+  en: Earthquake Scenarios
+  fr: Scénarios de séismes
+id: psra_bc_all_indicators
+scenarios:
+- description:
+    en: Magnitude 7.3 scenario based on complete rupture of the CanSHM6 Hazard Model
+      implementation of the Leech River Full Fault.
+    fr: ''
+  name: ACM7p3_LeechRiverFullFault
+  title: Leech River Full Fault - Magnitude 7.3
+- description:
+    en: Evaluating impact of increasing magnitude using the 2015 Mw 4.7 Sidney, BC,
+      Earthquake hypocentre. More info at https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
+      - Strike selected to approximately parallel the strike of the subducting slab
+      for this deep intraslab extensional event.
+    fr: ''
+  name: IDM7p1_Sidney
+  title: Sidney - Magnitude 7.1
+- description:
+    en: .
+    fr: ''
+  name: SIM9p0_CascadiaInterfaceBestFault
+  title: Cascadia Interface Best Fault - Magnitude 9.0
+title:
+  en: Seismic Risk
+  fr: Risque sismique

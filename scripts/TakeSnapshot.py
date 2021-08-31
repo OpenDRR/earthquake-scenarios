@@ -378,67 +378,6 @@ with open(md_file, 'w') as f:
     )    
 
 
-# Function to generate name in sentence form
-def name_to_sentence(name):
-    end = name.split('_')[1]
-    title = ''.join(' ' + x if x.isupper() else x for x in end)
-    mag = name[3] + '.' + name[5]
-    return title + ' - Magnitude ' + mag
-
-long_name = name_to_sentence(NAME)
-
-
-# Generate HTML for previews
-html = f'''<h2 id={NAME}>{long_name}</h2>
-<p>{description}</p>
-<div>
-    <table class="table table-striped table-responsive">
-        <tbody>
-            <tr>
-                <th scope="col" class="col-sm-6">Resource Name</th>
-                <th scope="col" class="col-sm-2 hidden-xs">Resource Type</th>
-                <th scope="col" class="col-sm-2">Format</th>
-                <th scope="col" class="col-sm-1">Links </th>
-                </tr>
-            <tr>
-                <td>GitHub repository</td>
-                <td class="hidden-xs">Document</td>
-                <td><span class="label HTML">HTML</span></td>
-                <td><a href="https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED/{NAME}.md" class="btn btn-primary">Access</a></td>
-            </tr>
-            <tr>
-                <td>{long_name} (Points)</td>
-                <td class="hidden-xs">Dataset</td>
-                <td><span class="label GPKG">GPKG</span></td>
-                <td><a href="https://github.com/jvanulde/data/releases/download/{NAME}_all_indicators_b.gpkg.zip" class="btn btn-primary">Access</a></td>
-                </tr>
-            <tr>
-                <td>{long_name} (Polygons)</td>
-                <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
-                <td><a href="https://github.com/jvanulde/data/releases/download/{NAME}_all_indicators_s.gpkg.zip" class="btn btn-primary">Access</a></td>
-            </tr>
-        </tbody>
-    </table>
-</div>\n'''
-
-preview_file = FINISHEDdir + '/' + 'previews.html'
-
-
-# Removes scenario from html if it has already been run
-with open(preview_file, 'r') as f:
-    text = f.read()
-    if NAME in text:
-        location = text.find(NAME)
-        first_half, second_half = (text[:location], text[location:])
-        edited_text = first_half[:first_half.rfind('<h2')] + second_half[second_half.find('</div>') + 7:]
-        with open(preview_file, 'w') as f:
-            f.write(edited_text)
-
-
-# Append new html to .html file
-with open(preview_file, 'a') as f:
-    f.write(html)
-
 ################################################## OLD SCRAPS
 
 # Print statements

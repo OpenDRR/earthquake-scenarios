@@ -52,8 +52,8 @@ for i in range(len(data)):
     features_fr.append(feature_fr)
 collection = FeatureCollection(features)
 dump = geojson.dumps(collection, sort_keys=False)
-collection_fr = FeatureCollection(features)
-dump_fr = geojson.dumps(collection, sort_keys=False)
+collection_fr = FeatureCollection(features_fr)
+dump_fr = geojson.dumps(collection_fr, sort_keys=False)
 
 
 # Save geoJSON files

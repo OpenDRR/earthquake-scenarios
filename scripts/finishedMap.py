@@ -16,6 +16,7 @@ data = data.sort_values('mag', ascending=False).drop_duplicates()
 sigma = 0.0015
 
 features = []
+features_fr = []
 # Generate points for scenarios
 for i in range(len(data)):
     point = data.iloc[i]
@@ -29,7 +30,7 @@ for i in range(len(data)):
     elif float(point.mag) >= 8:
         size = 'large'
         color = '#ff4000'
-    # Offset coordinates randomly to prevent overlap
+    # Slightly offset coordinates randomly to prevent overlap
     lon = np.random.normal(point.lon, sigma)
     lat = np.random.normal(point.lat, sigma)
     # Set data for point features
@@ -41,14 +42,28 @@ for i in range(len(data)):
                                 "marker-color": color,
                                 "marker-size": size})
     features.append(feature)
+    feature_fr = Feature(geometry=Point((lon, lat)),
+                    properties={"magnitude": str(point.mag),
+                                "prix": '$' + str("{:,}".format(point.cost)),
+                                "bâtiments détruits": "{:,}".format(point.redtag),
+                                "URL": f'<a href="#{point.title.strip()}">Informations complémentaires</a>',
+                                "marker-color": color,
+                                "marker-size": size})
+    features_fr.append(feature_fr)
 collection = FeatureCollection(features)
 dump = geojson.dumps(collection, sort_keys=False)
+collection_fr = FeatureCollection(features)
+dump_fr = geojson.dumps(collection, sort_keys=False)
 
 
-# Save geoJSON file
+# Save geoJSON files
 geo_file = 'FinishedScenarios.geojson'
 with open(geo_file, 'w') as f:
     f.write(dump)
+
+geo_file_fr = 'FinishedScenariosFr.geojson'
+with open(geo_file_fr, 'w') as f:
+    f.write(dump_fr)
 
 
 # Save markdown file

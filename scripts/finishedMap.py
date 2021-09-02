@@ -38,7 +38,7 @@ for i in range(len(data)):
                     properties={"magnitude": str(point.mag),
                                 "cost": '$' + str("{:,}".format(point.cost)),
                                 "redtag buildings": "{:,}".format(point.redtag),
-                                "URL": f'<a href="#{point.title.strip()}">Additional info and resources</a>',
+                                "URL": f'<a href="http://127.0.0.1:4000/data/en/dsra#{point.title.strip()}">Additional info and resources</a>',
                                 "marker-color": color,
                                 "marker-size": size})
     features.append(feature)
@@ -46,7 +46,7 @@ for i in range(len(data)):
                     properties={"magnitude": str(point.mag),
                                 "prix": '$' + str("{:,}".format(point.cost)),
                                 "bâtiments détruits": "{:,}".format(point.redtag),
-                                "URL": f'<a href="#{point.title.strip()}">Informations complémentaires</a>',
+                                "URL": f'<a href="http://127.0.0.1:4000/data/fr/dsra#{point.title.strip()}">Informations complémentaires</a>',
                                 "marker-color": color,
                                 "marker-size": size})
     features_fr.append(feature_fr)

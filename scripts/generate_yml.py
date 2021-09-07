@@ -32,7 +32,7 @@ for file in list_of_files:
 data = {
     'collection': {'en': 'Earthquake Scenarios',
                 'fr': 'Scénarios de séismes'},
-    'id': 'psra_bc_all_indicators',
+    'id': 'dsra_bc_all_indicators',
     'title': {'en': 'Seismic Risk',
               'fr': 'Risque sismique'},
     'scenarios': scenarios

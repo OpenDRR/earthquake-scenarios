@@ -1,6 +1,6 @@
 #!bash
 # Script to make a map and list of all the finished scenarios in this folder.
-# Uses a python script to make the map image.
+# Uses python scripts to make the map geojson and yaml for github pages.
 
 lat=`grep latitude *_*.md | awk -F'|' '{print $3}' | awk '{print $1}'`
 lon=`grep longitude *_*.md | awk -F'|' '{print $3}' | awk '{print $1}'`

@@ -15,7 +15,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: './FINISHED/dsra.yml'
-        destination_repo: 'DamonU2/data'
+        destination_repo: 'OpenDRR/data'
         destination_folder: '_data/'
         user_email: 'damon_ulmi@hotmail.com'
         user_name: 'DamonU2'

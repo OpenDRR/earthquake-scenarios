@@ -26,7 +26,7 @@ This modelling approach uses state of the art techniques and data, but is subjec
 
 ## Attribution
 
-If using any of these scenarios, please include reference to any works which are cited in the scenario descriptions as well as reference to the scenario catalogue itseld. The following citation should be used:
+If using any of these scenarios, please include reference to any works which are cited in the scenario descriptions as well as reference to the scenario catalogue itself. The following citation should be used:
 
 Hobbs, T.E., Journeay, J.M., Rotheram, D., 2021. An Earthquake Scenario Catalogue for Canada: A Guide to Using Scenario Hazard and Risk Results; Geological Survey of Canada, Open File 8806, 22 p. [https://doi.org/10.4095/328364](https://doi.org/10.4095/328364)
 

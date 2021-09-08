@@ -30,6 +30,10 @@ If using any of these scenarios, please include reference to any works which are
 
 Hobbs, T.E., Journeay, J.M., Rotheram, D., 2021. An Earthquake Scenario Catalogue for Canada: A Guide to Using Scenario Hazard and Risk Results; Geological Survey of Canada, Open File 8806, 22 p. [https://doi.org/10.4095/328364](https://doi.org/10.4095/328364)
 
+## License
+
+This project is licensed under the terms of the MIT license. Data in this repository are licensed under the terms of [Canada's Open Government License](https://github.com/OpenDRR/test-bilingual-readme/blob/main/data/LICENSE).
+
 ---
 
 # Catalogue national de scénarios de tremblement de terre
@@ -61,3 +65,7 @@ Les scénarios sont HYPOTHÉTIQUES, mais ils représentent des événements envi
 Si vous utilisez l’un de ces scénarios, veuillez ajouter un renvoi aux travaux qui sont cités dans les descriptions de scénarios ainsi qu’un renvoi au catalogue de scénarios. La référence suivante devrait être utilisée :
 
 Hobbs, T.E., Journeay, J.M., Rotheram, D., 2021. An Earthquake Scenario Catalogue for Canada: A Guide to Using Scenario Hazard and Risk Results; Geological Survey of Canada, Open File 8806, 22 p. https://doi.org/10.4095/328364
+
+## Licence
+
+Ce projet est concédé sous licence selon les termes de la licence MIT. Les données de ce référentiel sont sous licence selon les termes de la [Licence du gouvernement ouvert du Canada] (https://github.com/OpenDRR/test-bilingual-readme/blob/main/data/LICENSE).

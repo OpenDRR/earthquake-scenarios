@@ -1,7 +1,7 @@
 collection:
   en: Earthquake Scenarios
   fr: Scénarios de séismes
-id: dsra_bc_all_indicators
+id: dsra_bc_indicators
 scenarios:
 - description:
     en: Magnitude 7.3 scenario based on complete rupture of the CanSHM6 Hazard Model

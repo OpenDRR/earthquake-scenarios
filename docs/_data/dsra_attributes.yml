@@ -1,0 +1,875 @@
+attributes:
+- description:
+    en: Settled Area ID
+    fr: Identification de la zone habitée
+  detailed:
+    en: Unique identification code assiged to the Settled Area (SAUID), which represents
+      the approximate footprint of permanent buildings within standard census dissemination
+      areas (DAUID)
+    fr: Code d’identification unique attribué à la zone habitée (SAUID), qui représente
+      l’empreinte approximative des immeubles permanents dans les aires de diffusion
+      standard du recensement (DAUID).
+  format: null
+  name: Sauid
+- description:
+    en: Earthquake Scenario
+    fr: Scénarios de séismes
+  detailed:
+    en: Name of earthquake rupture scenario used to estimate damages and losses
+    fr: Nom du scénario de rupture du séisme utilisé pour estimer les dommages et les pertes
+  format: null
+  name: sH_RupName
+- description:
+    en: Rupture Abbreviation
+    fr: Abréviation de rupture
+  detailed:
+    en: Abbreviation for earthquake rupture scenario used to estimate damages and losses
+    fr: Abréviation pour le scénario de rupture du séisme utilisé pour estimer les dommages et les pertes
+  format: null
+  name: sH_RupAbbr
+- description:
+    en: Source Type
+    fr: Type de source
+  detailed:
+    en: Representative earthquake source zone for rupture scenario
+    fr: Zone source sismique représentative pour le scénario de rupture
+  format: null
+  name: sH_Source
+- description:
+    en: Moment Magnitude
+    fr: Magnitude du moment
+  detailed:
+    en: Magnitude of earthquake rupture scenario
+    fr: Magnitude du scénario de rupture du séisme
+  format: 1
+  name: sH_Mag
+- description:
+    en: Hypocentre longitude
+    fr: Longitude de l\u0027hypocentre
+  detailed:
+    en: Degree of east-west longitude for earthquake hypocentre location
+    fr: Degré de longitude est-ouest pour la localisation de l\u0027hypocentre du séisme
+  format: 3
+  name: sH_HypoLon
+- description:
+    en: Hypocentre latitude
+    fr: Latitude de l\u0027hypocentre
+  detailed:
+    en: Degree of north-south latitude for earthquake hypocentre location
+    fr: Degré de latitude nord-sud pour la localisation de l\u0027hypocentre du séisme
+  format: 3
+  name: sH_HypoLat
+- description:
+    en: Hypocentre depth
+    fr: Profondeur de l\u0027hypocentre
+  detailed:
+    en: Depth below ground surface to earthquake hypocentre
+    fr: Profondeur sous la surface du sol jusqu\u0027à l\u0027hypocentre du séisme
+  format: 2
+  name: sH_HypoDepth
+- description:
+    en: Rupture Direction
+    fr: Direction de la rupture
+  detailed:
+    en: Direction of slip along earthquake rupture surface measured relative to the
+      fault strike (between -180 and 180 decimal degrees).  Convention follows Aki
+      & Richards, [1980], where left lateral slip is 0, reverse slip is 90, normal
+      slip is -90, and right lateral is positive or negative 180, respectively.
+    fr: Direction du glissement le long de la surface de rupture du séisme, mesurée par rapport à l\u0027axe de la faille (entre -180 et 180 degrés décimaux).
+      la direction de la faille (entre -180 et 180 degrés décimaux).  La convention suit Aki
+      et Richards, [1980], où le glissement latéral gauche est égal à 0, le glissement inverse à 90, le glissement normal à -90 et le glissement latéral droit à 180 respectivement.
+      90, le glissement normal est -90, et le glissement latéral droit est positif ou négatif à 180, respectivement.
+  format: 1
+  name: sH_Rake
+- description:
+    en: Ground Motion Model
+    fr: Modèle de mouvement du sol
+  detailed:
+    en: Ground motion model set used for calculating propogation of seismic energy
+      from earthquake rupture zone to a point on the earth\u0027s surface
+    fr: Ensemble de modèles de mouvement du sol utilisé pour calculer la propagation de l\u0027énergie sismique
+      depuis la zone de rupture du séisme jusqu\u0027à un point de la surface de la terre.
+  format: null
+  name: sH_GMPE
+- description:
+    en: Branch Number
+    fr: Numéro de la branche
+  detailed:
+    en: Specific ground motion prediction equation or a mean value equivalent used
+      for calculating ground motion values
+    fr: Équation spécifique de prédiction du mouvement du sol ou équivalent de la valeur moyenne utilisée
+      pour calculer les valeurs du mouvement du sol
+  format: null
+  name: sH_Rlz
+- description:
+    en: Branch Weighting
+    fr: Pondération des branches
+  detailed:
+    en: Weight assigned to ground motion prediction equation for calculating mean
+      ground motion values
+    fr: Poids attribué à l\u0027équation de prédiction du mouvement du sol pour le calcul des valeurs moyennes du mouvement du sol.
+      des mouvements du sol
+  format: null
+  name: sH_Wght
+- description:
+    en: Hazard Site ID
+    fr: ID du site dangereux
+  detailed:
+    en: Unique asset location identification used to sample Vs30 values for calculation
+      of site amplification factor
+    fr: Identification unique de l\u0027emplacement de l\u0027actif utilisée pour échantillonner les valeurs Vs30 pour calculer
+      du facteur d\u0027amplification du site
+  format: null
+  name: sH_SiteID
+- description:
+    en: Site Longitude
+    fr: Longitude du site
+  detailed:
+    en: Degree of east-west longitude for SiteID
+    fr: Degré de longitude est-ouest pour SiteID
+  format: 3
+  name: sH_SiteLon
+- description:
+    en: Site Latitude
+    fr: Latitude du site
+  detailed:
+    en: Degree of north-south latitude for SiteID
+    fr: Degré de latitude nord-sud pour SiteID
+  format: 3
+  name: sH_SiteLat
+- description:
+    en: Shear Wave Velocity at 30 meters
+    fr: Vitesse de l\u0027onde de cisaillement à 30 mètres
+  detailed:
+    en: Average shear-wave velocity, in m/s, in the top 30m of soil/rock.
+    fr: Vitesse moyenne des ondes de cisaillement, en m/s, dans les 30 m supérieurs du sol/roche.
+  format: 111
+  name: sH_Vs30
+- description:
+    en: Depth to 1 km/s Shear Wave Velocity
+    fr: Profondeur à 1 km/s vitesse de l\u0027onde de cisaillement
+  detailed:
+    en: Depth to a shear-wave velocity of 1 km/s
+    fr: Profondeur à une vitesse d\u0027onde de cisaillement de 1 km/s
+  format: 2
+  name: sH_z1p0
+- description:
+    en: Depth to 2.5 km/s Shear Wave Velocity
+    fr: Profondeur à 2,5 km/s vitesse de l\u0027onde de cisaillement
+  detailed:
+    en: Depth to a shear-wave velocity of 2.5 km/s
+    fr: Profondeur à une vitesse d\u0027onde de cisaillement de 2,5 km/s
+  format: 2
+  name: sH_z2p5
+- description:
+    en: Peak Ground Acceleration
+    fr: Accélération maximale du sol
+  detailed:
+    en: Expected peak ground acceleration (PGA) for the earthquake scenario
+    fr: Accélération maximale du sol attendue (PGA) pour le scénario du tremblement de terre.
+  format: 2
+  name: sH_PGA
+- description:
+    en: Spectral Acceleration (0.1s)
+    fr: Accélération spectrale (0,1s)
+  detailed:
+    en: Expected spectral acceleration at 0.1 seconds (SA0.1) for the earthquake scenario
+    fr: Accélération spectrale attendue à 0,1 seconde (SA0.1) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa0p1
+- description:
+    en: Spectral Acceleration (0.2s)
+    fr: Accélération spectrale (0,2s)
+  detailed:
+    en: Expected spectral acceleration at 0.2 seconds (SA0.2) for the earthquake scenario
+    fr: Accélération spectrale attendue à 0,2 seconde (SA0.2) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa0p2
+- description:
+    en: Spectral Acceleration (0.3s)
+    fr: Accélération spectrale (0,3s)
+  detailed:
+    en: Expected spectral acceleration at 0.3 seconds (SA0.3) for the earthquake scenario
+    fr: Accélération spectrale attendue à 0,3 seconde (SA0.3) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa0p3
+- description:
+    en: Spectral Acceleration (0.5s)
+    fr: Accélération spectrale (0,5s)
+  detailed:
+    en: Expected spectral acceleration at 0.5 seconds (SA0.5) for the earthquake scenario
+    fr: Accélération spectrale attendue à 0,5 seconde (SA0.5) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa0p5
+- description:
+    en: Spectral Acceleration (0.6s)
+    fr: Accélération spectrale (0,6s)
+  detailed:
+    en: Expected spectral acceleration at 0.6 seconds (SA0.6) for the earthquake scenario
+    fr: Accélération spectrale attendue à 0,6 seconde (SA0.6) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa0p6
+- description:
+    en: Spectral Acceleration (1.0s)
+    fr: Accélération spectrale (1,0s)
+  detailed:
+    en: Expected spectral acceleration at 1 seconds (SA1.0) for the earthquake scenario
+    fr: Accélération spectrale attendue à 1 seconde (SA1.0) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa1p0
+- description:
+    en: Spectral Acceleration (2.0s)
+    fr: Accélération spectrale (2,0s)
+  detailed:
+    en: Expected spectral acceleration at 2 seconds (SA2.0) for the earthquake scenario
+    fr: Accélération spectrale attendue à 2 seconde (SA2.0) pour le scénario de tremblement de terre
+  format: 2
+  name: sH_Sa2p0
+- description:
+    en: Modified Mercalli Index Value
+    fr: Valeur de l\u0027indice Mercalli modifié
+  detailed:
+    en: Modified Mercalli Index, based on the Peak Ground Acceleration using the relations
+      of Caprio et al., 2015
+    fr: Indice de Mercalli modifié, basé sur l\u0027accélération maximale du sol en utilisant les relations
+      de Caprio et al. 2015
+  format: null
+  name: sH_MMI
+- description:
+    en: No Damage
+    fr: Aucun dommage
+  detailed:
+    en: Expected number of undamaged buildings for the earthquake scenario
+    fr: Nombre attendu de bâtiments non endommagés pour le scénario du tremblement de terre
+  format: 111
+  name: sDt_None
+- description:
+    en: No Damage Probability
+    fr: Probabilité d\u0027absence de dommages
+  detailed:
+    en: Probability of no damage to buildings for the earthquake scenario
+    fr: Probabilité d\u0027absence de dommages aux bâtiments pour le scénario de tremblement de terre
+  format: 2
+  name: sDtr_None
+- description:
+    en: Slight Damage
+    fr: Légers dommages
+  detailed:
+    en: Expected number of buildings likely to sustain slight damage for the earthquake scenario
+    fr: Nombre attendu de bâtiments susceptibles de subir des dommages légers pour le scénario de tremblement de terre
+  format: 111
+  name: sDt_Slight
+- description:
+    en: Slight Damage Ratio Probability
+    fr: Probabilité de rapport de dommages légers
+  detailed:
+    en: Probability of slight damage to buildings for the earthquake scenario
+    fr: Probabilité de dommages légers aux bâtiments pour le scénario de tremblement de terre
+  format: 2
+  name: sDtr_Slight
+- description:
+    en: Moderate Damage
+    fr: Dégâts modérés
+  detailed:
+    en: Expected number of buildings likely to sustain moderate damage for the earthquake scenario
+    fr: Nombre attendu de bâtiments susceptibles de subir des dommages modérés pour le scénario de séisme
+  format: 111
+  name: sDt_Moderate
+- description:
+    en: Moderate Damage Ratio Probability
+    fr: Probabilité d\u0027un rapport de dommages modérés
+  detailed:
+    en: Probability of moderate damage to buildings for the earthquake scenario
+    fr: Probabilité de dommages modérés aux bâtiments pour le scénario de tremblement de terre
+  format: 2
+  name: sDtr_Moderate
+- description:
+    en: Extensive Damage
+    fr: Dommages importants
+  detailed:
+    en: Expected number of buildings likely to sustain extensive damage for the earthquake scenario
+    fr: Nombre attendu de bâtiments susceptibles de subir des dommages importants pour le scénario de tremblement de terre scénario
+  format: 111
+  name: sDt_Extensive
+- description:
+    en: Extensive Damage Ratio Probability
+    fr: Probabilité de rapport de dommages étendus
+  detailed:
+    en: Probability of extensive damage to buildings for the earthquake scenario
+    fr: Probabilité de dommages importants aux bâtiments pour le scénario du tremblement de terre
+  format: 2
+  name: sDtr_Extensive
+- description:
+    en: Complete Damage
+    fr: Dommage complet
+  detailed:
+    en: Expected number of buildings likely to sustain complete damage for the earthquake scenario
+    fr: Nombre attendu de bâtiments susceptibles de subir des dommages complets pour le scénario du tremblement de terre
+  format: 111
+  name: sDt_Complete
+- description:
+    en: Complete Damage Ratio Probability
+    fr: Probabilité du rapport de dommages complets
+  detailed:
+    en: Probability of complete damage to buildings for the earthquake scenario
+    fr: Probabilité de dommages complets aux bâtiments pour le scénario du tremblement de terre
+  format: 2
+  name: sDtr_Complete
+- description:
+    en: Collapsed Buildings
+    fr: Bâtiments effondrés
+  detailed:
+    en: Expected number of collapsed buildings for the earthquake scenario
+    fr: Nombre attendu de bâtiments effondrés pour le scénario de tremblement de terre
+  format: 111
+  name: sDt_Collapse
+- description:
+    en: Collapse Ratio Probability
+    fr: Probabilité du rapport d\u0027effondrement
+  detailed:
+    en: Probability of building collapsed buildings for the earthquake scenario
+    fr: Probabilité d\u0027effondrement des bâtiments pour le scénario du tremblement de terre
+  format: 2
+  name: sDtr_Collapse
+- description:
+    en: Building Downtime
+    fr: Temps d\u0027arrêt du bâtiment
+  detailed:
+    en: Average expected duration of time that a building is not functional for habitation
+      or business operations for the earthquake scenario
+    fr: Durée moyenne attendue pendant laquelle un bâtiment n\u0027est pas fonctionnel pour l\u0027habitation
+      ou les opérations commerciales pour le scénario du tremblement de terre
+  format: 2
+  name: SCm_Interruption
+- description:
+    en: Repair Time
+    fr: Temps de réparation
+  detailed:
+    en: Average expected duration of time required for cleanup, permitting, construction
+      and repair of building damage sustained for the earthquake scenario
+    fr: Durée moyenne prévue pour le nettoyage, l\u0027obtention des permis, la construction et la réparation des dommages subis par les bâtiments dans le cadre du scénario de tremblement de terre.
+      et la réparation des dommages subis par les bâtiments dans le cadre du scénario de tremblement de terre.
+  format: 2
+  name: sCm_Repair
+- description:
+    en: Recovery Time
+    fr: Temps de récupération
+  detailed:
+    en: Average expected time required to recover pre-event (baseline) levels of building
+      functionality for the earthquake scenario, including initial downtime
+      and time for cleanup, construction and repair of building damage
+    fr: Temps moyen prévu pour récupérer les niveaux de fonctionnalité du bâtiment avant l\u0027événement (ligne de base) pour le scénario de tremblement de terre, y compris le temps d\u0027arrêt initial.
+      du bâtiment pour le scénario du tremblement de terre, y compris le temps d\u0027arrêt initial
+      et le temps nécessaire au nettoyage, à la construction et à la réparation des dommages causés aux bâtiments.
+  format: 2
+  name: SCm_Recovery
+- description:
+    en: Total Disaster Debris
+    fr: Total des débris de catastrophe
+  detailed:
+    en: Expected volume of disaster debris (wood and brick + concrete and steel) generated
+      as a result of building damage in the earthquake scenario
+    fr: Volume prévu de débris de catastrophe (bois et briques + béton et acier) générés par les dommages aux bâtiments dans le scénario du tremblement de terre.
+  format: 2
+  name: sCt_DebrisTotal
+- description:
+    en: Wood and Brick Debris
+    fr: Débris de bois et de briques
+  detailed:
+    en: Expected volume of wood and brick disaster debris generated as a result of
+      building damage in the earthquake scenario
+    fr: Volume prévu de débris de bois et de briques générés par les dommages aux bâtiments dans le cadre d\u0027un scénario de tremblement de terre.
+  format: 2
+  name: sCt_DebrisBW
+- description:
+    en: Concrete and Steel Debris
+    fr: Débris de béton et d\u0027acier
+  detailed:
+    en: Expected volume of concrete and steel disaster debris generated as a result
+      of building damage in the earthquake scenario
+    fr: Volume prévu de débris de béton et d\u0027acier générés à la suite des dommages causés aux bâtiments dans un scénario de tremblement de terre.
+  format: 2
+  name: sCt_DebrisCS
+- description:
+    en: Minor Injury (Daytime)
+    fr: Blessure légère (jour)
+  detailed:
+    en: Number of persons expected to suffer basic first-aid treatment (Severity
+      Level 1) in the earthquake scenario should it occur during daytime
+      hours  (09:00-17:00)
+    fr: Nombre de personnes susceptibles de recevoir des soins de premiers secours de base (niveau de gravité 1) dans le cadre du scénario de tremblement de terre s\u0027il se produit pendant la journée (09:00-17:00).
+  format: 111
+  name: sCt_CasDayL1
+- description:
+    en: Moderate Injury (Daytime)
+    fr: Blessure modérée (jour)
+  detailed:
+    en: Number of persons expected to suffer non-life-threatening injuries requiring
+      specialized medical treatment (Severity Level 2) in the earthquake scenario should it occur during daytime hours  (09:00-17:00)
+    fr: Nombre de personnes susceptibles de subir des blessures ne mettant pas leur vie en danger et nécessitant
+      un traitement médical spécialisé (niveau de gravité 2) dans le scénario du tremblement de terre, s\u0027il se produit pendant la journée (09:00-17:00).
+  format: 111
+  name: sCt_CasDayL2
+- description:
+    en: Serious Injury (Daytime)
+    fr: Blessure grave (jour)
+  detailed:
+    en: Number of persons expected to suffer life-threatening injuries requiring
+      hospital admissions (Severity Level 3) in the earthquake scenario
+      should it occur during daytime hours (09:00-17:00)
+    fr: Nombre de personnes susceptibles de souffrir de blessures mortelles nécessitant
+      une admission à l\u0027hôpital (niveau de gravité 3) dans le scénario du séisme
+      s\u0027il se produit pendant la journée (09:00-17:00)
+  format: 111
+  name: sCt_CasDayL3
+- description:
+    en: Critical Injury (Daytime)
+    fr: Blessures graves (journée)
+  detailed:
+    en: Number of expected fatalities resulting from complete building damage and/or
+      collapse (Severity Level 4) in the earthquake scenario should it
+      occur during daytime hours (09:00-17:00)
+    fr: Nombre de décès attendus résultant de l\u0027endommagement et/ou de l\u0027effondrement complet du bâtiment
+      l\u0027effondrement (niveau de gravité 4) dans le scénario du tremblement de terre s\u0027il devait
+      se produit pendant la journée (09:00-17:00)
+  format: 111
+  name: sCt_CasDayL4
+- description:
+    en: Minor Injury (Nighttime)
+    fr: Blessure légère (nuit)
+  detailed:
+    en: Number of persons expected to suffer basic first-aid treatment (Severity Level
+      1) in the earthquake scenario should it occur during nighttime
+      hours (20:00-06:00)
+    fr: Nombre de personnes qui devraient recevoir des soins de premiers secours de base (niveau de gravité 1) dans le cadre du scénario de tremblement de terre s\u0027il se produit pendant la nuit (20:00-06:00)
+  format: 111
+  name: sCt_CasNightL1
+- description:
+    en: Moderate Injury (Nighttime)
+    fr: Blessure modérée (nuit)
+  detailed:
+    en: Number of persons expected to suffer non-life-threatening injuries requiring
+      specialized medical treatment (Severity Level 2) in the earthquake scenario should it occur during nighttime hours (20:00-06:00)
+    fr: Nombre de personnes susceptibles de subir des blessures ne mettant pas leur vie en danger et nécessitant
+      un traitement médical spécialisé (niveau de gravité 2) dans le scénario du tremblement de terre, si celui-ci se produit pendant la nuit (20h00-06h00).
+  format: 111
+  name: sCt_CasNightL2
+- description:
+    en: Serious Injury (Nighttime)
+    fr: Blessures graves (nuit)
+  detailed:
+    en: Number of persons expected to suffer life-threatening injuries requiring hospital
+      admissions (Severity Level 3) in the earthquake scenario should
+      it occur during nighttime hours (20:00-06:00)
+    fr: Le nombre de personnes susceptibles de souffrir de blessures mortelles nécessitant une
+      nécessitant des admissions à l\u0027hôpital (niveau de gravité 3) dans le scénario du séisme s\u0027il se produit pendant les heures de nuit (20h00-06h00)
+  format: 111
+  name: sCt_CasNightL3
+- description:
+    en: Critical Injury (Nighttime)
+    fr: Blessures graves (nuit)
+  detailed:
+    en: Number of expected fatalities resulting from complete building damage and/or
+      collapse (Severity Level 4) in the earthquake scenario should it
+      occur during nighttime hours (20:00-06:00)
+    fr: Nombre de décès attendus résultant de l\u0027endommagement et/ou de l\u0027effondrement complet du bâtiment
+      l\u0027effondrement (niveau de gravité 4) dans le scénario du tremblement de terre s\u0027il devait
+      se produit pendant les heures de nuit (20h00-06h00)
+  format: 111
+  name: sCt_CasNightL4
+- description:
+    en: Minor Injury (In Transit)
+    fr: Blessure légère (en transit)
+  detailed:
+    en: Number of persons expected to suffer basic first-aid treatment (Severity Level
+      1) in the earthquake scenario should it occur during morning and
+      evening commute hours (06:00-09:00 and 17:00-20:00)
+    fr: Nombre de personnes qui devraient recevoir des soins de base (niveau de gravité 1) dans le cadre du scénario de tremblement de terre s\u0027il se produit le matin et le soir (06:00-09:00 et 17:00-20:00)
+  format: 111
+  name: sCt_CasTransitL1
+- description:
+    en: Moderate Injury (In Transit)
+    fr: Blessure modérée (en transit)
+  detailed:
+    en: Number of persons expected to suffer non-life-threatening injuries requiring
+      specialized medical treatment (Severity Level 2) in the earthquake scenario should it occur during morning and evening commute hours (06:00-09:00
+      and 17:00-20:00)
+    fr: Nombre de personnes susceptibles de subir des blessures ne mettant pas leur vie en danger et nécessitant
+      un traitement médical spécialisé (niveau de gravité 2) dans le scénario du tremblement de terre s\u0027il se produit pendant les heures de déplacement du matin et du soir (06:00-09:00 et 17:00-20:00).
+  format: 111
+  name: sCt_CasTransitL2
+- description:
+    en: Serious Injury (In Transit)
+    fr: Blessures graves (en transit)
+  detailed:
+    en: Number of persons expected to suffer life-threatening injuries requiring hospital
+      admissions (Severity Level 3) in the earthquake scenario should
+      it occur during morning and evening commute hours (06:00-09:00 and 17:00-20:00)
+    fr: Le nombre de personnes susceptibles de souffrir de blessures mortelles nécessitant une
+      des admissions à l\u0027hôpital (niveau de gravité 3) dans le scénario de séisme s\u0027il se produit pendant les heures de déplacement du matin et du soir (06:00-09:00 et 17:00-20:00)
+  format: 111
+  name: sCt_CasTransitL3
+- description:
+    en: Critical Injury (In Transit)
+    fr: Blessure grave (en transit)
+  detailed:
+    en: Number of expected fatalities resulting from complete building damage and/or
+      collapse (Severity Level 4) in the earthquake scenario should it
+      occur during morning and evening commute hours (06:00-09:00 and 17:00-20:00)
+    fr: Nombre de décès attendus résultant de l\u0027endommagement et/ou de l\u0027effondrement complet du bâtiment (niveau de gravité 4) dans le scénario du tremblement de terre, s\u0027il se produit
+      se produisait pendant les heures de déplacement du matin et du soir (06:00-09:00 et 17:00-20:00)
+  format: 111
+  name: sCt_CasTransitL4
+- description:
+    en: Emergency Shelter Requirement
+    fr: Exigences en matière d\u0027hébergement d\u0027urgence
+  detailed:
+    en: Expected number of people requiring short-term emergency shelter for the earthquake scenario
+    fr: Nombre prévu de personnes nécessitant un abri d\u0027urgence à court terme pour le scénario de tremblement de terre
+  format: 111
+  name: sCt_Shelter
+- description:
+    en: Residents Disrupted after 3 Days
+    fr: Les résidents perturbés après 3 jours
+  detailed:
+    en: Expected number of people to be displaced for up to 3 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre prévu de personnes déplacées pendant 3 jours pour le scénario du tremblement de terre.
+      en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Res3
+- description:
+    en: Residents Disrupted after 30 Days
+    fr: Résidents perturbés après 30 jours
+  detailed:
+    en: Expected number of people to be displaced for up to 30 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre attendu de personnes à déplacer pendant 30 jours maximum pour le scénario du tremblement de terre.
+      en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Res30
+- description:
+    en: Residents Affected after 90 Days
+    fr: Résidents affectés après 90 jours
+  detailed:
+    en: Expected number of people to be displaced for up to 90 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre prévu de personnes déplacées pendant 90 jours pour le scénario du tremblement de terre
+      en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Res90
+- description:
+    en: 90-Day Residential Affected
+    fr: Résidentiels affectés à 90 jours
+  detailed:
+    en: Proportion of nighttime population expected to be displaced for up to 90 days
+      for the earthquake scenario as a result of building damage (sCt_DisplRes90 / Et_PopNight)
+    fr: Proportion de la population nocturne dont on s\u0027attend à ce qu\u0027elle soit déplacée pendant un maximum de 90 jours
+      pour le scénario de tremblement de terre en raison des dommages aux bâtiments (sCt_DisplRes90 / Et_PopNight)
+  format: 2
+  name: sCr_Res90
+- description:
+    en: Residents Disrupted after 180 Days
+    fr: Résidents perturbés après 180 jours
+  detailed:
+    en: Expected number of people to be displaced for up to 180 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre prévu de personnes déplacées pendant 180 jours pour le scénario du tremblement de terre
+      en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Res180
+- description:
+    en: Residents Disrupted after 360 Days
+    fr: Les résidents perturbés après 360 jours
+  detailed:
+    en: Expected number of people to be displaced for up to 360 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre attendu de personnes déplacées pendant une période pouvant aller jusqu\u0027à 360 jours pour le scénario du tremblement de terre
+      en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Res360
+- description:
+    en: Displaced Households after 3 Days
+    fr: Ménages déplacés après 3 jours
+  detailed:
+    en: Expected number of households to be displaced for the earthquake scenario as a result of building damage
+    fr: Nombre attendu de ménages à déplacer pour le scénario du tremblement de terre en raison des dommages aux bâtiments
+  format: 111
+  name: sCt_Hshld
+- description:
+    en: Displaced Households after 3 Days
+    fr: Ménages déplacés après 3 jours
+  detailed:
+    en: Expected number of households to be displaced for up to 3 days for the earthquake scenario as a result of building damage
+    fr: Nombre attendu de ménages qui seront déplacés pendant 3 jours maximum pour le scénario du tremblement de terre en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Hshld3
+- description:
+    en: Displaced Households after 30 Days
+    fr: Ménages déplacés après 30 jours
+  detailed:
+    en: Expected number of households to be displaced for up to 30 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre attendu de ménages qui seront déplacés pendant une période allant jusqu\u0027à 30 jours pour le scénario du tremblement de terre
+      suite à des dommages aux bâtiments
+  format: 111
+  name: sCt_Hshld30
+- description:
+    en: Displaced Households after 90 Days
+    fr: Ménages déplacés après 90 jours
+  detailed:
+    en: Expected number of households to be displaced for up to 90 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre prévu de ménages qui seront déplacés pendant une période allant jusqu\u0027à 90 jours dans le cadre du scénario de tremblement de terre, en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Hshld90
+- description:
+    en: 90-Day Household Displacement
+    fr: Déplacement des ménages pendant 90 jours
+  detailed:
+    en: Proportion of households expected to be displaced for up to 90 days for the
+      earthquake scenario as a result of building damage (sCt_DisplHshld90 / Et_SFHshld+Et_MFHshld)
+    fr: Proportion de ménages dont on s\u0027attend à ce qu\u0027ils soient déplacés jusqu\u0027à 90 jours pour le
+      scénario de tremblement de terre en raison des dommages aux bâtiments (sCt_DisplHshld90 / Et_SFHshld+Et_MFHshld)
+  format: 2
+  name: sCr_Hshld90
+- description:
+    en: Displaced Households after 180 Days
+    fr: Ménages déplacés après 180 jours
+  detailed:
+    en: Expected number of households to be displaced for up to 180 days for the earthquake scenario as a result of building damage
+    fr: Nombre attendu de ménages qui seront déplacés pendant 180 jours au maximum pour le scénario du tremblement de terre, en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Hshld180
+- description:
+    en: Displaced Households after 360 Days
+    fr: Ménages déplacés après 360 jours
+  detailed:
+    en: Expected number of households to be displaced for up to 360 days for the earthquake
+      scenario as a result of building damage
+    fr: Nombre attendu de ménages qui seront déplacés pendant une période allant jusqu\u0027à 360 jours pour le scénario du tremblement de terre, en raison des dommages causés aux bâtiments
+  format: 111
+  name: sCt_Hshld360
+- description:
+    en: Employees Displaced after 30 Days
+    fr: Employés déplacés après 30 jours
+  detailed:
+    en: Expected number of employees affected for up to 30 days by business interruption
+      caused by building damage in the earthquake scenario
+    fr: Nombre prévu d\u0027employés affectés pendant un maximum de 30 jours par une interruption d\u0027activité
+      causées par les dommages aux bâtiments dans le scénario du tremblement de terre
+  format: 111
+  name: sCt_Empl30
+- description:
+    en: Employees Displaced after 90 Days
+    fr: Employés déplacés après 90 jours
+  detailed:
+    en: Expected number of employees affected for up to 90 days by business interruption
+      caused by building damage in the earthquake scenario
+    fr: Nombre prévu d\u0027employés affectés pendant un maximum de 90 jours par l\u0027interruption d\u0027activité
+      causée par les dommages aux bâtiments dans le scénario du tremblement de terre
+  format: 111
+  name: sCt_Empl90
+- description:
+    en: 90-Day Employee Displacement
+    fr: Déplacement d\u0027employés pendant 90 jours
+  detailed:
+    en: Proportion of employees expected to be affected for up to 90 days by business
+      interruption caused by building damage in the earthquake scenario (sCt_DisrupEmpl90 / Et_PopDay)
+    fr: Proportion d\u0027employés dont on s\u0027attend à ce qu\u0027ils soient affectés pendant 90 jours au maximum par une interruption d\u0027activité causée par des dommages aux bâtiments dans le scénario du tremblement de terre (sCt_DisrupEmpl90 / Et_PopDay)
+  format: 2
+  name: sCr_Empl90
+- description:
+    en: Employees Displaced after 180 Days
+    fr: Employés déplacés après 180 jours
+  detailed:
+    en: Expected number of employees affected for up to 180 days by business interruption
+      caused by building damage in the earthquake scenario
+    fr: Nombre prévu d\u0027employés affectés pendant un maximum de 180 jours par l\u0027interruption d\u0027activité
+      causées par les dommages aux bâtiments dans le scénario du tremblement de terre
+  format: 111
+  name: sCt_Empl180
+- description:
+    en: Employees Displaced after 360 Days
+    fr: Employés déplacés après 360 jours
+  detailed:
+    en: Expected number of employees affected for up to 360 days by business interruption
+      caused by building damage in the earthquake scenario
+    fr: Nombre prévu d\u0027employés affectés pendant un maximum de 360 jours par une interruption d\u0027activité
+      causée par les dommages aux bâtiments dans le scénario du tremblement de terre
+  format: 111
+  name: sCt_Empl360
+- description:
+    en: Asset Loss
+    fr: Perte d\u0027actifs
+  detailed:
+    en: Expected total capital asset loss to buildings and contents for a specific
+      earthquake rupture scenario
+    fr: Perte totale en capital attendue pour les bâtiments et leur contenu pour un scénario spécifique de rupture de séisme
+  format: 444
+  name: sLt_Asset
+- description:
+    en: Asset Loss Ratio
+    fr: Taux de perte d\u0027actifs
+  detailed:
+    en: Average capital asset loss ratio for buildings and contents for the earthquake scenario
+    fr: Ratio moyen de pertes sur immobilisations pour les bâtiments et le contenu pour le scénario de tremblement de terre
+  format: 2
+  name: sLm_Asset
+- description:
+    en: Building Loss
+    fr: Perte du bâtiment
+  detailed:
+    en: Expected total loss from building damage for the earthquake scenario
+    fr: Perte totale attendue des dommages aux bâtiments pour le scénario du tremblement de terre
+  format: 444
+  name: sLt_Bldg
+- description:
+    en: Building Loss Ratio
+    fr: Rapport sinistres/prix des bâtiments
+  detailed:
+    en: Average loss ratio for buildings in the earthquake scenario
+    fr: Ratio moyen de pertes pour les bâtiments dans le scénario du tremblement de terre
+  format: 2
+  name: sLmr_Bldg
+- description:
+    en: Structural Loss
+    fr: Perte structurelle
+  detailed:
+    en: Expected total loss to structural components of a building  for the earthquake
+      scenario
+    fr: Perte totale attendue pour les composants structurels d\u0027un bâtiment pour le scénario de tremblement de terre
+      scénario
+  format: 444
+  name: sLt_Str
+- description:
+    en: Nonstructural Loss
+    fr: Perte non structurelle
+  detailed:
+    en: Expected total loss to non structural components of a building for the earthquake
+      scenario
+    fr: Perte totale attendue pour les éléments non structurels d\u0027un bâtiment pour le scénario de tremblement de terre
+  format: 444
+  name: sLt_NStr
+- description:
+    en: Content Loss
+    fr: Perte de contenu
+  detailed:
+    en: Expected total loss to building contents for the earthquake scenario
+    fr: Perte totale attendue pour le contenu du bâtiment pour le scénario de tremblement de terre
+  format: 444
+  name: sLt_Cont
+- description:
+    en: Province or Territory ID
+    fr: ID de la province ou du territoire
+  detailed:
+    en: Unique identifier for province or territory.
+    fr: Identifiant unique de la province ou du territoire
+  format: 
+  name: pruid
+- description:
+    en: Province or Territory Name
+    fr: Nom de la province ou du territoire
+  detailed:
+    en: Province or Territory name
+    fr: Nom de la province ou du territoire
+  format: 
+  name: prname
+- description:
+    en: Census Economic Region ID
+    fr: ID de la région économique du recensement
+  detailed:
+    en: Unique identifier for economic region
+    fr: Identifiant unique de la région économique
+  format: 
+  name: eruid
+- description:
+    en: Census Economic Region name
+    fr: Nom de la région économique du recensement
+  detailed:
+    en: Census Economic Region name
+    fr: Nom de la région économique du recensement
+  format: 
+  name: ername
+- description:
+    en: Census Division ID
+    fr: ID de la division de recensement
+  detailed:
+    en: Unique identifier for census division
+    fr: Identifiant unique de la division de recensement
+  format: 
+  name: cduid
+- description:
+    en: Census Division name
+    fr: Nom de la division de recensement
+  detailed:
+    en: Census division name
+    fr: Nom de la division de recensement
+  format: 
+  name: cdname
+- description:
+    en: Census Subdivision ID
+    fr: ID de la subdivision de recensement
+  detailed:
+    en: Unique identifier for census subdivision
+    fr: Identifiant unique de la subdivision de recensement
+  format: 
+  name: csduid
+- description:
+    en: Census Subdivision name
+    fr: Nom de la subdivision de recensement
+  detailed:
+    en: Census subdivision name
+    fr: Nom de la subdivision de recensement
+  format: 
+  name: csdname
+- description:
+    en: Forward Sorting Area ID
+    fr: ID de la région de tri d’acheminement
+  detailed:
+    en: Unique identifier for forward sorting area
+    fr: Identifiant unique de la région de tri d’acheminement
+  format: 
+  name: fsauid
+- description:
+    en: Dissemination Area ID
+    fr: ID de l’aire de diffusion
+  detailed:
+    en: Unique identifier for dissemination area
+    fr: Identifiant unique de l’aire de diffusion
+  format: 
+  name: dauid
+- description:
+    en: Statistical Area Classification
+    fr: Classification des secteurs statistiques
+  detailed:
+    en: 3-digit Statisical Area Classification code
+    fr: Code à trois chiffres de la classification des secteurs statistiques
+  format: 
+  name: saccode
+- description:
+    en: Statistical Area Classification Type
+    fr: Type de classification des secteurs statistiques
+  detailed:
+    en: The Statistical Area Classification groups census subdivisions according to
+      whether they are a component of a census metropolitan area, a census agglomeration,
+      a census metropolitan influenced zone or the territories.
+    fr: La classification des secteurs statistiques regroupe les subdivisions de recensement
+      selon qu\u0027elles sont une composante d\u0027une région métropolitaine de recensement,
+      d\u0027une agglomération de recensement, d\u0027une zone d\u0027influence métropolitaine de
+      recensement ou des territoires
+  format: 
+  name: sactype
+- description:
+    en: Land Use Class
+    fr: Catégorie d\u0027utilisation des terres
+  detailed:
+    en: Assigned land use for the Settled Area (SAUID) based on population density,
+      census housing characteristics and NAICS industry codes. One of residential-high,
+      -medium, or -low density; mixed use; commercial industrial; or rural.
+    fr: 'Utilisation des terres attribuées de la zone habitée (SAUID) en fonction
+      de la densité de population, des caractéristiques des logements du recensement et des codes industriels du SCIAN. L\u0027une des catégories suivantes : résidentielle
+      à densité élevée, moyenne ou faible; utilisation mixte; commerciale et industrielle;
+      ou rurale'
+  name: landuse
+  format: 

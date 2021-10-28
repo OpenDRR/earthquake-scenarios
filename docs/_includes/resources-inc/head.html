@@ -1,0 +1,20 @@
+<link href="{{ setting-resourcesBasePathTheme }}/assets/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="stylesheet" href="{{ setting-resourcesBasePathTheme }}/css/theme{{ setting-minifiedSuffix }}.css" />
+<noscript><link rel="stylesheet" href="{{ setting-resourcesBasePathWetboew }}/css/noscript{{ setting-minifiedSuffix }}.css" /></noscript>
+{%- if page.css.first -%}
+	{%- for sheet in page.css -%}
+		<link rel="stylesheet" rel="stylesheet" href="{{ sheet }}" />
+	{%- endfor -%}
+{%- elsif page.css -%}
+	<link rel="stylesheet" href="{{ page.css }}" />
+{%- endif -%}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.analytics_google}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{site.analytics_google}}');
+</script>
+<link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">

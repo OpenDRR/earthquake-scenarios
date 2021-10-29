@@ -122,7 +122,7 @@ crossorigin=""></script>
     full_name = title + ' - Magnitude ' + mag;
 
     // Replace generic title with scenario name
-    $( '#wb-cont' ).html( full_name + ' Scenario Map' );
+    $( '#wb-cont' ).html( full_name );
 
     // Add progress modal to map before fetching geoJSON
     $( '#map' ).before( '<div id="modal"></div>' );

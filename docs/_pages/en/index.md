@@ -69,7 +69,7 @@ breadcrumbs:
 
 <h3>Completed Scenarios</h3>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <iframe width="100%" height="480" frameborder="0" src="https://viewscreen.githubusercontent.com/view/geojson?url=https%3a%2f%2fraw.githubusercontent.com%2fDamonU2%2fearthquake-scenarios%2fgeojson-maps%2fFINISHED%2fFinishedScenarios.geojson" title="FinishedScenarios.geojson"></iframe>
     <table style="width:100%; font-size:14px;">
@@ -80,7 +80,7 @@ breadcrumbs:
       </tr>
     </table>
   </div>
-</div>
+</div> -->
 
 {% assign header = '' %}
 {% if page.lang == 'fr' %}
@@ -105,7 +105,7 @@ breadcrumbs:
   <h4 id={{ scenario.name }}>{{ scenario.title }}</h4>
   <p>
     <div class="card" style="float:left;margin:10px 20px 0px 0px;">
-      <img src="https://github.com/OpenDRR/earthquake-scenarios/raw/master/FINISHED/{{ scenario.name }}.png" width="350" class="img-rounded img-responsive"/>
+      <img src="https://github.com/DamonU2/earthquake-scenarios/raw/gh-pages/FINISHED/{{ scenario.name }}.png" width="350" class="img-rounded img-responsive"/>
       <div class="card-body">
         <a href="dsra_scenario_map.html?scenario={{ scenario.name }}" class="btn btn-primary btn-lg btn-block mrgn-tp-sm" role="button">
          {% if page.lang == 'en' %} View on Map {% else %} Voir sur la carte {% endif %}

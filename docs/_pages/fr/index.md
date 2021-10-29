@@ -69,7 +69,7 @@ breadcrumbs:
 
 <h3>Scénarios Sélectionnés</h3>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
     <iframe width="100%" height="480" frameborder="0" src="https://viewscreen.githubusercontent.com/view/geojson?url=https%3a%2f%2fraw.githubusercontent.com%2fDamonU2%2fearthquake-scenarios%2fauto-updates-for-pages%2fFINISHED%2fFinishedScenariosFr.geojson" title="FinishedScenariosFr.geojson"></iframe>
     <table style="width:100%; font-size:14px;">
@@ -80,7 +80,7 @@ breadcrumbs:
       </tr>
     </table>
   </div>
-</div>
+</div> -->
 
 {% assign header = '' %}
 {% if page.lang == 'fr' %}

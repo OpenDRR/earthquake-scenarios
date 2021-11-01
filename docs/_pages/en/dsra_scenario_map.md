@@ -82,9 +82,10 @@ crossorigin=""></script>
     params = new URLSearchParams(window.location.search), // Get query paramaters
     baseUrl = "https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_",
     eqScenario = params.get( 'scenario' ), // Scenario name
-    featureProperties = 'Sauid,sCt_Res90_b0', // Limit fetched properties for performance
+    featureProperties = 'csduid,sCt_Res90_b0', // Limit fetched properties for performance
     scenarioProp = 'sCt_Res90_b0', // Property for popup and feature colour
-    limit = 500,
+    limit = 50,
+    lastZoom = -1,
     selection;
     
 
@@ -99,11 +100,11 @@ crossorigin=""></script>
 
   if ( eqScenario ) {
 
-    $("#scenarios").hide();
+    $( "#scenarios" ).hide();
 
     var scenario = eqScenario.toLowerCase(); // API uses lowercase
-      geojsonUrl = baseUrl + scenario + "_indicators_s/items?lang=en_US&f=json&limit=" + limit  + '&properties=' + featureProperties,
-      featureUrl = baseUrl + scenario + "_indicators_s/items/";
+      geojsonUrl = baseUrl + scenario + "_indicators_csd/items?lang=en_US&f=json&limit=" + limit  + '&properties=' + featureProperties,
+      featureUrl = baseUrl + scenario + "_indicators_csd/items/";
 
     // Turn scenario name into a title
     end = eqScenario.split( '_' )[ 1 ];
@@ -130,6 +131,48 @@ crossorigin=""></script>
 
     map.on( 'fullscreenchange', function () {
       map.invalidateSize();
+    }).on( 'zoomend dragend', function ( e ) {
+      
+      zoom = e.target.getZoom();
+
+      if ( zoom > 10 ) {
+        
+        geojsonLayer.clearLayers();
+
+        var bounds = map.getBounds(),
+            bbox = [
+              bounds.getSouthWest().lng,
+              bounds.getSouthWest().lat,
+              bounds.getNorthEast().lng,
+              bounds.getNorthEast().lat,
+            ];
+
+        limit = 500;
+        featureProperties = 'Sauid,sCt_Res90_b0';
+        geojsonUrl = baseUrl + scenario + "_indicators_s/items?&limit=" + limit  + '&properties=' + featureProperties + '&bbox=' + bbox,
+        featureUrl = baseUrl + scenario + "_indicators_s/items/"
+
+        $( '#map' ).before( '<div id="modal"></div>' );
+        getData( geojsonUrl );
+
+      }
+      else if ( lastZoom > 10 ) {
+
+        $( '#sidebar' ).html( '' );
+        geojsonLayer.clearLayers();
+
+        limit = 50;
+        featureProperties = 'csduid,sCt_Res90_b0';
+        geojsonUrl = baseUrl + scenario + "_indicators_csd/items?lang=en_US&f=json&limit=" + limit  + '&properties=' + featureProperties,
+        featureUrl = baseUrl + scenario + "_indicators_csd/items/"
+
+        $( '#map' ).before( '<div id="modal"></div>' );
+        getData( geojsonUrl );
+
+      }
+
+      lastZoom = zoom;
+
     });
   }
   
@@ -154,8 +197,10 @@ crossorigin=""></script>
       if ( nxt_lnk ) {
         getData( nxt_lnk );
       } else {
-        // set map bounds to frame loaded features
-        map.fitBounds(geojsonLayer.getBounds());
+        // set map bounds to frame loaded features on first load
+        if ( lastZoom == -1 ) {
+          map.fitBounds(geojsonLayer.getBounds());
+        }
         // done with paging so remove progress
         $( '#modal' ).remove();
         // Add legend
@@ -178,6 +223,7 @@ crossorigin=""></script>
         if ( selection ) {
           // reset style of previously selected feature
           selection.setStyle(featureStyle(selection.feature));
+          $( '#sidebar' ).html( '' );
         }
         selection = e.target;
         selection.setStyle(selectedStyle());
@@ -248,7 +294,7 @@ crossorigin=""></script>
                 '<td class="attr"><div class="prop" title="' + detail + '">' + desc + mod + '</div><div class="val">' + value + '</div></td>';
               }
             // Leaflet info not displayed
-            else if ( key === 'OBJECTID' || key === 'SHAPE_Length' || key === 'SHAPE_Area' || key === 'geom_poly' ) {
+            else if ( key === 'OBJECTID' || key === 'SHAPE_Length' || key === 'SHAPE_Area' || key === 'geom_poly' || key === 'geom' ) {
             }
             else if ( desc ) { // For properties with descriptions but null values
               string +=

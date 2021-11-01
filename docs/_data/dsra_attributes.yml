@@ -340,7 +340,7 @@ attributes:
     fr: Durée moyenne attendue pendant laquelle un bâtiment n\u0027est pas fonctionnel pour l\u0027habitation
       ou les opérations commerciales pour le scénario du tremblement de terre
   format: 2
-  name: SCm_Interruption
+  name: sCm_Interruption
 - description:
     en: Repair Time
     fr: Temps de réparation

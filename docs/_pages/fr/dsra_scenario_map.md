@@ -295,7 +295,7 @@ crossorigin=""></script>
                 '<td class="attr"><div class="prop" title="' + detail + '">' + desc + mod + '</div><div class="val">' + value + '</div></td>';
               }
             // Leaflet info not displayed
-            else if ( key === 'OBJECTID' || key === 'SHAPE_Length' || key === 'SHAPE_Area' || key === 'geom_poly' ) {
+            else if ( key === 'OBJECTID' || key === 'SHAPE_Length' || key === 'SHAPE_Area' || key === 'geom_poly' || key === 'geom' ) {
             }
             else if ( desc ) { // For properties with descriptions but null values
               string +=

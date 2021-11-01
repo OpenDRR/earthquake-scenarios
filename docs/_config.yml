@@ -63,7 +63,7 @@ analytics_adobe: ""
 analytics_google: "G-19T5RKNSMJ"
 analytics_google_anonymize_ip: ""
 assets: "https://wet-boew.github.io/themes-dist"
-baseurl: "/"
+baseurl: ""
 css_inline: false # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
 description:
   en: "OpenDRR Downloads" # English site description and default description

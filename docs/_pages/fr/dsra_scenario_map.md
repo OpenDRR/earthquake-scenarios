@@ -137,6 +137,7 @@ crossorigin=""></script>
 
       if ( zoom > 10 ) {
         
+        $( '#sidebar' ).html( '' );
         geojsonLayer.clearLayers();
 
         var bounds = map.getBounds(),

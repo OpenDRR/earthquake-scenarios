@@ -104,7 +104,9 @@ breadcrumbs:
   <h2 id={{ scenario.name }}>{{ scenario.title }}</h2>
   <p>
     <div class="card" style="float:left;margin:10px 20px 0px 0px;">
-      <img src="https://github.com/DamonU2/earthquake-scenarios/raw/gh-pages/FINISHED/{{ scenario.name }}.png" width="350" class="img-rounded img-responsive"/>
+      <a href="dsra_scenario_map.html?scenario={{ scenario.name }}">
+        <img src="https://github.com/DamonU2/earthquake-scenarios/raw/gh-pages/FINISHED/{{ scenario.name }}.png" width="350" class="img-rounded img-responsive"/>
+      </a>
       <div class="card-body">
         <a href="dsra_scenario_map.html?scenario={{ scenario.name }}" class="btn btn-primary btn-lg btn-block mrgn-tp-sm" role="button">
          {% if page.lang == 'en' %} View on Map {% else %} Voir sur la carte {% endif %}

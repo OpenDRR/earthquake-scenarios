@@ -154,19 +154,14 @@ breadcrumbs:
   </div>
 {% endfor %}
 
+<script src="../assets/js/app.js"></script>
+
 <script>
 
-  var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
-    descriptions = document.getElementsByClassName('scenario-desc');
+  let descriptions = document.getElementsByClassName('scenario-desc');
 
   for (let i = 0; i < descriptions.length; i++) {
     descriptions[i].innerHTML = urlify( descriptions[i].innerHTML );
-  }
-
-  function urlify( text ) {
-    return text.replace( urlRegex, function( url ) {
-      return '<a href="' + url + '">' + url + '</a>';
-    })
   }
 
 </script>

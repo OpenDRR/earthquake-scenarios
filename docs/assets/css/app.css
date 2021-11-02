@@ -112,3 +112,10 @@ background-color: #FFCCCC;
 }
 
 .ab, .bc, .mb, .ns, .nl, .qc, .on, .nu, .yt, .nt, .sk, .pe, .nb, .rgn { display:none; }
+
+#alert {
+    display: none;
+    background: rgb(220, 20, 20);
+    color: white;
+    padding: 5px;
+}

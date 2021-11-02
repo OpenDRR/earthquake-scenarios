@@ -1,14 +1,9 @@
-function showProv( layers ) {
-    for ( l in layers ) {
-        $( '#select-rgn-' + layers[l] ).on( 'change', function() {
-        $( ".ab, .bc, .mb, .ns, .nl, .qc, .on, .nu, .yt, .nt, .sk, .pe, .nb, .rgn" ).hide();
+function urlify( text ) {
 
-        $("select").val( $( this ).val() );
+    var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 
-        if ( $( this ).val() ) {
-            let p = '.' + $( this ).val() + ', .rgn';
-            $( p ).fadeIn();
-        }
-        });
-    }
+    return text.replace( urlRegex, function( url ) {
+        return '<a href="' + url + '">' + url + '</a>';
+
+    })
 }

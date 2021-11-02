@@ -376,12 +376,3 @@ crossorigin=""></script>
   }
 
 </script>
-
-<style>
-  #alert {
-    display: none;
-    background: rgb(220, 20, 20);
-    color: white;
-    padding: 5px;
-  }
-</style>

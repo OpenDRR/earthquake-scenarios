@@ -105,7 +105,7 @@ breadcrumbs:
   <p>
     <div class="card" style="float:left;margin:10px 20px 0px 0px;">
       <a href="dsra_scenario_map.html?scenario={{ scenario.name }}">
-        <img src="https://github.com/DamonU2/earthquake-scenarios/raw/gh-pages/FINISHED/{{ scenario.name }}.png" width="350" class="img-rounded img-responsive"/>
+        <img src="https://github.com/OpenDRR/earthquake-scenarios/raw/master/FINISHED/{{ scenario.name }}.png" width="350" class="img-rounded img-responsive"/>
       </a>
       <div class="card-body">
         <a href="dsra_scenario_map.html?scenario={{ scenario.name }}" class="btn btn-primary btn-lg btn-block mrgn-tp-sm" role="button">
@@ -140,17 +140,17 @@ breadcrumbs:
                   <td><span class="label HTML">HTML</span></td>
                   <td><a href="https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_{{ scenario.name | downcase }}_indicators_s?lang=en-CA" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
-              <!-- <tr>
+              <tr>
                   <td>{{ scenario.title }} (Points)</td>
                   <td class="hidden-xs">Dataset</td>
                   <td><span class="label GPKG">GPKG</span></td>
-                  <td><a href="https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED/{{ scenario.name }}_indicators_b.gpkg.zip" class="btn btn-primary">{{ btntxt }}</a></td>
+                  <td><a href="https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED/geopackages/{{ scenario.name }}_indicators_b.gpkg.zip" class="btn btn-primary">{{ btntxt }}</a></td>
                   </tr>
               <tr>
                   <td>{{ scenario.title }} (Polygons)</td>
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
-                  <td><a href="https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED/{{ scenario.name }}_indicators_s.gpkg.zip" class="btn btn-primary">{{ btntxt }}</a></td>
-              </tr> -->
+                  <td><a href="https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED/geopackages/{{ scenario.name }}_indicators_s.gpkg.zip" class="btn btn-primary">{{ btntxt }}</a></td>
+              </tr>
           </tbody>
       </table>
   </div>

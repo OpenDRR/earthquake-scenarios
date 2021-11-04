@@ -2,8 +2,7 @@ name: Create release assets
 
 on: 
   release:
-    types:
-      - created
+    types: [created]
 
 jobs:
   build:
@@ -11,7 +10,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - uses: AButler/upload-release-assets@v2.0
+        with:
+          lfs: 'true'
+      - name: upload assets
+        uses: AButler/upload-release-assets@v2.0
         with:
           files: 'FINISHED/geopackages/*;FINISHED/*.csv'
           repo-token: ${{ secrets.GITHUB_TOKEN }}

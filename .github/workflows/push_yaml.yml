@@ -1,0 +1,22 @@
+name: Push dsra.yml to data repo
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes changed file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: './FINISHED/dsra.yml'
+        destination_repo: 'OpenDRR/data'
+        destination_folder: '_data/'
+        user_email: 'damon_ulmi@hotmail.com'
+        user_name: 'DamonU2'
+        commit_message: 'Update to dsra.yml'

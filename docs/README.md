@@ -1,10 +1,10 @@
-# data
+# Earthquake scenarios
 
 All products are released under the [Open Government Licence - Canada](https://open.canada.ca/en/open-government-licence-canada)
 
-Data download site for OpenDRR
+Earthquake scenarios download site for OpenDRR
 
-https://opendrr.github.io/data/
+https://opendrr.github.io/earthquake-scenarios/
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ https://opendrr.github.io/data/
 
 ## Roadmap
 
-See the [open issues](https://github.com/OpenDRR/data/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/OpenDRR/earthquake-scenarios/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 
@@ -51,14 +51,14 @@ Project Link: [https://opendrr.github.io](https://opendrr.github.io)
 
 ---
 
-# data
+# Scénarios de séismes
 
 Tous les produits sont publiés sous la [licence du gouvernement ouvert – Canada](https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)
 
 
 Site de téléchargement de données pour OpenDRR
 
-https://opendrr.github.io/data/
+https://opendrr.github.io/earthquake-scenarios/
 
 ## Démarrage
 
@@ -71,7 +71,7 @@ https://opendrr.github.io/data/
 
 ## Feuille de route
 
-Voir le [open issues](https://github.com/OpenDRR/data/issues) pour une liste des fonctionnalités proposées (et des problèmes connus).
+Voir le [open issues](https://github.com/OpenDRR/earthquake-scenarios/issues) pour une liste des fonctionnalités proposées (et des problèmes connus).
 
 ## Contribuer
 

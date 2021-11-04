@@ -128,7 +128,7 @@ breadcrumbs:
                   <td><span class="label HTML">HTML</span></td>
                   <td><a href="https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED/{{ scenario.name }}.md" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
-              <tr>
+              <!--<tr>
                   <td>OGC API - Features (Points)</td>
                   <td class="hidden-xs">Web Service</td>
                   <td><span class="label HTML">HTML</span></td>
@@ -139,7 +139,7 @@ breadcrumbs:
                   <td class="hidden-xs">Web Service</td>
                   <td><span class="label HTML">HTML</span></td>
                   <td><a href="https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_{{ scenario.name | downcase }}_indicators_s?lang=fr-CA" class="btn btn-primary">{{ btntxt }}</a></td>
-              </tr>
+              </tr>-->
               <tr>
                   <td>{{ scenario.title }} (Points)</td>
                   <td class="hidden-xs">Dataset</td>

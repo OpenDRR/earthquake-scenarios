@@ -139,7 +139,7 @@ gl.ylocator = mticker.FixedLocator(np.arange(44, 80, 1).tolist()) #lat gridlines
 
 plt.plot(lon, lat, 35, markersize=6, marker = 'o', color='r', zorder=5)
 plt.title(NAME)
-plt.savefig(NAME + '.png')
+plt.savefig(str(FINISHEDdir)+'/'+str(NAME)+'.png')
 #plt.show()
 
 

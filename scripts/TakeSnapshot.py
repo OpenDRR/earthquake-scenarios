@@ -16,8 +16,7 @@ from xml.dom import minidom
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
-import cartopy.feature as cfeature
-import cartopy.io.shapereader as shpreader
+import cartopy.io.img_tiles as cimgt
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import numpy as np
 
@@ -118,22 +117,8 @@ except:
 #######################################################################################
 lon, lat = float(lon), float(lat)
 
-shpfilename = shpreader.natural_earth(resolution='10m', category='cultural', name='populated_places') #take populated places open data from naturalearthdata.org
-reader = shpreader.Reader(shpfilename)
-
-# Extract only canadian cities within map bounds
-canada = [city for city in reader.records() if city.attributes['SOV0NAME'] == 'Canada']
-extents = [lon - 3, lon + 3, lat - 2, lat + 2] # Map extents
-region = [city for city in canada if city.attributes['LONGITUDE'] > extents[0]\
-            if city.attributes['LONGITUDE'] < extents[1]\
-            if city.attributes['LATITUDE'] > extents[2]\
-            if city.attributes['LATITUDE'] < extents[3]]
-
-# Extract city name and coordinates from records
-name = [city.attributes['NAME'] for city in region]
-x = [city.attributes['LONGITUDE'] for city in region]
-y = [city.attributes['LATITUDE'] for city in region]
-cities = pd.DataFrame(list(zip(name, x, y)), columns = ['City', 'Lon', 'Lat'])
+extents = [lon - 2, lon + 2, lat - 1.3, lat + 1.3] # Map extents
+request = cimgt.OSM()
 
 # Plot map
 fig = plt.figure(figsize=(5, 5), frameon=True) #figure size
@@ -142,25 +127,15 @@ ax = plt.axes(projection=ccrs.LambertConformal(central_longitude=lon,
                 central_latitude=lat, standard_parallels=(lat, lat))) # Proj is Lambert Conformal Conic (GSC convention)
 
 ax.set_extent(extents) # Set map extent using extents
+ax.add_image(request, 7, interpolation='spline36') # Add image overlay
 
 # Add map features
-ax.coastlines(resolution='10m') # High resolution coastline
-ax.add_feature(cfeature.LAND, facecolor='darkgrey')
-ax.add_feature(cfeature.OCEAN, facecolor='lightcyan')
-ax.add_feature(cfeature.LAKES, alpha=0.9)
-ax.add_feature(cfeature.BORDERS, zorder=10)
-
 gl = ax.gridlines(crs=ccrs.PlateCarree(), x_inline=False, y_inline=False, draw_labels=True,
                   linewidth=1, color='gray', alpha=0.5, linestyle='-')
 gl.top_labels = False
 gl.left_labels = False
 gl.xlocator = mticker.FixedLocator(np.arange(-160, -40, 2).tolist()) #lon gridlines every 2deg
-
-# Label cities
-for i in range(len(cities)):
-    city = cities.iloc[i]
-    ax.text(city.Lon, city.Lat, city.City, ha='center', va='center',
-            transform=ccrs.PlateCarree(), clip_on=False)
+gl.ylocator = mticker.FixedLocator(np.arange(44, 80, 1).tolist()) #lat gridlines every deg
 
 plt.plot(lon, lat, 35, markersize=6, marker = 'o', color='r', zorder=5)
 plt.title(NAME)

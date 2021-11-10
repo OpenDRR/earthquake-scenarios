@@ -40,6 +40,6 @@ data = {
 
 # Convert to yaml and write file
 dump = yaml.dump(data, encoding='utf-8', allow_unicode=True)
-resource_file = '../FINISHED/dsra.yml'
+resource_file = '../docs/_data/dsra.yml'
 with open(resource_file, 'w+b') as f:
     f.write(dump)

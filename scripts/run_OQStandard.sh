@@ -26,6 +26,16 @@ USAGE: run_OQStandard.sh NAME [-h -d -r -[b/o] -[s] -[l]]
 "
 }
 
+if [[ $LAPTOP != 'True' ]]; then
+### SETUP AWS KILL 
+shut_down_ec2_instance() {
+    echo "Shutting down EC2 instance"
+    sudo shutdown
+    }
+
+trap "shut_down_ec2_instance" ERR
+fi
+
 #    INITIALIZATION
 #Set below flags to 0 to skip those elements of run, and to 1 to include. For retrofits, set flag to 0 for baseline, 1 for baseline plus one level of retrofit, and 2 for baseline plus two levels of retrofit.
 HAZFLAG="0"; DMGFLAG="0"; RSKFLAG="0"; RETROFLAG="2"; EXPO='b'
@@ -227,6 +237,10 @@ if [[ $RSKFLAG == "1" ]]; then
     fi
 fi
 
+if [[ $LAPTOP != 'True' ]]; then
+### AWS KILL
+shut_down_ec2_instance
+fi
 
 
 exit 0

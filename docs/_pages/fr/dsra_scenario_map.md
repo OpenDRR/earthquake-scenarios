@@ -17,11 +17,10 @@ breadcrumbs:
   - title: "OpenDRR"
     link: "https://www.github.com/OpenDRR/"
   - title: "Téléchargements de OpenDRR"
-    link: "../data/fr"
+    link: ../data/fr
   - title: "Scénarios de tremblement de terre"
-    link: "/fr"
+    link: /fr
   - title: "Carte des scénarios de tremblement de terre"
-    link: "/fr/dsra_scenario_map"
 ---
 <!-- Load Leaflet from CDN -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"

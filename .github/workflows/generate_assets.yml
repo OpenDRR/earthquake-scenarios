@@ -3,6 +3,8 @@ name: Create release assets
 on: 
   release:
     types: [created]
+  workflow_dispatch:
+  push:
 
 jobs:
   build:

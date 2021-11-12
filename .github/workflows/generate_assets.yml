@@ -19,3 +19,4 @@ jobs:
         with:
           files: 'FINISHED/geopackages/*;FINISHED/*.csv'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          release-tag: v1.0

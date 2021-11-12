@@ -19,7 +19,7 @@ breadcrumbs:
   - title: "OpenDRR Downloads"
     link: ../data/en
   - title: "Earthquake Scenarios"
-    link: ../en
+    link: ../en/index.html
   - title: "Earthquake Scenario Map"
 ---
 <!-- Load Leaflet from CDN -->

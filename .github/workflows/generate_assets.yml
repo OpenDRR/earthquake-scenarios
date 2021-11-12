@@ -4,7 +4,6 @@ on:
   release:
     types: [created]
   workflow_dispatch:
-  push:
 
 jobs:
   build:
@@ -19,4 +18,5 @@ jobs:
         with:
           files: 'FINISHED/geopackages/*;FINISHED/*.csv'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          release-tag: v1.0
+          # To add assets to an existing release, use below line with release tag, then run action from actions page
+          #release-tag: v1.0

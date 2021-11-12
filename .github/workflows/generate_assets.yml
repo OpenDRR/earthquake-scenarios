@@ -17,7 +17,6 @@ jobs:
       - name: upload assets
         uses: AButler/upload-release-assets@v2.0
         with:
-          files: 'FINISHED/*.geojson'
+          files: 'FINISHED/geopackages/*;FINISHED/*.csv'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           release-tag: v1.0
-          

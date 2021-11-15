@@ -151,6 +151,11 @@ breadcrumbs:
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_s.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
+              <tr>
+                  <td>{{ scenario.title }} ShakeMap</td>
+                  <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
+                  <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_shakemap.zip" class="btn btn-primary">{{ btntxt }}</a></td>
+              </tr>
           </tbody>
       </table>
   </div>

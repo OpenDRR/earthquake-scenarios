@@ -1,0 +1,18 @@
+name: Check Markdown links
+
+on: push
+
+jobs:
+  my-broken-link-checker:
+    name: Check broken links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: https://damonu2.github.io/data/en
+      - name: Check
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: https://damonu2.github.io/earthquake-scenarios/en
+          

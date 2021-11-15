@@ -65,7 +65,7 @@ At a high level, [the process for proposing changes](https://guides.github.com/i
 7. Make your changes add tests, and make sure the tests still pass
 8. Pat your self on the back and wait for your pull request to be reviewed and merged
 
-**Interesting in submitting your first Pull Request?** It's easy! You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+**Interesting in submitting your first Pull Request?** It's easy! You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github)
 
 ## Bootstrapping your local development environment
 

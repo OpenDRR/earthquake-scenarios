@@ -14,7 +14,7 @@ nomenu: true
 nofooter: true
 breadcrumbs:
   - title: "OpenDRR"
-    link: "https://www.github.com/OpenDRR/"
+    link: https://www.github.com/OpenDRR/
   - title: "OpenDRR Downloads"
     link: "../data/en"
   - title: "Earthquake Scenarios"

@@ -6,10 +6,10 @@ on:
 
 jobs:
   my-broken-link-checker:
-    name: Check broken links
+    name: Check for broken links
     runs-on: ubuntu-latest
     steps:
       - name: Check
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
-          url: https://damonu2.github.io/data/en
+          url: https://opendrr.github.io/data/en

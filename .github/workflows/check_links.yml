@@ -1,6 +1,8 @@
-name: Check Markdown links
+name: Check links
 
-on: push
+on: 
+  push:
+  workflow_dispatch:
 
 jobs:
   my-broken-link-checker:

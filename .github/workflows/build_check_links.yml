@@ -1,0 +1,25 @@
+name: Check for dead links
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  broken-link-checker:
+    name: Check for broken links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: 2.6
+
+      - name: Build site locally
+        run: |
+          cd docs
+          bundle exec jakyll serve
+
+      - name: Check links
+        uses: ruzickap/action-my-broken-link-checker@v2
+        with:
+          url: http://127.0.0.1:4000/earthquake-scenarios/

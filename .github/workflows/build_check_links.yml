@@ -17,7 +17,7 @@ jobs:
       - name: Build site locally
         run: |
           cd docs
-          bundle exec jakyll serve
+          bundle exec jekyll serve
 
       - name: Check links
         uses: ruzickap/action-my-broken-link-checker@v2

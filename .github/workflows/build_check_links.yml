@@ -17,6 +17,7 @@ jobs:
       - name: Build site locally
         run: |
           cd docs
+          bundle install
           bundle exec jekyll serve
 
       - name: Check links

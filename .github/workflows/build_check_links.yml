@@ -26,7 +26,7 @@ jobs:
           args: ./docs/_site/* -b https://opendrr.github.io
 
       - name: Check errors
-        if: ./lychee/out.md
+        if: hashFiles('./lychee/out.md') != ''
         uses: actions/github-script@v3
         with:
           script: core.setFailed('Pages contain broken links')

@@ -1,10 +1,8 @@
 name: Check for dead links on github pages
 
 on:
-  push:
   pull_request:
     types: [ opened, synchronize, edited, reopened ]
-  workflow_dispatch:
 
 jobs:
   broken-link-checker:

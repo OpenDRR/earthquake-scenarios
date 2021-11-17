@@ -25,6 +25,4 @@ jobs:
           args: ./docs/_site/* -b https://opendrr.github.io
 
       - name: Check errors
-        run: |
-          less ./lychee/out.md
-          q
+        run: less ./lychee/out.md

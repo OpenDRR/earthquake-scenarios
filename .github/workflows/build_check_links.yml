@@ -27,7 +27,6 @@ jobs:
 
       - name: Check errors
         if: hashFiles('./lychee/out.md') != ''
-        run: less ./lychee/out.md
-        uses: actions/github-script@v3
-        with:
-          script: core.setFailed('Pages contain broken links')
+        run: |
+            less ./lychee/out.md
+            exit 1

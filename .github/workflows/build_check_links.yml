@@ -1,6 +1,10 @@
 name: Check for dead links on github pages
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+  pull_request:
+    types: [ opened, synchronize, edited, reopened ]
+  workflow_dispatch:
 
 jobs:
   broken-link-checker:
@@ -24,6 +28,19 @@ jobs:
         uses: lycheeverse/lychee-action@v1.1.0
         with:
           args: ./docs/_site/* -b https://opendrr.github.io
+      
+      - name: Add comment if broken links
+        if: hashFiles('./lychee/out.md') != '' && ${{ github.event_name == 'pull_request' }}
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Broken links found, please check actions log.'
+            })
 
       - name: Check errors
         if: hashFiles('./lychee/out.md') != ''

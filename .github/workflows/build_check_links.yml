@@ -29,4 +29,6 @@ jobs:
         if: hashFiles('./lychee/out.md') != ''
         uses: actions/github-script@v3
         with:
-          script: core.setFailed('Pages contain broken links')
+          script: |
+            less ./lychee/out.md
+            core.setFailed('Pages contain broken links')

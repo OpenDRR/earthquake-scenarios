@@ -30,7 +30,7 @@ jobs:
           args: ./docs/_site/* -b https://opendrr.github.io
       
       - name: Add comment if broken links
-        if: hashFiles('./lychee/out.md') != '' && ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' }} && hashFiles('./lychee/out.md') != ''
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -42,7 +42,7 @@ jobs:
               body: 'Broken links found, please check actions log.'
             })
 
-      - name: Check errors
+      - name: Display broken links and exit
         if: hashFiles('./lychee/out.md') != ''
         run: |
             less ./lychee/out.md

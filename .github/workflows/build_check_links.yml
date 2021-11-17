@@ -23,8 +23,7 @@ jobs:
             ${{ runner.os }}-gems-
 
       # Build jekyll pages
-      - run: cd docs
-        uses:  lemonarc/jekyll-action@1.0.0
+      - uses:  lemonarc/jekyll-action@1.0.0
 
       - name: Check links
         uses: becheran/mlc@v0.14.3

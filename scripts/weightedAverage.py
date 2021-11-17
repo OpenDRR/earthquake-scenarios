@@ -51,7 +51,7 @@ elif runType.lower() == 'loss':
     lastcol = 'lat'
     groupname = 'asset_id'
 elif runType.lower() == 'consequence':
-    name_native = "consequences-rlz"; name_native_long = "consequences-rlz"
+    name_native = "consequences"; name_native_long = "consequences-rlz"
     name_out = "consequences"
     skippy = 0
     lastcol = 'occupants_transit'

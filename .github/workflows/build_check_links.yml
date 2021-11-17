@@ -22,4 +22,4 @@ jobs:
       - name: Check links
         uses: becheran/mlc@v0.14.3
         with:
-          args: --ignore-links "*.html?*" "./docs/_site"
+          args: -r "opendrr.github.io" --ignore-links "*.html?*" "./docs/_site"

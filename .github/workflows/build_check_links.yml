@@ -19,7 +19,7 @@ jobs:
           bundle install
           jekyll build
 
-      - name: Check links
-        uses: becheran/mlc@v0.14.3
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.1.0
         with:
-          args: -r "opendrr.github.io" --ignore-links "*.html?*" "./docs/_site"
+          args: -b https://opendrr.github.io ./docs/_site

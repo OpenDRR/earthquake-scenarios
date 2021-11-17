@@ -1,4 +1,4 @@
-name: Check for dead links
+name: Check for dead links on github pages
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -13,6 +13,7 @@ jobs:
         uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
         with:
           ruby-version: 2.6
+          bundler-cache: true
 
       - run: |
           cd docs
@@ -25,4 +26,7 @@ jobs:
           args: ./docs/_site/* -b https://opendrr.github.io
 
       - name: Check errors
-        run: less ./lychee/out.md
+        if: ./lychee/out.md
+        uses: actions/github-script@v3
+        with:
+          script: core.setFailed('Pages contain broken links')

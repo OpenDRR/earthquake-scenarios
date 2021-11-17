@@ -22,4 +22,4 @@ jobs:
       - name: Check links
         uses: becheran/mlc@v0.14.3
         with:
-          args: <docs/_site>
+          args: <./docs/_site/>

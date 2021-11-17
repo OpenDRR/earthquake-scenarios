@@ -22,4 +22,4 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.1.0
         with:
-          args: -b https://opendrr.github.io --exclude *.css ./docs/_site/*
+          args: ./docs/_site/* -b https://opendrr.github.io --exclude *.css

@@ -14,13 +14,19 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - name: Build site locally
-        run: |
-          cd docs
-          bundle install
-          bundle exec jekyll serve
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v1
+        with:
+          path: /docs
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # Build jekyll pages
+      - run: cd docs
+        uses:  lemonarc/jekyll-action@1.0.0
 
       - name: Check links
-        uses: ruzickap/action-my-broken-link-checker@v2
+        uses: becheran/mlc@v0.14.3
         with:
-          url: http://127.0.0.1:4000/earthquake-scenarios/
+          args: <_site>

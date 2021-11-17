@@ -22,7 +22,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.1.0
         with:
-          args: ./docs/_site/* -b https://opendrr.github.io --exclude https://opendrr.github.io/assets/fontawesome/css/all.min.css
+          args: ./docs/_site/* -b https://opendrr.github.io
 
       - name: Check errors
         run: |

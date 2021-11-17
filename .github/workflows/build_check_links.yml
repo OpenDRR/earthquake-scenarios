@@ -22,6 +22,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
 
+      - run: cd docs
+
       # Build jekyll pages
       - uses:  lemonarc/jekyll-action@1.0.0
 

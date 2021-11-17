@@ -14,18 +14,10 @@ jobs:
         with:
           ruby-version: 2.6
 
-      # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v1
-        with:
-          path: /docs
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-
-      - run: cd docs
-
-      # Build jekyll pages
-      - uses:  lemonarc/jekyll-action@1.0.0
+      - run: |
+          cd docs
+          bundle install
+          jekyll build
 
       - name: Check links
         uses: becheran/mlc@v0.14.3

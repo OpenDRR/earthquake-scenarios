@@ -83,7 +83,7 @@ crossorigin=""></script>
     eqScenario = params.get( 'scenario' ), // Scenario name
     featureProperties = 'csduid,sCt_Res90_b0', // Limit fetched properties for performance
     scenarioProp = 'sCt_Res90_b0', // Property for popup and feature colour
-    limit = 50,
+    limit = 10,
     lastZoom = -1,
     selection;
     
@@ -161,7 +161,7 @@ crossorigin=""></script>
         $( '#sidebar' ).html( '' );
         geojsonLayer.clearLayers();
 
-        limit = 50;
+        limit = 10;
         featureProperties = 'csduid,sCt_Res90_b0';
         geojsonUrl = baseUrl + scenario + "_indicators_csd/items?lang=en_US&f=json&limit=" + limit  + '&properties=' + featureProperties,
         featureUrl = baseUrl + scenario + "_indicators_csd/items/"

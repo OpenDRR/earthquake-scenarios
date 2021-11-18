@@ -341,9 +341,9 @@ crossorigin=""></script>
 
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 10, 50, 100, 300],
-        label = ' People Displaced';
+        label = ' People Affected';
 
-    div.innerHTML = "<div style=\"padding: 3px;\"><b>People displaced after 90 days</b></div>";
+    div.innerHTML = "<div style=\"padding: 3px;\"><b>People affected after 90 days</b></div>";
 
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++ ) {

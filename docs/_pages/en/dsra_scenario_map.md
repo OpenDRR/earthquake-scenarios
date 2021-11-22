@@ -217,7 +217,7 @@ crossorigin=""></script>
   // Handles events for each feature
   function geoJsonOnEachFeature( feature, layer ){
     layer.bindPopup( function ( e ) {
-      return L.Util.template( '<p>Residents displaced after 90 days: <strong>' + e.feature.properties.sCt_Res90_b0.toLocaleString( undefined, { maximumFractionDigits: 0 }) + '</strong></p>' );
+      return L.Util.template( '<p>Residents affected after 90 days: <strong>' + e.feature.properties.sCt_Res90_b0.toLocaleString( undefined, { maximumFractionDigits: 0 }) + '</strong></p>' );
     }).on({
       click: function( e ) {
         if ( selection ) {

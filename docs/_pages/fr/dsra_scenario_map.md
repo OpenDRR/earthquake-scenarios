@@ -253,11 +253,11 @@ crossorigin=""></script>
 
             if ( key.slice( -3 ) === '_b0' ) {
               mod_key = key.slice( 0, -3 );
-              mod = ' (Baseline)';
+              mod = ' (référence)';
             }
             else if ( key.slice( -3 ) === '_r1' ) {
               mod_key = key.slice( 0, -3 );
-              mod = ' (Retrofit)';
+              mod = ' (rénovation)';
             }
             else if ( key.slice( -3 ) === '_le' ) {
               mod_key = key.slice( 0, -3 );

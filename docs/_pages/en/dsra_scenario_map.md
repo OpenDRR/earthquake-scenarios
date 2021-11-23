@@ -17,7 +17,7 @@ breadcrumbs:
   - title: "OpenDRR"
     link: "https://www.github.com/OpenDRR/"
   - title: "OpenDRR Downloads"
-    link: "../data/en"
+    link: "../downloads/en"
   - title: "Earthquake Scenarios"
     link: "/en"
   - title: "Earthquake Scenario Map"

@@ -16,7 +16,7 @@ breadcrumbs:
   - title: "OpenDRR"
     link: "https://www.github.com/OpenDRR/"
   - title: "Téléchargements de OpenDRR"
-    link: "../data/fr"
+    link: "../downloads/fr"
   - title: "Scénarios de séismes"
 ---
 

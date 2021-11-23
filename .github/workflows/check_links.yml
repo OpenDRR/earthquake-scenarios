@@ -14,4 +14,4 @@ jobs:
       - name: Check links
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
-          url: https://opendrr.github.io/data/
+          url: https://opendrr.github.io/downloads/

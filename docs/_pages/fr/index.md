@@ -156,6 +156,11 @@ breadcrumbs:
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_shakemap.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
+              <tr>
+                  <td>{% if page.lang == 'en' %}Data dictionary{% else %}Dictionnaire de données{% endif %}</td>
+                  <td class="hidden-xs">Document</td><td><span class="label EXCEL">EXCEL</span></td>
+                  <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_attributes_{{ page.lang }}.xlsx" class="btn btn-primary">{{ btntxt }}</a></td>
+              </tr>
           </tbody>
       </table>
   </div>

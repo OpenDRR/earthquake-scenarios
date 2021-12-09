@@ -17,7 +17,7 @@ breadcrumbs:
   - title: "OpenDRR"
     link: "https://www.github.com/OpenDRR/"
   - title: "Téléchargements de OpenDRR"
-    link: "../data/fr"
+    link: "../downloads/fr"
   - title: "Scénarios de tremblement de terre"
     link: "/fr"
   - title: "Carte des scénarios de tremblement de terre"

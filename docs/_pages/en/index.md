@@ -35,6 +35,9 @@ breadcrumbs:
   </div>
   <div class="col-md-4">
     <p>
+      <a href="https://github.com/OpenDRR/earthquake-scenarios/raw/master/Openfile8806_Hobbs_etal_2021_OQCanadaScenario.pdf" class="btn btn-info btn-lg btn-block" style="background-color:#2572b4; border-color:#2572b4;" role="button"><i class="fas fa-file-download"></i> GSC OpenFile</a>
+    </p>
+    <p>
       <a href="https://github.com/OpenDRR/earthquake-scenarios" class="btn btn-info btn-lg btn-block" role="button"><i class="fab fa-github"></i> GitHub</a>
     </p>
     <div class="panel panel-primary mrgn-tp-sm">

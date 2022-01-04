@@ -6,6 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "bundler" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "/docs" # Location of package manifests
     schedule:
       interval: "daily"

@@ -5,7 +5,7 @@ import sys
 #### Quick script to calculate MMI from PGA using Caprio et al 2015
 #USAGE: python convert_to_MMI.py outputs/s_shakemap_IDM5p7_StevestonJdFAftershock_80.csv 
 
-shakemap = 's_shakemap_ACM7p3_LeechRiverFullFault_107.csv' #sys.argv[1]
+shakemap = 's_shakemap_SCM7p5_ValDesBois_345.csv' #sys.argv[1]
 df = pd.read_csv(shakemap)
 df['PGA_cms'] = df['gmv_PGA']*981
 df['logPGA_cms'] = np.log10(df['PGA_cms'])

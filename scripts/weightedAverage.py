@@ -51,7 +51,7 @@ elif runType.lower() == 'loss':
     lastcol = 'lat'
     groupname = 'asset_id'
 elif runType.lower() == 'consequence':
-    name_native = "consequences-rlz"; name_native_long = "consequences-rlz"
+    name_native = "consequences"; name_native_long = "consequences-rlz"
     name_out = "consequences"
     skippy = 0
     lastcol = 'occupants_transit'
@@ -109,7 +109,7 @@ def wavg(group, avg_name, weight_name):
 ####FIND WEIGHTED AVERAGES
 breakpt = (data.columns.get_loc(lastcol))
 new = data[data.columns[0:(breakpt+1)]]  # load in context info #18 for CoV
-out = 0;
+out = 0
 for indicator in tqdm(data.columns[(breakpt+1):(len(data.columns))-1]): #25 for CoV
     del out
     out = df.groupby([groupname]).apply(wavg, indicator, 'weight').reset_index(name=indicator)

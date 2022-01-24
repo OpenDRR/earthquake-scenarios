@@ -1,0 +1,28 @@
+[2021-10-14 00:42:26 #124 INFO] thobbs running /Users/thobbs/Documents/GitHub/earthquake-scenarios/initializations/s_Hazard_ACM7p0_GeorgiaStraitFault.ini [--hc=None]
+[2021-10-14 00:42:26 #124 INFO] Using engine version 3.11.3-git0cccb86798
+[2021-10-14 00:42:27 #124 WARNING] Version v3.11.4 of the engine is available, but you are still using version 3.11.3-git0cccb86798
+[2021-10-14 00:42:27 #124 WARNING] Using 16 cores on L-VAN-AC02ZW7L4MD6N.local
+[2021-10-14 00:42:27 #124 INFO] Checksum of the input files: 3215837928
+[2021-10-14 00:42:27 #124 INFO] Reading the risk model if present
+[2021-10-14 00:42:27 #124 INFO] Extracting the hazard sites from the site model
+[2021-10-14 00:42:28 #124 INFO] Read N=136702 hazard sites and L=8 hazard levels
+[2021-10-14 00:42:28 #124 INFO] gzipping the input files
+[2021-10-14 00:42:29 #124 INFO] minimum_intensity={}
+[2021-10-14 00:42:29 #124 INFO] There are 4 realization(s)
+[2021-10-14 00:42:29 #124 INFO] Reordering the ruptures and storing the events
+[2021-10-14 00:42:29 #124 INFO] Associating event_id -> rlz_id for 4 events and 1 ruptures
+[2021-10-14 00:42:29 #124 INFO] Reading 1 ruptures
+[2021-10-14 00:42:33 #124 INFO] compute_gmfs 100% [1 submitted, 0 queued]
+[2021-10-14 00:42:33 #124 INFO] Received {'gmfdata': '7.86 MB', 'sig_eps': '989 B', 'times': '317 B', 'hcurves': '5 B'} in 3 seconds
+[2021-10-14 00:42:33 #124 INFO] Stored 6.57 MB of GMFs
+[2021-10-14 00:42:42 #124 INFO] Checking seed dependency
+[2021-10-14 00:42:42 #124 WARNING] Your results are expected to have a large dependency from ses_seed
+[2021-10-14 00:42:42 #124 INFO] Exposing the outputs to the database
+[2021-10-14 00:42:42 #124 INFO] Stored 26.54 MB on /Users/thobbs/oqdata/calc_124.hdf5 in 15 seconds
+[2021-10-14 00:42:42 #124 INFO] Stopping the workers
+  id | name
+ 717 | Events
+ 718 | Full Report
+ 719 | Ground Motion Fields
+ 720 | Input Files
+ 721 | Realizations

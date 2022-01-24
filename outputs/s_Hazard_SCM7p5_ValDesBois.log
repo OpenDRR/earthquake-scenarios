@@ -1,0 +1,29 @@
+/home/ssm-user/src/oq-engine/openquake/hazardlib/gsim/base.py:347: ExperimentalWarning: CanadaSHM6_ActiveCrust_BooreEtAl2014 is experimental and may change in future versions - the user is liable for their application
+  warnings.warn(msg, ExperimentalWarning)
+[2021-11-11 20:36:15 #345 INFO] root running /mnt/storage/earthquake-scenarios/initializations/s_Hazard_SCM7p5_ValDesBois.ini [--hc=None]
+[2021-11-11 20:36:15 #345 INFO] Using engine version 3.11.4-git36369d6f2b
+[2021-11-11 20:36:15 #345 WARNING] Using 96 cores on ip-10-70-136-95
+[2021-11-11 20:36:15 #345 INFO] Checksum of the input files: 1347366989
+[2021-11-11 20:36:15 #345 INFO] Reading the risk model if present
+[2021-11-11 20:36:15 #345 INFO] Extracting the hazard sites from the site model
+[2021-11-11 20:36:49 #345 INFO] Read N=2222068 hazard sites and L=8 hazard levels
+[2021-11-11 20:40:33 #345 INFO] gzipping the input files
+[2021-11-11 20:41:08 #345 INFO] minimum_intensity={}
+[2021-11-11 20:41:11 #345 INFO] There are 16 realization(s)
+[2021-11-11 20:41:11 #345 INFO] Reordering the ruptures and storing the events
+[2021-11-11 20:41:11 #345 INFO] Associating event_id -> rlz_id for 16 events and 1 ruptures
+[2021-11-11 20:41:11 #345 INFO] Reading 1 ruptures
+[2021-11-11 20:42:26 #345 INFO] compute_gmfs 100% [1 submitted, 0 queued]
+[2021-11-11 20:42:26 #345 INFO] Received {'gmfdata': '132.54 MB', 'sig_eps': '1.81 KB', 'times': '338 B', 'hcurves': '14 B'} in 73 seconds
+[2021-11-11 20:42:26 #345 INFO] Stored 110.43 MB of GMFs
+[2021-11-11 20:43:44 #345 INFO] Checking seed dependency
+[2021-11-11 20:43:44 #345 WARNING] Your results are expected to have a large dependency from ses_seed
+[2021-11-11 20:43:44 #345 INFO] Exposing the outputs to the database
+[2021-11-11 20:43:45 #345 INFO] Stored 440.22 MB on /root/oqdata/calc_345.hdf5 in 449 seconds
+[2021-11-11 20:43:45 #345 INFO] Stopping the workers
+  id | name
+1502 | Events
+1503 | Full Report
+1504 | Ground Motion Fields
+1505 | Input Files
+1506 | Realizations

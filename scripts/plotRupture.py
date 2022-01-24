@@ -27,7 +27,7 @@ NAME = sys.argv[1]
 rup = minidom.parse(fileloc+NAME)
 hypo = rup.getElementsByTagName('hypocenter')
 lat = hypo[0].attributes['lat'].value
-lon = hypo[0].attributes['lon'].value;
+lon = hypo[0].attributes['lon'].value
 
 surf = rup.getElementsByTagName('simpleFaultGeometry')
 

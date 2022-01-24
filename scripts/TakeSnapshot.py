@@ -188,7 +188,7 @@ tectonicRegion = tectregionnames[gsim_logic_tree_file.split('NGASa0p3weights_')[
 if 'Cascadia' in NAME:
     wRR = [433]
 elif 'LeechRiver' in NAME:
-    wRR = [7500]
+    wRR = [3500]
 else:
     filepath = "../../CanadaSHM6/source_summary_csv/simplifiedModel/"
     W = pd.read_csv(filepath+"W_CANADA_UPDATED_simplified_collapsedRates.csv"); W['regWt'] = 1; W['regName'] = 'W'

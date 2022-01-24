@@ -1,0 +1,27 @@
+collection:
+  en: Earthquake Scenarios
+  fr: Scénarios de séismes
+id: dsra_bc_indicators
+scenarios:
+- description:
+    en: Magnitude 7.3 scenario based on complete rupture of the CanSHM6 Hazard Model
+      implementation of the Leech River Full Fault.
+    fr: Scénario de magnitude 7,3 basé sur une rupture complète de la mise en œuvre du modèle de risque CanSHM6 de la faille complète de Leech River.
+  name: ACM7p3_LeechRiverFullFault
+  title: Leech River Full Fault - Magnitude 7.3
+- description:
+    en: Evaluating impact of increasing magnitude using the 2015 Mw 4.7 Sidney, BC,
+      Earthquake hypocentre. More info at https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
+      - Strike selected to approximately parallel the strike of the subducting slab
+      for this deep intraslab extensional event.
+    fr: Évaluation de l'impact de l'augmentation de la magnitude à l'aide de l'hypocentre du tremblement de terre de 2015 Mw 4,7 de Sidney, en Colombie-Britannique. Plus d'informations sur https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php - La direction choisie est approximativement parallèle à la direction de la dalle subductrice. pour cet événement d'extension intraslab profond.
+  name: IDM7p1_Sidney
+  title: Sidney - Magnitude 7.1
+- description:
+    en: Magnitude 9.0 scenario based on complete rupture of the CanSHM6 Hazard Model implementation of the Cascadia Interface Best Fault.
+    fr: Scénario de magnitude 9.0 basé sur la rupture complète de l'implémentation du modèle de risque CanSHM6 de la meilleure faille d'interface de Cascadia.
+  name: SIM9p0_CascadiaInterfaceBestFault
+  title: Cascadia Interface Best Fault - Magnitude 9.0
+title:
+  en: Seismic Risk
+  fr: Risque sismique

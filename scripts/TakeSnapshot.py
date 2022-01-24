@@ -11,15 +11,12 @@
 import pandas as pd
 import sys
 import configparser
-import argparse
 import os
 from xml.dom import minidom
 import cartopy.crs as ccrs
-import cartopy
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
-import cartopy.feature as cfeature
-import cartopy.io.shapereader as shpreader
+import cartopy.io.img_tiles as cimgt
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import numpy as np
 
@@ -101,7 +98,7 @@ mag = float(NAME[3]+'.'+NAME[5])
 rup = minidom.parse(RUPTUREdir+rupture_model_file)
 hypo = rup.getElementsByTagName('hypocenter')
 lat = hypo[0].attributes['lat'].value
-lon = hypo[0].attributes['lon'].value;
+lon = hypo[0].attributes['lon'].value
 cost = loss['totalLoss'].sum()
 redtag = data['structural~complete'].sum()
 displaced = data['sc_Displ90'].sum()
@@ -118,32 +115,29 @@ except:
 #######################################################################################
 ### GENERATE A MAP
 #######################################################################################
-shpfilename = shpreader.natural_earth(resolution='10m', category='cultural', name='populated_places') #take populated places open data from naturalearthdata.org
-reader = shpreader.Reader(shpfilename)
-xy = [pt.coords[0] for pt in reader.geometries()] #extract lat lon from geometries
-x, y = zip(*xy) 
-name = [pt.attributes['NAME'] for pt in reader.records()] #extract city and country from records
-countries = [pt.attributes['SOV0NAME'] for pt in reader.records()]
-cities = pd.DataFrame(list(zip(name, countries, x, y)), columns = ['City', 'Country', 'Lon', 'Lat'])
-cities = cities[cities['Country'] == 'Canada'].reset_index() #grab Canadian cities
-proj=ccrs.LambertConformal(central_longitude=float(lon), central_latitude=float(lat), standard_parallels=(float(lat), float(lat))) #proj is Lambert Conformal Conic (GSC convention)
+lon, lat = float(lon), float(lat)
+
+extents = [lon - 2, lon + 2, lat - 1.3, lat + 1.3] # Map extents
+request = cimgt.OSM()
+
+# Plot map
 fig = plt.figure(figsize=(5, 5), frameon=True) #figure size
-ax = fig.add_axes([0.08, 0.05, 0.8, 0.94], projection=proj) #add the plot to the figure
-ax.set_extent([float(lon)-3, float(lon)+3, float(lat)-2, float(lat)+2], crs=ccrs.PlateCarree()) #set map extent using latlon (PlateCarree)
-ax.coastlines(resolution='10m') #high resolution coastline
-ax.add_feature(cfeature.LAND, facecolor='darkgrey')
-ax.add_feature(cfeature.OCEAN, facecolor='lightcyan')
-ax.add_feature(cfeature.LAKES, alpha=0.9)  
-ax.add_feature(cfeature.BORDERS, zorder=10)
+
+ax = plt.axes(projection=ccrs.LambertConformal(central_longitude=lon,
+                central_latitude=lat, standard_parallels=(lat, lat))) # Proj is Lambert Conformal Conic (GSC convention)
+
+ax.set_extent(extents) # Set map extent using extents
+ax.add_image(request, 7, interpolation='spline36') # Add image overlay
+
+# Add map features
 gl = ax.gridlines(crs=ccrs.PlateCarree(), x_inline=False, y_inline=False, draw_labels=True,
                   linewidth=1, color='gray', alpha=0.5, linestyle='-')
-gl.xlabels_top = False; gl.xlabels_bottom = True; gl.ylabels_left = False
+gl.top_labels = False
+gl.left_labels = False
 gl.xlocator = mticker.FixedLocator(np.arange(-160, -40, 2).tolist()) #lon gridlines every 2deg
-for i in range(len(cities)):
-    city = cities.iloc[i]
-    txt = ax.text(city.Lon, city.Lat, city.City, ha='center', va='center', transform=ccrs.PlateCarree(), clip_on=True) #BUG. How to make this clipping work?!
+gl.ylocator = mticker.FixedLocator(np.arange(44, 80, 1).tolist()) #lat gridlines every deg
 
-plt.plot(float(lon), float(lat), 35, markersize=6, marker = 'o', color='r', zorder=5)
+plt.plot(lon, lat, 35, markersize=6, marker = 'o', color='r', zorder=5)
 plt.title(NAME)
 plt.savefig(str(FINISHEDdir)+'/'+str(NAME)+'.png')
 #plt.show()
@@ -192,9 +186,9 @@ tectonicRegion = tectregionnames[gsim_logic_tree_file.split('NGASa0p3weights_')[
 
 ### Find scenario source region and determine rate
 if 'Cascadia' in NAME:
-    wRR = 433
+    wRR = [433]
 elif 'LeechRiver' in NAME:
-    wRR = 7500
+    wRR = [7500]
 else:
     filepath = "../../CanadaSHM6/source_summary_csv/simplifiedModel/"
     W = pd.read_csv(filepath+"W_CANADA_UPDATED_simplified_collapsedRates.csv"); W['regWt'] = 1; W['regName'] = 'W'
@@ -258,8 +252,7 @@ else:
 
     # find weighted average between regions
     print("Weighted recurrence rate is "+str(sum(wRR)))
-    wRRprint = sum(wRR) #not sure this always works..
-
+wRRprint = sum(wRR)
 
 # unanswered pieces
 #- is it ok that the regions overlap / choice of buffer?
@@ -272,6 +265,47 @@ else:
 #######################################################################################
 ######## SAVE MARKDOWN
 #######################################################################################
+
+# Function to generate github link and download button markdown
+def link_markdown(link):
+    if link.startswith('../../openquake-inputs'):
+        gh_link = link.replace('../../openquake-inputs', 'https://github.com/OpenDRR/openquake-inputs/blob/main')
+        display_link = link.replace('../', '', 2)
+    elif link.startswith('../../CanadaSHM6'):
+        gh_link = link.replace('../../CanadaSHM6', 'https://github.com/OpenDRR/CanadaSHM6/blob/master')
+        display_link = link.replace('../', '', 2)
+    elif link.startswith('../'):
+        gh_link = link.replace('..', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master', 1)
+        display_link = link.replace('../', '', 1)
+    elif link.startswith('.'):
+        gh_link = link.replace('.', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED', 1)
+        display_link = link.replace('./', '', 1)
+    download_link = gh_link.replace('blob', 'raw', 1)
+    # Markdown for link - [link text](link url)
+    md_link = f'[{display_link}]({gh_link})'
+    # HTML button for download link
+    button = f'[<kbd>Download</kbd>]({download_link})'
+    return md_link + '<br/>' + button
+
+
+# Generate markdown for all files
+sh_file = link_markdown(shakename)
+db_file = link_markdown(dmg_basename)
+dr_file = link_markdown(dmg_retroname)
+cb_file = link_markdown(cons_basename)
+cr_file = link_markdown(cons_retroname)
+lb_file = link_markdown(loss_basename)
+lr_file = link_markdown(loss_retroname)
+sm_file = link_markdown(site_model_file)
+rm_file = link_markdown(rupture_model_file)
+gl_tree_file = link_markdown(gsim_logic_tree_file)
+ex_file = link_markdown(exposure_file)
+tmb_file = link_markdown(taxonomy_mapping_baseline)
+sf_file = link_markdown(structural_fragility_file)
+sv_file = link_markdown(structural_vulnerability_file)
+nv_file = link_markdown(nonstructural_vulnerability_file)
+cv_file = link_markdown(contents_vulnerability_file)
+
 metadata = {
     "magnitude": mag,
     "latitude": '{0:.3f} degrees'.format(float(lat)),
@@ -286,26 +320,26 @@ metadata = {
     "critical_injuries_and_entrapments": '{0:,.0f} people'.format(critical),
     "all_hospitalizations": '{0:,.0f} people'.format(hospital),
     "epicentre_map": '![Epicentre]({}.png)'.format(NAME),
-    "shakemap_file": shakename,
-    "damage_baseline_file": dmg_basename,
-    "damage_retrofitted_file": dmg_retroname,
-    "consequence_baseline_file": cons_basename,
-    "consequence_retrofitted_file": cons_retroname,
-    "loss_baseline_file": loss_basename,
-    "loss_retrofitted_file": loss_retroname,
-    "site_model_file": site_model_file,
-    "rupture_model_file": rupture_model_file,
+    "shakemap_file": sh_file,
+    "damage_baseline_file": db_file,
+    "damage_retrofitted_file": dr_file,
+    "consequence_baseline_file": cb_file,
+    "consequence_retrofitted_file": cr_file,
+    "loss_baseline_file": lb_file,
+    "loss_retrofitted_file": lr_file,
+    "site_model_file": sm_file,
+    "rupture_model_file": rm_file,
     "rupture_mesh_spacing": rupture_mesh_spacing,
-    "gsim_logic_tree_file": gsim_logic_tree_file,
+    "gsim_logic_tree_file": gl_tree_file,
     "truncation_level_risk": truncation_level_risk,
     "maximum_distance": maximum_distance,
     "number_of_ground_motion_fields_risk": number_of_ground_motion_fields_risk,
-    "exposure_file": exposure_file,
-    "taxonomy_mapping_baseline": taxonomy_mapping_baseline,
-    "structural_fragility_file": structural_fragility_file,
-    "structural_vulnerability_file": structural_vulnerability_file,
-    "nonstructural_vulnerability_file": nonstructural_vulnerability_file,
-    "contents_vulnerability_file": contents_vulnerability_file,
+    "exposure_file": ex_file,
+    "taxonomy_mapping_baseline": tmb_file,
+    "structural_fragility_file": sf_file,
+    "structural_vulnerability_file": sv_file,
+    "nonstructural_vulnerability_file": nv_file,
+    "contents_vulnerability_file": cv_file,
     "description": description
 }
 
@@ -316,18 +350,9 @@ pd.options.display.max_colwidth = 200
 with open(md_file, 'w') as f:
     f.write(
         df.to_markdown(index=False)
-    )
+    )    
 
 
-
-    
-
-    
-
-    
-    
-    
-    
 ################################################## OLD SCRAPS
 
 # Print statements

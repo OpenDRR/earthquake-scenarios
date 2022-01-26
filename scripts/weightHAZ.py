@@ -53,7 +53,7 @@ else:
 # LOAD DATA
 rlz = pd.read_csv(rlzCheck)
 numRlz = rlz['rlz_id'].count()
-data = pd.read_csv(nameCheck, skiprows=1, thousands=',')
+data = pd.read_csv(nameCheck, thousands=',')
 numEvents = (data['event_id'].unique().max())+1
 data['rlz'] = numRlz*np.divide(data['event_id'],numEvents)
 data['rlz'] = data['rlz'].apply(np.floor)

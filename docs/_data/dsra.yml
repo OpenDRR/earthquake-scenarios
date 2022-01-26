@@ -4,19 +4,31 @@ collection:
 id: dsra_bc_indicators
 scenarios:
 - description:
-    en: Magnitude 7.3 scenario based on complete rupture of the CanSHM6 Hazard Model
-      implementation of the Leech River Full Fault.
+    en: Georgia Strait Rupture Scenarios using the 1997 Georgia Strait earthquake hypocentre and fault plane geometry from Cassidy, Rogers, & Waldhauser (2000, BSSA).
+      These scenarios use a mapped crustal marine fault near Vancouver, but consider larger magnitude events than those that have been observed to date for that location.
+      Maximum magnitude (7.5) is obtained from CanSHM6 for PUGET SOUND SHALLOW.
+    fr: Scénarios de rupture dans le détroit de Georgia utilisant l'hypocentre du séisme de 1997 dans le détroit de Georgia et la géométrie du plan de faille de Cassidy, Rogers et Waldhauser (2000, BSSA). Ces scénarios utilisent une faille marine crustale cartographiée près de Vancouver, mais considèrent des événements de plus grande magnitude que ceux qui ont été observés à ce jour pour cet endroit. La magnitude maximale (7,5) est obtenue de CanSHM6 pour PUGET SOUND SHALLOW.
+  name: ACM7p0_GeorgiaStraitFault
+  title: Georgia Strait Fault - Magnitude 7.0
+- description:
+    en: Magnitude 7.3 scenario based on complete rupture of the CanSHM6 Hazard Model implementation of the Leech River Full Fault.
     fr: Scénario de magnitude 7,3 basé sur une rupture complète de la mise en œuvre du modèle de risque CanSHM6 de la faille complète de Leech River.
   name: ACM7p3_LeechRiverFullFault
   title: Leech River Full Fault - Magnitude 7.3
 - description:
     en: Evaluating impact of increasing magnitude using the 2015 Mw 4.7 Sidney, BC,
       Earthquake hypocentre. More info at https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
-      - Strike selected to approximately parallel the strike of the subducting slab
-      for this deep intraslab extensional event.
+      - Strike selected to approximately parallel the strike of the subducting slab for this deep intraslab extensional event.
     fr: Évaluation de l'impact de l'augmentation de la magnitude à l'aide de l'hypocentre du tremblement de terre de 2015 Mw 4,7 de Sidney, en Colombie-Britannique. Plus d'informations sur https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php - La direction choisie est approximativement parallèle à la direction de la dalle subductrice. pour cet événement d'extension intraslab profond.
   name: IDM7p1_Sidney
   title: Sidney - Magnitude 7.1
+- description:
+    en: Ottawa planning scenario using the 2010 Val-de-bois, QC earthquake hypocentre and fault plane geometry from Ma & Motazedian, 2012 and Atkinson & Assatourians, 2010.
+      This scenario uses a larger magnitude event than those that have been observed to date for that location, within bounds of the national seismic hazard model.
+      Maximum magnitude of 7.95 is obtained from CanSHM6 for GATINEAU region.
+    fr: Scénario de planification pour Ottawa utilisant la géométrie de l'hypocentre et du plan de faille du tremblement de terre de 2010 à Val-de-bois, QC, d'après Ma & Motazedian, 2012 et Atkinson & Assatourians, 2010. Ce scénario utilise un événement de plus grande magnitude que ceux qui ont été observés à ce jour pour cet endroit, dans les limites du modèle national d'aléa sismique. La magnitude maximale de 7,95 est obtenue de CanSHM6 pour la région de la GATINEAU.
+  name: SCM7p5_ValDesBois
+  title: Val Des Bois - Magnitude 7.5
 - description:
     en: Magnitude 9.0 scenario based on complete rupture of the CanSHM6 Hazard Model implementation of the Cascadia Interface Best Fault.
     fr: Scénario de magnitude 9.0 basé sur la rupture complète de l'implémentation du modèle de risque CanSHM6 de la meilleure faille d'interface de Cascadia.

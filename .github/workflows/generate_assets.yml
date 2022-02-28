@@ -1,9 +1,9 @@
 name: Create release assets
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    branches:
+      - master
   release:
     types: [released]
   workflow_dispatch:

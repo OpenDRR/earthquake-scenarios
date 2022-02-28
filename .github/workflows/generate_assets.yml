@@ -1,8 +1,11 @@
 name: Create release assets
 
-on: 
+on:
+  pull_request:
+    types:
+      - closed
   release:
-    types: [created]
+    types: [released]
   workflow_dispatch:
 
 jobs:
@@ -19,4 +22,4 @@ jobs:
           files: 'FINISHED/geopackages/*;FINISHED/*.csv'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           # To add assets to an existing release, use below line with release tag, then run action from actions page
-          #release-tag: v1.0
+          release-tag: v1.1.0

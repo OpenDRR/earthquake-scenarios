@@ -144,13 +144,18 @@ breadcrumbs:
                   <td><a href="https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_{{ scenario.name | downcase }}_indicators_s?lang=fr-CA" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>-->
               <tr>
-                  <td>{{ scenario.title }} (Points)</td>
+                  <td>{{ scenario.title }} (Bâtiments agrégés)</td>
                   <td class="hidden-xs">Dataset</td>
                   <td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_b.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
               <tr>
-                  <td>{{ scenario.title }} (Polygons)</td>
+                  <td>{{ scenario.title }} (Subdivision du recensement)</td>
+                  <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
+                  <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_csd.zip" class="btn btn-primary">{{ btntxt }}</a></td>
+              </tr>
+              <tr>
+                  <td>{{ scenario.title }} (Zone de peuplement)</td>
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_s.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>

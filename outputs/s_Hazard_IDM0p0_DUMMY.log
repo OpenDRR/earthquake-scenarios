@@ -1,0 +1,28 @@
+[2022-03-10 16:13:57 #136 INFO] thobbs running /Users/thobbs/Documents/GitHub/earthquake-scenarios/initializations/s_Hazard_IDM0p0_DUMMY.ini [--hc=None]
+[2022-03-10 16:13:57 #136 INFO] Using engine version 3.11.3-git0cccb86798
+[2022-03-10 16:13:57 #136 WARNING] Version v3.11.5 of the engine is available, but you are still using version 3.11.3-git0cccb86798
+[2022-03-10 16:13:57 #136 WARNING] Using 16 cores on L-VAN-AC02ZW7L4MD6N.local
+[2022-03-10 16:13:57 #136 INFO] Checksum of the input files: 2560874398
+[2022-03-10 16:13:57 #136 INFO] Reading the risk model if present
+[2022-03-10 16:13:57 #136 INFO] Extracting the hazard sites from the site model
+[2022-03-10 16:13:58 #136 INFO] Read N=136702 hazard sites and L=4 hazard levels
+[2022-03-10 16:13:59 #136 INFO] gzipping the input files
+[2022-03-10 16:13:59 #136 INFO] minimum_intensity={}
+[2022-03-10 16:13:59 #136 INFO] There are 4 realization(s)
+[2022-03-10 16:13:59 #136 INFO] Reordering the ruptures and storing the events
+[2022-03-10 16:13:59 #136 INFO] Associating event_id -> rlz_id for 4 events and 1 ruptures
+[2022-03-10 16:13:59 #136 INFO] Reading 1 ruptures
+[2022-03-10 16:14:00 #136 INFO] compute_gmfs 100% [1 submitted, 0 queued]
+[2022-03-10 16:14:00 #136 INFO] Received {'gmfdata': '906.72 KB', 'sig_eps': '637 B', 'times': '317 B', 'hcurves': '5 B'} in 0 seconds
+[2022-03-10 16:14:00 #136 INFO] Stored 1.11 MB of GMFs
+[2022-03-10 16:14:02 #136 INFO] Checking seed dependency
+[2022-03-10 16:14:02 #136 WARNING] Your results are expected to have a large dependency from ses_seed
+[2022-03-10 16:14:02 #136 INFO] Exposing the outputs to the database
+[2022-03-10 16:14:02 #136 INFO] Stored 18.3 MB on /Users/thobbs/oqdata/calc_136.hdf5 in 4 seconds
+[2022-03-10 16:14:02 #136 INFO] Stopping the workers
+  id | name
+ 766 | Events
+ 767 | Full Report
+ 768 | Ground Motion Fields
+ 769 | Input Files
+ 770 | Realizations

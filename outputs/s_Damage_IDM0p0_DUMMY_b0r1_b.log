@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/thobbs/openquake/bin/oq", line 33, in <module>
+    sys.exit(load_entry_point('openquake.engine', 'console_scripts', 'oq')())
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/commands/__main__.py", line 44, in oq
+    sap.run(commands, prog='oq')
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/baselib/sap.py", line 225, in run
+    return _run(parser(funcdict, **parserkw), argv)
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/baselib/sap.py", line 216, in _run
+    return func(**dic)
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/commands/engine.py", line 164, in main
+    run_jobs(job_inis, log_level, log_file, exports, **pars)
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/engine/engine.py", line 354, in run_jobs
+    jobs = create_jobs(job_inis, loglvl, kw)  # inizialize the logs
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/engine/engine.py", line 313, in create_jobs
+    dic = readinput.get_params(job_ini, kw)
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/commonlib/readinput.py", line 248, in get_params
+    _update(params, cp.items(sect), base_path)
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/commonlib/readinput.py", line 180, in _update
+    input_type, fnames = normalize(key, value.split(), base_path)
+  File "/Users/thobbs/Documents/GitHub/oq-engine/openquake/commonlib/readinput.py", line 172, in normalize
+    raise OSError('No such file: %s' % val)
+OSError: No such file: /Users/thobbs/Documents/openquake-inputs/exposure/general-building-stock/oqBldgExp_BC.xml

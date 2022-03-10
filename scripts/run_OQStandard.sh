@@ -18,8 +18,7 @@ USAGE: run_OQStandard.sh NAME [-h -d -r -[b/o] -[s] -[l]]
         -b [b]aseline condition
         -o baseline + [o]ne extra retrofit (level r1)
         -t run retrofit level [t]wo (r2)
-	    -s ini files call a site level exposure file, else default is building level
-        -l run using personal laptop (not AWS)
+	   -s ini files call a site level exposure file, else default is building level
     EXAMPLE 1: run_OQStandard.sh AFM7p3_GSM
     EXAMPLE 2: run_OQStandard.sh AFM7p3_GSM -d -b
 
@@ -75,7 +74,7 @@ else
 		        EXPO='s'
 		        ;;
             -l )
-                LAPTOP='True'
+                LAPTOP='True' #Took laptop flag out of usage statement
                 ;;
         esac; shift; done
     fi
@@ -89,16 +88,18 @@ mkdir -p ./${OUTDIR}/
 echo "Outputs will be placed in '${OUTDIR}'"
 JOBDIR="initializations"
 #JOBDIR="job-files"
+SCRIPTS_LOC="scripts"
+CONSQ_LOC=${SCRIPTS_LOC}"/consequences-v3.10.0.py"
 
-if [[ $LAPTOP == 'True' ]]; then
-    SCRIPTS_LOC="/Users/thobbs/Documents/GitHub/earthquake-scenarios/scripts/"
-    CONSQ_LOC=${SCRIPTS_LOC}"consequences-v3.10.0_Laptop.py"
-else
-    SCRIPTS_LOC="/mnt/storage/earthquake-scenarios/scripts/"
-    CONSQ_LOC=${SCRIPTS_LOC}"consequences-v3.10.0.py"
-fi
-AVGHAZLOC=${SCRIPTS_LOC}"weightHAZ.py"
-AVG_LOC=${SCRIPTS_LOC}"weightedAverage.py"
+#if [[ $LAPTOP == 'True' ]]; then
+#    SCRIPTS_LOC="/Users/thobbs/Documents/GitHub/earthquake-scenarios/scripts"
+#    CONSQ_LOC=${SCRIPTS_LOC}"/consequences-v3.10.0_Laptop.py"
+#else
+#    SCRIPTS_LOC="/mnt/storage/earthquake-scenarios/scripts"
+#    CONSQ_LOC=${SCRIPTS_LOC}"/consequences-v3.10.0.py"
+#fi
+AVGHAZLOC=${SCRIPTS_LOC}"/weightHAZ.py"
+AVG_LOC=${SCRIPTS_LOC}"/weightedAverage.py"
 
 if [[ $HAZFLAG == "1" ]]; then 
     echo "Preparing to run a hazard calculation."
@@ -151,7 +152,7 @@ if [[ $HAZFLAG == "1" ]]; then
     echo "------------------------------------------------"
     echo "RUNNING HAZARD CALCULATION"
     echo "------------------------------------------------"
-    oq engine --run ${JOBDIR}/s_Hazard_${NAME}.ini &> ./${OUTDIR}/s_Hazard_${NAME}.log;
+    #oq engine --run ${JOBDIR}/s_Hazard_${NAME}.ini &> ./${OUTDIR}/s_Hazard_${NAME}.log;
     oq export gmf_data -1 -e csv -d temp
     CALCID=`basename temp/*gmf* .csv | awk -F'_' '{print $NF}'`
     python3 $AVGHAZLOC $NAME $CALCID

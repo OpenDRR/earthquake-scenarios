@@ -155,7 +155,7 @@ crossorigin=""></script>
       });
 
       // Add a popup with desired property
-      L.popup().setContent( "<strong>Personnes déplacées après 90 jours: </strong>" + e.layer.properties.sCt_Res90_b0.toString() )
+      L.popup().setContent( "<strong>Residents affected after 90 days: </strong>" + e.layer.properties.sCt_Res90_b0.toString() )
           .setLatLng( e.latlng )
           .openOn( map );
 

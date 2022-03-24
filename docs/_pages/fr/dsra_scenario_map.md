@@ -134,11 +134,12 @@ crossorigin=""></script>
 
     var sauidLayer = L.vectorGrid.protobuf( vectorUrl, vectorTileOptions ).addTo( map );
 
+    buildLegend();
+
     map.on( 'fullscreenchange', function () {
       map.invalidateSize();
     })
   
-
     sauidLayer.on( 'click', function ( e ) {
       // if we have a selected feature reset the style
       if ( selection != 0 ) {
@@ -152,6 +153,11 @@ crossorigin=""></script>
       setTimeout( function () {
         sauidLayer.setFeatureStyle( selection, selectedStyle(), 100 );
       });
+
+      // Add a popup with desired property
+      L.popup().setContent( "<strong>Personnes déplacées après 90 jours: </strong>" + e.layer.properties.sCt_Res90_b0.toString() )
+          .setLatLng( e.latlng )
+          .openOn( map );
 
       let props = e.layer.properties,
         string = '<table class="table table-striped table-responsive"><tr>',
@@ -222,7 +228,7 @@ crossorigin=""></script>
       }
       string += '</tr></table>';
       // Add table to sidebar div
-      $( '#sidebar' ).html( '<h3>Properties of Selected Feature</h3>' + string );
+      $( '#sidebar' ).html( '<h3>Propriétés de la caractéristique sélectionnée</h3>' + string );
 
     });
   }
@@ -238,23 +244,27 @@ crossorigin=""></script>
                   '#fff176';
   }
 
-  legend.onAdd = function ( map ) {
+  function buildLegend () {
+    legend.onAdd = function ( map ) {
 
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 10, 50, 100, 300],
-        label = ' Personnes déplacées';
+      var div = L.DomUtil.create('div', 'info legend'),
+          grades = [0, 10, 50, 100, 300],
+          label = ' Personnes déplacées';
 
-    div.innerHTML = "<div style=\"padding: 3px;\"><b>Personnes déplacées après 90 jours</b></div>";
+      div.innerHTML = "<div style=\"padding: 3px;\"><b>Personnes déplacées après 90 jours</b></div>";
 
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++ ) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + ( grades[i + 1] ? '&ndash;' + grades[i + 1] + label + '<br>' : '+' + label);
-    }
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++ ) {
+          div.innerHTML +=
+              '<i style="background:' + getColor( grades[i] + 1 ) + '"></i> ' +
+              grades[i] + ( grades[i + 1] ? '&ndash;' + grades[i + 1] + label + '<br>' : '+' + label);
+      }
 
-    return div;
-  };
+      return div;
+    };
+
+    legend.addTo( map );
+  }
   
   function setBounds() {
     if ( lcScenario == "acm7p0_georgiastraitfault" ) {
@@ -296,7 +306,7 @@ crossorigin=""></script>
       fillColor: getColor( properties[ scenarioProp ] ),
       fillOpacity: 0.6,
       fill: true
-    }
+    };
   }
 
   function setTileLayerStyles() {
@@ -305,35 +315,35 @@ crossorigin=""></script>
         dsra_acm7p0_georgiastraitfault_indicators_s: function ( properties ) {
           return tileStyle( properties );
         }
-      }
+      };
     }
     else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
       return {
         dsra_acm7p3_leechriverfullfault_indicators_s: function ( properties ) {
           return tileStyle( properties );
         }
-      }
+      };
     }
     else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
       return {
         dsra_sim9p0_cascadiainterfacebestfault_indicators_s: function ( properties ) {
           return tileStyle( properties );
         }
-      }
+      };
     }
     else if ( lcScenario == "scm7p5_valdesbois" ) {
       return {
         dsra_scm7p5_valdesbois_indicators_s: function ( properties ) {
           return tileStyle( properties );
         }
-      }
+      };
     }
     else if ( lcScenario == "idm7p1_sidney" ) {
       return {
         dsra_idm7p1_sidney_indicators_s: function ( properties ) {
           return tileStyle( properties );
         }
-      }
+      };
     }
   }
 

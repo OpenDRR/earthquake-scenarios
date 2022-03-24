@@ -134,10 +134,11 @@ crossorigin=""></script>
 
     var sauidLayer = L.vectorGrid.protobuf( vectorUrl, vectorTileOptions ).addTo( map );
 
+    buildLegend();
+
     map.on( 'fullscreenchange', function () {
       map.invalidateSize();
     })
-  
 
     sauidLayer.on( 'click', function ( e ) {
       // if we have a selected feature reset the style
@@ -152,6 +153,11 @@ crossorigin=""></script>
       setTimeout( function () {
         sauidLayer.setFeatureStyle( selection, selectedStyle(), 100 );
       });
+
+      // Add a popup with desired property
+      L.popup().setContent( "<strong>Personnes déplacées après 90 jours: </strong>" + e.layer.properties.sCt_Res90_b0.toString() )
+          .setLatLng( e.latlng )
+          .openOn( map );
 
       let props = e.layer.properties,
         string = '<table class="table table-striped table-responsive"><tr>',
@@ -238,23 +244,27 @@ crossorigin=""></script>
                   '#fff176';
   }
 
-  legend.onAdd = function ( map ) {
+  function buildLegend () {
+    legend.onAdd = function ( map ) {
 
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 10, 50, 100, 300],
-        label = ' People Affected';
+      var div = L.DomUtil.create('div', 'info legend'),
+          grades = [0, 10, 50, 100, 300],
+          label = ' People Affected';
 
-    div.innerHTML = "<div style=\"padding: 3px;\"><b>People affected after 90 days</b></div>";
+      div.innerHTML = "<div style=\"padding: 3px;\"><b>People affected after 90 days</b></div>";
 
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++ ) {
-      div.innerHTML +=
-        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-        grades[i] + ( grades[i + 1] ? '&ndash;' + grades[i + 1] + label + '<br>' : '+' + label);
-    }
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++ ) {
+          div.innerHTML +=
+              '<i style="background:' + getColor( grades[i] + 1 ) + '"></i> ' +
+              grades[i] + ( grades[i + 1] ? '&ndash;' + grades[i + 1] + label + '<br>' : '+' + label);
+      }
 
-    return div;
-  };
+      return div;
+    };
+
+    legend.addTo( map );
+  }
 
   function setBounds() {
     if ( lcScenario == "acm7p0_georgiastraitfault" ) {

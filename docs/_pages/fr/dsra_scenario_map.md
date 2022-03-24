@@ -1,7 +1,7 @@
 ---
 authorName: Natural Resources Canada
 authorUrl:
-dateModified: 2021-07-26
+dateModified: 2022-03-24
 noContentTitle: true
 pageclass: wb-prettify all-pre
 subject:
@@ -41,6 +41,7 @@ crossorigin=""></script>
 
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet'/>
+<script src="https://unpkg.com/leaflet.vectorgrid@latest/dist/Leaflet.VectorGrid.bundled.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -75,35 +76,40 @@ crossorigin=""></script>
 
   var map = L.map( 'map', {
     fullscreenControl: true,
-    center: [ 57, -100 ],
-    zoom: 4}),
+    center: [ 49.2576508,-123.2639868 ],
+    maxZoom: 15,
+    minZoom: 7,
+    zoom: 8}),
+    bounds, // Bounds of the tileset, set according to scenario
     legend = L.control( { position: 'bottomright' } ),
-    params = new URLSearchParams(window.location.search), // Get query paramaters
-    baseUrl = "https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_",
+    params = new URLSearchParams( window.location.search ), // Get query paramaters
+    baseUrl = "https://riskprofiler.ca/dsra_",
     eqScenario = params.get( 'scenario' ), // Scenario name
-    featureProperties = 'csduid,sCt_Res90_b0', // Limit fetched properties for performance
     scenarioProp = 'sCt_Res90_b0', // Property for popup and feature colour
-    limit = 10,
-    lastZoom = -1,
-    selection;
+    selection = 0; // Id of a selected feature
     
 
   L.tileLayer( '//{s}.tile.osm.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    detectRetina: true
 	}).addTo( map );
 
-  const geojsonLayer = L.geoJSON([], {
-        style: featureStyle,
-        onEachFeature: geoJsonOnEachFeature
-      }).addTo( map );
-
+  
   if ( eqScenario ) {
 
-    $("#scenarios").hide();
+    $( "#scenarios" ).hide(); // Hide list of available scenarios
+    lcScenario = eqScenario.toLowerCase();
 
-    var scenario = eqScenario.toLowerCase(); // API uses lowercase
-      geojsonUrl = baseUrl + scenario + "_indicators_csd/items?lang=en_US&f=json&limit=" + limit  + '&properties=' + featureProperties,
-      featureUrl = baseUrl + scenario + "_indicators_csd/items/";
+    setBounds();
+    var vectorTileOptions = {
+      rendererFactory: L.canvas.tile,
+      interactive: true,
+      getFeatureId: function(feature) {
+        return feature.properties[ "Sauid" ];
+      },
+      bounds: bounds,
+      vectorTileLayerStyles: setTileLayerStyles()
+    }
 
     // Turn scenario name into a title
     end = eqScenario.split( '_' )[ 1 ];
@@ -124,217 +130,112 @@ crossorigin=""></script>
     // Replace generic title with scenario name
     $( '#wb-cont' ).html( full_name );
 
-    // Add progress modal to map before fetching geoJSON
-    $( '#map' ).before( '<div id="modal"></div>' );
-    getData( geojsonUrl );
+    var vectorUrl = baseUrl + lcScenario + "_indicators_s/EPSG_900913/{z}/{x}/{y}.pbf";
+
+    var sauidLayer = L.vectorGrid.protobuf( vectorUrl, vectorTileOptions ).addTo( map );
 
     map.on( 'fullscreenchange', function () {
       map.invalidateSize();
-    }).on( 'zoomend dragend', function ( e ) {
-      
-      zoom = e.target.getZoom();
-
-      if ( zoom > 10 ) {
-        
-        $( '#sidebar' ).html( '' );
-        geojsonLayer.clearLayers();
-
-        var bounds = map.getBounds(),
-            bbox = [
-              bounds.getSouthWest().lng,
-              bounds.getSouthWest().lat,
-              bounds.getNorthEast().lng,
-              bounds.getNorthEast().lat,
-            ];
-
-        limit = 500;
-        featureProperties = 'Sauid,sCt_Res90_b0';
-        geojsonUrl = baseUrl + scenario + "_indicators_s/items?&limit=" + limit  + '&properties=' + featureProperties + '&bbox=' + bbox,
-        featureUrl = baseUrl + scenario + "_indicators_s/items/"
-
-        $( '#map' ).before( '<div id="modal"></div>' );
-        getData( geojsonUrl );
-
-      }
-      else if ( lastZoom > 10 ) {
-
-        $( '#sidebar' ).html( '' );
-        geojsonLayer.clearLayers();
-
-        limit = 10;
-        featureProperties = 'csduid,sCt_Res90_b0';
-        geojsonUrl = baseUrl + scenario + "_indicators_csd/items?lang=en_US&f=json&limit=" + limit  + '&properties=' + featureProperties,
-        featureUrl = baseUrl + scenario + "_indicators_csd/items/"
-
-        $( '#map' ).before( '<div id="modal"></div>' );
-        getData( geojsonUrl );
-
-      }
-
-      lastZoom = zoom;
-
-    });
-  }
-  
-  // Get all geoJSON for scenario
-  function getData( url ) {
-    
-    var nxt_lnk;
-
-    $.getJSON( url, function ( data ) {
-      
-      geojsonLayer.addData( data );
-
-      for ( var l in data.links ) {
-        lnk = data.links[ l ];
-        if ( lnk.rel == 'next' ) {
-          nxt_lnk = lnk.href;
-          break;
-        }
-      }
-      
-      // if next link continue loading data
-      if ( nxt_lnk ) {
-        getData( nxt_lnk );
-      } else {
-        // set map bounds to frame loaded features on first load
-        if ( lastZoom == -1 ) {
-          map.fitBounds(geojsonLayer.getBounds());
-        }
-        // done with paging so remove progress
-        $( '#modal' ).remove();
-        // Add legend
-        legend.addTo( map );
-      }
     })
-    .fail( function ( jqXHR, error ) {
-      $( '#alert' ).show();
-      $( '#modal' ).remove();
-      $( '#scenarios' ).show();
+  
+
+    sauidLayer.on( 'click', function ( e ) {
+      // if we have a selected feature reset the style
+      if ( selection != 0 ) {
+        sauidLayer.resetFeatureStyle( selection );
+      }
+
+      // set the selected feature id
+      selection = e.layer.properties[ 'Sauid' ];
+
+      // set the selected feature style
+      setTimeout( function () {
+        sauidLayer.setFeatureStyle( selection, selectedStyle(), 100 );
+      });
+
+      let props = e.layer.properties,
+        string = '<table class="table table-striped table-responsive"><tr>',
+        counter = 1; // Counts number of cells in table row
+
+      for ( const key in props ) {
+
+        mod_key = key; // Key with _b0, _r1, _le ending must be modified
+        mod = '';
+
+        if ( key.slice( -3 ) === '_b0' ) {
+          mod_key = key.slice( 0, -3 );
+          mod = ' (Baseline)';
+        }
+        else if ( key.slice( -3 ) === '_r1' ) {
+          mod_key = key.slice( 0, -3 );
+          mod = ' (Retrofit)';
+        }
+        else if ( key.slice( -3 ) === '_le' ) {
+          mod_key = key.slice( 0, -3 );
+          mod = ' (Seismic Upgrade)';
+        }
+
+        desc = window[ mod_key + 'Desc' ];
+        detail = window[ mod_key + 'Detail' ];
+        format = window[ mod_key + 'Format' ];
+        value = props[ key ];
+
+        if ( format && value ) { // Format values with set formatting
+          if ( format === 444 ) {
+            value = value.toLocaleString( undefined, {style:'currency', currency:'USD'});
+          }
+          else if ( format === 111 ) {
+            value = value.toLocaleString( undefined, { maximumFractionDigits: 0 })
+          }
+          else if ( format === 555 ) {
+            value *= 100
+            value = value.toLocaleString( undefined, { maximumFractionDigits: 2 });
+            value += '%';
+          }
+          else if ( format < 0 ) {
+            mult = Math.abs(format);
+            rounded = Math.round( value / ( 10 ** mult )) * 10 ** mult;
+            value = rounded.toLocaleString( undefined);
+          }
+          else if ( format > 0 ) {
+            value = value.toLocaleString( undefined, { maximumFractionDigits: format });
+          }
+
+          string +=
+          '<td class="attr"><div class="prop" title="' + detail + '">' + desc + mod + '</div><div class="val">' + value + '</div></td>';
+        }
+        // Leaflet info not displayed
+        else if ( key === 'OBJECTID' || key === 'SHAPE_Length' || key === 'SHAPE_Area' || key === 'geom_poly' || key === 'geom' ) {
+        }
+        else if ( desc ) { // For properties with descriptions but null values
+          string +=
+            '<td class="attr"><div class="prop" title="' + detail + '">' + desc + mod + '</div><div class="val">' + value + '</div></td>';
+        }
+        else { // Properties with no descriptions
+          string +=
+            '<td class="attr"><div class="prop">' + key + '</div><div class="val">' + value + '</div></td>';
+        }
+        if ( counter % 3 === 0 ) {
+          string += '</tr><tr>';
+        }
+        counter++;
+      }
+      string += '</tr></table>';
+      // Add table to sidebar div
+      $( '#sidebar' ).html( '<h3>Properties of Selected Feature</h3>' + string );
+
     });
   }
-
-  // Handles events for each feature
-  function geoJsonOnEachFeature( feature, layer ){
-    layer.bindPopup( function ( e ) {
-      return L.Util.template( '<p>Residents displaced after 90 days: <strong>' + e.feature.properties.sCt_Res90_b0.toLocaleString( undefined, { maximumFractionDigits: 0 }) + '</strong></p>' );
-    }).on({
-      click: function( e ) {
-        if ( selection ) {
-          // reset style of previously selected feature
-          selection.setStyle(featureStyle(selection.feature));
-          $( '#sidebar' ).html( '' );
-        }
-        selection = e.target;
-        selection.setStyle(selectedStyle());
-
-        // Get geoJSON of selected feature
-        $.ajax({
-          method: "GET",
-          tryCount : 0,
-          retryLimit : 3,
-          crossDomain: true,
-          url: featureUrl +  selection.feature.id,
-          headers: { "content-type": "application/json" }
-        })
-
-        // Displays properties of selection in a table
-        .done( function ( resp ) {
-
-          let props = resp.properties,
-             string = '<table class="table table-striped table-responsive"><tr>';
-
-          counter = 1; // Counts number of cells in table row
-
-          for ( const key in props ) {
-
-            mod_key = key; // Key with _b0, _r1, _le ending must be modified
-            mod = '';
-
-            if ( key.slice( -3 ) === '_b0' ) {
-              mod_key = key.slice( 0, -3 );
-              mod = ' (référence)';
-            }
-            else if ( key.slice( -3 ) === '_r1' ) {
-              mod_key = key.slice( 0, -3 );
-              mod = ' (rénovation)';
-            }
-            else if ( key.slice( -3 ) === '_le' ) {
-              mod_key = key.slice( 0, -3 );
-              mod = ' (Seismic Upgrade)';
-            }
-
-            desc = window[ mod_key + 'Desc' ];
-            detail = window[ mod_key + 'Detail' ];
-            format = window[ mod_key + 'Format' ];
-            value = props[ key ];
-
-            if ( format && value ) { // Format values with set formatting
-                if ( format === 444 ) {
-                  value = value.toLocaleString( undefined, {style:'currency', currency:'USD'});
-                }
-                else if ( format === 111 ) {
-                  value = value.toLocaleString( undefined, { maximumFractionDigits: 0 })
-                }
-                else if ( format === 555 ) {
-                  value *= 100
-                  value = value.toLocaleString( undefined, { maximumFractionDigits: 2 });
-                  value += '%';
-                }
-                else if ( format < 0 ) {
-                  mult = Math.abs(format);
-                  rounded = Math.round( value / ( 10 ** mult )) * 10 ** mult;
-                  value = rounded.toLocaleString( undefined);
-                }
-                else if ( format > 0 ) {
-                  value = value.toLocaleString( undefined, { maximumFractionDigits: format });
-                }
-
-                string +=
-                '<td class="attr"><div class="prop" title="' + detail + '">' + desc + mod + '</div><div class="val">' + value + '</div></td>';
-              }
-            // Leaflet info not displayed
-            else if ( key === 'OBJECTID' || key === 'SHAPE_Length' || key === 'SHAPE_Area' || key === 'geom_poly' || key === 'geom' ) {
-            }
-            else if ( desc ) { // For properties with descriptions but null values
-              string +=
-                '<td class="attr"><div class="prop" title="' + detail + '">' + desc + mod + '</div><div class="val">' + value + '</div></td>';
-            }
-            else { // Properties with no descriptions
-              string +=
-                '<td class="attr"><div class="prop">' + key + '</div><div class="val">' + value + '</div></td>';
-            }
-            if ( counter % 3 === 0 ) {
-                string += '</tr><tr>';
-              }
-            counter++;
-          }
-          string += '</tr></table>';
-          // Add table to sidebar div
-          $( '#sidebar' ).html( '<h3>Properties of Selected Feature</h3>' + string );
-        })
-
-        .fail( function ( error ) {
-        this.tryCount++;
-        if ( this.tryCount <= this.retryLimit ) {
-            //try again
-            $.ajax( this );
-            return;
-        }   
-        console.log( "Doh! " + error )    
-        return;
-        
-        });
-      }
-    });
-  };
+  else {
+    $( '#alert' ).show();
+  }
 
   function getColor( d ) {
-      return d > 300  ? '#ff3b00' :
-          d > 100   ? '#ff6500' :
-          d > 50   ? '#ff9000' :
-          d > 10   ? '#ffba00' :
-                      '#fff176';
+    return d > 300  ? '#ff3b00' :
+      d > 100   ? '#ff6500' :
+      d > 50   ? '#ff9000' :
+      d > 10   ? '#ffba00' :
+                  '#fff176';
   }
 
   legend.onAdd = function ( map ) {
@@ -355,22 +256,94 @@ crossorigin=""></script>
     return div;
   };
   
-  function featureStyle( feature ) {
+  function setBounds() {
+    if ( lcScenario == "acm7p0_georgiastraitfault" ) {
+      southWest = L.latLng( 48.30891568624434, -128.4312145637652 );
+      northEast = L.latLng( 52.9384673469385, -117.8488971573044 );
+      bounds = L.latLngBounds( southWest, northEast );
+      map.setView(new L.LatLng( 49.243365, -123.62296 ), 9);
+    }
+    else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
+      southWest = L.latLng( 48.30891568624434, -128.4312145637652 );
+      northEast = L.latLng( 52.14386926906652, -118.0499496202695 );
+      bounds = L.latLngBounds( southWest, northEast );
+      map.setView(new L.LatLng( 48.407017, -123.412134 ), 9);
+    }
+    else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
+      southWest = L.latLng( 48.30891568624434, -132.4247727702572 );
+      northEast = L.latLng( 58.50213289213824, -114.475795596884 );
+      bounds = L.latLngBounds( southWest, northEast );
+      map.setView(new L.LatLng( 48.251246, -125.215269 ), 8);
+    }
+    else if ( lcScenario == "scm7p5_valdesbois" ) {
+      southWest = L.latLng( 42.50576656719492, -83.68507351241767 );
+      northEast = L.latLng( 50.42592946883574, -68.22419753341977 );
+      bounds = L.latLngBounds( southWest, northEast );
+      map.setView(new L.LatLng( 45.905377, -75.494669 ), 8);
+    }
+    else if ( lcScenario == "idm7p1_sidney" ) {
+      southWest = L.latLng( 48.30891568624434, -128.1932571619549 );
+      northEast = L.latLng( 52.33305028176196, -117.77207886844 );
+      bounds = L.latLngBounds( southWest, northEast );
+      map.setView(new L.LatLng( 48.618961, -123.299385 ), 9);
+    }
+  }
+
+  function tileStyle( properties ) {
     return {
-        fillColor: getColor( feature.properties[ scenarioProp ] ),
-        weight: 0.6,
-        fillOpacity: 0.7,
-        color: '#4b4d4d',
-        opacity: 1
-    };
+      weight: 0.2,
+      color: "#666666",
+      fillColor: getColor( properties[ scenarioProp ] ),
+      fillOpacity: 0.6,
+      fill: true
+    }
+  }
+
+  function setTileLayerStyles() {
+    if ( lcScenario == "acm7p0_georgiastraitfault" ) {
+      return {
+        dsra_acm7p0_georgiastraitfault_indicators_s: function ( properties ) {
+          return tileStyle( properties );
+        }
+      }
+    }
+    else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
+      return {
+        dsra_acm7p3_leechriverfullfault_indicators_s: function ( properties ) {
+          return tileStyle( properties );
+        }
+      }
+    }
+    else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
+      return {
+        dsra_sim9p0_cascadiainterfacebestfault_indicators_s: function ( properties ) {
+          return tileStyle( properties );
+        }
+      }
+    }
+    else if ( lcScenario == "scm7p5_valdesbois" ) {
+      return {
+        dsra_scm7p5_valdesbois_indicators_s: function ( properties ) {
+          return tileStyle( properties );
+        }
+      }
+    }
+    else if ( lcScenario == "idm7p1_sidney" ) {
+      return {
+        dsra_idm7p1_sidney_indicators_s: function ( properties ) {
+          return tileStyle( properties );
+        }
+      }
+    }
   }
 
   function selectedStyle( feature ) {
-      return {
-        fillColor: 'blue',
-        color: 'black',
-        weight: 1,
-        fillOpacity: 0.5
+    return {
+      fill: true,
+      fillColor: 'blue',
+      color: 'black',
+      weight: 1,
+      fillOpacity: 0.5
     };
   }
 

@@ -42,7 +42,7 @@ breadcrumbs:
     </p>
     <div class="panel panel-primary mrgn-tp-sm">
       <div class="panel-heading">
-        <div class="panel-title">Datasets</div>
+        <div class="panel-title">Ensembles de données</div>
       </div>
       <ul class="list-group">
       {% for scenario in site.data.dsra.scenarios %}

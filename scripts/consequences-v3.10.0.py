@@ -17,17 +17,20 @@
 # along with OpenQuake. If not, see <http://www.gnu.org/licenses/>.
 
 import csv
-import numpy as np
-from openquake.baselib import datastore, sap
-import pandas as pd
-from tqdm import tqdm
 import sys
 
-params_file = "scripts/Hazus_Consequence_Parameters.xlsx" #/mnt/storage/earthquake-scenarios/scripts/Hazus_Consequence_Parameters.xlsx"
+import numpy as np
+import pandas as pd
+from openquake.baselib import datastore
+from tqdm import tqdm
+
+params_file = "scripts/Hazus_Consequence_Parameters.xlsx"  # /mnt/storage/earthquake-scenarios/scripts/Hazus_Consequence_Parameters.xlsx"
+
 
 def read_square_footage(xlsx):
     square_footage_df = pd.read_excel(xlsx, sheet_name="Square Footage", skiprows=1, index_col=0)
     return square_footage_df
+
 
 def read_repair_ratio_str(xlsx):
     repair_ratio_str_df = pd.read_excel(xlsx, sheet_name="Structural Repair Ratios", skiprows=2, index_col=0)
@@ -35,11 +38,13 @@ def read_repair_ratio_str(xlsx):
     repair_ratio_str_df.rename_axis("Structural Damage State", axis="columns", inplace=True)
     return repair_ratio_str_df/100
 
+
 def read_repair_ratio_nsa(xlsx):
     repair_ratio_nsa_df = pd.read_excel(xlsx, sheet_name="NonstrAccel Repair Ratios", skiprows=2, index_col=0)
     repair_ratio_nsa_df.index.name = "Occupancy"
     repair_ratio_nsa_df.rename_axis("Acceleration Sensitive Non-structural Damage State", axis="columns", inplace=True)
     return repair_ratio_nsa_df/100
+
 
 def read_repair_ratio_nsd(xlsx):
     repair_ratio_nsd_df = pd.read_excel(xlsx, sheet_name="NonstrDrift Repair Ratios", skiprows=2, index_col=0)
@@ -47,33 +52,39 @@ def read_repair_ratio_nsd(xlsx):
     repair_ratio_nsd_df.rename_axis("Drift Sensitive Non-structural Damage State", axis="columns", inplace=True)
     return repair_ratio_nsd_df/100
 
+
 def read_repair_ratio_con(xlsx):
     repair_ratio_con_df = pd.read_excel(xlsx, sheet_name="Contents Damage Ratios", skiprows=2, index_col=0)
     repair_ratio_con_df.index.name = "Occupancy"
     repair_ratio_con_df.rename_axis("Acceleration Sensitive Non-structural Damage State", axis="columns", inplace=True)
     return repair_ratio_con_df/100
 
+
 def read_collapse_rate(xlsx):
     collapse_rate_df = pd.read_excel(xlsx, sheet_name="Collapse Rates", skiprows=1, index_col=0)
     return collapse_rate_df/100
 
+
 def read_casualty_rate_in(xlsx):
-    casualty_rate_in_df = pd.read_excel(xlsx, sheet_name="Indoor Casualty Rates", skiprows=1, index_col=0, header=[0,1])
+    casualty_rate_in_df = pd.read_excel(xlsx, sheet_name="Indoor Casualty Rates", skiprows=1, index_col=0, header=[0, 1])
     casualty_rate_in_df.index.name = "Building Type"
     casualty_rate_in_df.columns.names = ["Damage State", "Severity Level"]
     return casualty_rate_in_df/100
 
+
 def read_casualty_rate_out(xlsx):
-    casualty_rate_out_df = pd.read_excel(xlsx, sheet_name="Outdoor Casualty Rates", skiprows=1, index_col=0, header=[0,1])
+    casualty_rate_out_df = pd.read_excel(xlsx, sheet_name="Outdoor Casualty Rates", skiprows=1, index_col=0, header=[0, 1])
     casualty_rate_out_df.index.name = "Building Type"
     casualty_rate_out_df.columns.names = ["Damage State", "Severity Level"]
     return casualty_rate_out_df/100
 
+
 def read_debris_weight(xlsx):
-    debris_df = pd.read_excel(xlsx, sheet_name="Debris", index_col=0, header=[0,1,2])
+    debris_df = pd.read_excel(xlsx, sheet_name="Debris", index_col=0, header=[0, 1, 2])
     debris_df.index.name = "Building Type"
     debris_df.columns.names = ["Item", "Material", "Component"]
     return debris_df
+
 
 def read_repair_time(xlsx):
     repair_time_df = pd.read_excel(xlsx, sheet_name="Building Repair Time", skiprows=2, index_col=0)
@@ -81,11 +92,13 @@ def read_repair_time(xlsx):
     repair_time_df.rename_axis("Structural Damage State", axis="columns", inplace=True)
     return repair_time_df
 
+
 def read_recovery_time(xlsx):
     recovery_time_df = pd.read_excel(xlsx, sheet_name="Building Recovery Time", skiprows=2, index_col=0)
     recovery_time_df.index.name = "Occupancy"
     recovery_time_df.rename_axis("Structural Damage State", axis="columns", inplace=True)
     return recovery_time_df
+
 
 def read_interruption_time(xlsx):
     interruption_time_df = pd.read_excel(xlsx, sheet_name="Interruption Time Multipliers", skiprows=2, index_col=0)
@@ -110,11 +123,12 @@ read_params = {
     "Interruption Time Multipliers": read_interruption_time,
 }
 
+
 def calculate_consequences(job_id='-1'):
-    calc_id = datastore.get_last_calc_id() if job_id=='-1' else int(job_id)
+    calc_id = datastore.get_last_calc_id() if job_id == '-1' else int(job_id)
     dstore = datastore.read(calc_id)
-    lt = 0 # structural damage
-    stat = 0 # damage state mean values
+    lt = 0  # structural damage
+    stat = 0  # damage state mean values
     num_rlzs = len(dstore["weights"])
     assetcol = dstore['assetcol']
     taxonomies = assetcol.tagcol.taxonomy
@@ -126,9 +140,9 @@ def calculate_consequences(job_id='-1'):
     elif calculation_mode == 'classical_damage':
         damages = dstore['damages-stats']
     else:
-        print("Consequence calculations not supported for ", calculation_mode)
+        print("Consequence calculations not supported for", calculation_mode)
         return
-    
+
     # Read the various consequences tables from the spreadsheet
     square_footage_df = read_params["Square Footage"](xlsx)
     repair_ratio_str_df = read_params["Structural Repair Ratios"](xlsx)
@@ -159,20 +173,20 @@ def calculate_consequences(job_id='-1'):
             writer = csv.writer(f)
             # Write the header row to the csv file
             writer.writerow(
-                ["asset_ref", "number_of_buildings", 
-                "value_structural", "value_nonstructural", "value_contents", 
-                "occupants_day", "occupants_night", "occupants_transit", 
-                "collapse_ratio", "mean_repair_time",
-                "mean_recovery_time","mean_interruption_time",
-                "casualties_day_severity_1", "casualties_day_severity_2",
-                "casualties_day_severity_3", "casualties_day_severity_4",
-                "casualties_night_severity_1", "casualties_night_severity_2",
-                "casualties_night_severity_3", "casualties_night_severity_4",
-                "casualties_transit_severity_1", "casualties_transit_severity_2",
-                "casualties_transit_severity_3", "casualties_transit_severity_4",
-                "sc_Displ3","sc_Displ30", "sc_Displ90", "sc_Displ180", "sc_Displ360",
-                "sc_BusDispl30", "sc_BusDispl90", "sc_BusDispl180", "sc_BusDispl360",
-                "debris_brick_wood_tons", "debris_concrete_steel_tons"])
+                ["asset_ref", "number_of_buildings",
+                 "value_structural", "value_nonstructural", "value_contents",
+                 "occupants_day", "occupants_night", "occupants_transit",
+                 "collapse_ratio", "mean_repair_time",
+                 "mean_recovery_time", "mean_interruption_time",
+                 "casualties_day_severity_1", "casualties_day_severity_2",
+                 "casualties_day_severity_3", "casualties_day_severity_4",
+                 "casualties_night_severity_1", "casualties_night_severity_2",
+                 "casualties_night_severity_3", "casualties_night_severity_4",
+                 "casualties_transit_severity_1", "casualties_transit_severity_2",
+                 "casualties_transit_severity_3", "casualties_transit_severity_4",
+                 "sc_Displ3", "sc_Displ30", "sc_Displ90", "sc_Displ180", "sc_Displ360",
+                 "sc_BusDispl30", "sc_BusDispl90", "sc_BusDispl180", "sc_BusDispl360",
+                 "debris_brick_wood_tons", "debris_concrete_steel_tons"])
 
             for asset in tqdm(assetcol):
                 asset_ref = asset['id'].decode()
@@ -200,11 +214,11 @@ def calculate_consequences(job_id='-1'):
                 # Hazus tables 12.1, 12.2, 12.3
                 unit_weight = unit_weight_df.loc[asset_typ]
                 weight_brick_wood = (
-                    unit_weight["Brick, Wood and Other"] 
+                    unit_weight["Brick, Wood and Other"]
                     * square_footage_df.loc[asset_occ].values[0] / 1000
                     * asset['number'])
                 weight_concrete_steel = (
-                    unit_weight["Reinforced Concrete and Steel"] 
+                    unit_weight["Reinforced Concrete and Steel"]
                     * square_footage_df.loc[asset_occ].values[0] / 1000
                     * asset['number'])
                 debris_brick_wood_pct = debris_brick_wood_pct_df.loc[asset_typ]
@@ -261,43 +275,42 @@ def calculate_consequences(job_id='-1'):
 
                 # Write all consequence estimates for this asset to the csv file
                 writer.writerow(
-                    [asset_ref, 
-                    "{0:,.1f}".format(asset['number']),
-                    "{0:,.1f}".format(asset["value-structural"]),
-                    "{0:,.1f}".format(asset["value-nonstructural"]),
-                    "{0:,.1f}".format(asset["value-contents"]),
-                    "{0:,.1f}".format(asset["occupants_day"]),
-                    "{0:,.1f}".format(asset["occupants_night"]),
-                    "{0:,.1f}".format(asset["occupants_transit"]),
-                    collapse_ratio_str,
-                    "{0:,.1f}".format(repair_time),
-                    "{0:,.1f}".format(recovery_time),
-                    "{0:,.1f}".format(interruption_time),
-                    "{0:,.2f}".format(casualties_day["Severity 1"]),
-                    "{0:,.2f}".format(casualties_day["Severity 2"]),
-                    "{0:,.2f}".format(casualties_day["Severity 3"]),
-                    "{0:,.2f}".format(casualties_day["Severity 4"]),
-                    "{0:,.2f}".format(casualties_night["Severity 1"]),
-                    "{0:,.2f}".format(casualties_night["Severity 2"]),
-                    "{0:,.2f}".format(casualties_night["Severity 3"]),
-                    "{0:,.2f}".format(casualties_night["Severity 4"]),
-                    "{0:,.2f}".format(casualties_transit["Severity 1"]),
-                    "{0:,.2f}".format(casualties_transit["Severity 2"]),
-                    "{0:,.2f}".format(casualties_transit["Severity 3"]),
-                    "{0:,.2f}".format(casualties_transit["Severity 4"]),
-                    "{0:,.1f}".format(sc_Displ3),
-                    "{0:,.1f}".format(sc_Displ30),
-                    "{0:,.1f}".format(sc_Displ90),
-                    "{0:,.1f}".format(sc_Displ180),
-                    "{0:,.1f}".format(sc_Displ360),
-                    "{0:,.1f}".format(sc_BusDispl30),
-                    "{0:,.1f}".format(sc_BusDispl90),
-                    "{0:,.1f}".format(sc_BusDispl180),
-                    "{0:,.1f}".format(sc_BusDispl360),
-                    "{0:,.1f}".format(debris_brick_wood),
-                    "{0:,.1f}".format(debris_concrete_steel),
-                    ])
-
+                    [asset_ref,
+                     "{0:,.1f}".format(asset['number']),
+                     "{0:,.1f}".format(asset["value-structural"]),
+                     "{0:,.1f}".format(asset["value-nonstructural"]),
+                     "{0:,.1f}".format(asset["value-contents"]),
+                     "{0:,.1f}".format(asset["occupants_day"]),
+                     "{0:,.1f}".format(asset["occupants_night"]),
+                     "{0:,.1f}".format(asset["occupants_transit"]),
+                     collapse_ratio_str,
+                     "{0:,.1f}".format(repair_time),
+                     "{0:,.1f}".format(recovery_time),
+                     "{0:,.1f}".format(interruption_time),
+                     "{0:,.2f}".format(casualties_day["Severity 1"]),
+                     "{0:,.2f}".format(casualties_day["Severity 2"]),
+                     "{0:,.2f}".format(casualties_day["Severity 3"]),
+                     "{0:,.2f}".format(casualties_day["Severity 4"]),
+                     "{0:,.2f}".format(casualties_night["Severity 1"]),
+                     "{0:,.2f}".format(casualties_night["Severity 2"]),
+                     "{0:,.2f}".format(casualties_night["Severity 3"]),
+                     "{0:,.2f}".format(casualties_night["Severity 4"]),
+                     "{0:,.2f}".format(casualties_transit["Severity 1"]),
+                     "{0:,.2f}".format(casualties_transit["Severity 2"]),
+                     "{0:,.2f}".format(casualties_transit["Severity 3"]),
+                     "{0:,.2f}".format(casualties_transit["Severity 4"]),
+                     "{0:,.1f}".format(sc_Displ3),
+                     "{0:,.1f}".format(sc_Displ30),
+                     "{0:,.1f}".format(sc_Displ90),
+                     "{0:,.1f}".format(sc_Displ180),
+                     "{0:,.1f}".format(sc_Displ360),
+                     "{0:,.1f}".format(sc_BusDispl30),
+                     "{0:,.1f}".format(sc_BusDispl90),
+                     "{0:,.1f}".format(sc_BusDispl180),
+                     "{0:,.1f}".format(sc_BusDispl360),
+                     "{0:,.1f}".format(debris_brick_wood),
+                     "{0:,.1f}".format(debris_concrete_steel),
+                     ])
 
 
 if __name__ == "__main__":

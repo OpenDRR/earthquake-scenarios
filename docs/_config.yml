@@ -60,7 +60,7 @@ collections:
 
 # 7. Site settings
 analytics_adobe: ""
-analytics_google: "G-19T5RKNSMJ"
+analytics_google: "G-ZHJHEK1RNZ"
 analytics_google_anonymize_ip: ""
 assets: "https://wet-boew.github.io/themes-dist"
 baseurl: "/earthquake-scenarios"

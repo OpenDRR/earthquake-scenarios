@@ -6,3 +6,4 @@
 |   7.3 | 48.405 | -123.412 | ACM7p3_LeechRiverFullFault        |
 |   7.1 | 48.62  | -123.3   | IDM7p1_Sidney                     |
 |   7   | 49.243 | -123.627 | ACM7p0_GeorgiaStraitFault         |
+|   5.3 | 48.64  | -123.74  | ACM5p3_Duncan                     |

@@ -31,11 +31,6 @@ scenarios:
   name: ACM7p4_BurwashLanding
   title: Burwash Landing - Magnitude 7.4
 - description:
-    en: Magnitude 5.0 deep intraslab rupture based on 10 percent in 50 years deaggregation
-    fr: ''
-  name: IDM5p0_Masset
-  title: Masset - Magnitude 5.0
-- description:
     en: Evaluating impact of increasing magnitude using the 2015 Mw 4.7 Sidney, BC, Earthquake hypocentre. More info at https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
       - Strike selected to approximately parallel the strike of the subducting slab for this deep intraslab extensional event.
     fr: Évaluation de l'impact de l'augmentation de la magnitude à l'aide de l'hypocentre du tremblement de terre de 2015 Mw 4,7 de Sidney, en Colombie-Britannique. Plus d'informations sur https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php

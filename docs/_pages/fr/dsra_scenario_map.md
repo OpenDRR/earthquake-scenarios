@@ -149,8 +149,8 @@ crossorigin=""></script>
     $( '#wb-cont' ).html( full_name );
 
     var vectorUrl = baseUrl + lcScenario + "_indicators_s/EPSG_4326/{z}/{x}/{y}.pbf",
-        shakemapUrl1 = baseUrl + lcScenario + "_shakemap_hexbin_1km/EPSG_4326/{z}/{x}/{y}.pbf",
-        shakemapUrl5 = baseUrl + lcScenario + "_shakemap_hexbin_5km/EPSG_4326/{z}/{x}/{y}.pbf";
+        shakemapUrl1 = baseUrl + lcScenario + "_shakemap_hexgrid_1km/EPSG_4326/{z}/{x}/{y}.pbf",
+        shakemapUrl5 = baseUrl + lcScenario + "_shakemap_hexgrid_5km/EPSG_4326/{z}/{x}/{y}.pbf";
 
     var sauidLayer = L.vectorGrid.protobuf( vectorUrl, vectorTileOptions )
         .on( 'add', function () {
@@ -597,14 +597,14 @@ crossorigin=""></script>
     if ( lcScenario == "acm7p0_georgiastraitfault" ) {
       if ( z == 1 ) {
         return {
-          dsra_acm7p0_georgiastraitfault_shakemap_hexbin_1km: function ( properties ) {
+          dsra_acm7p0_georgiastraitfault_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_acm7p0_georgiastraitfault_shakemap_hexbin_5km: function ( properties ) {
+          dsra_acm7p0_georgiastraitfault_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -613,14 +613,14 @@ crossorigin=""></script>
     else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
       if ( z == 1 ) {
         return {
-          dsra_acm7p3_leechriverfullfault_shakemap_hexbin_1km: function ( properties ) {
+          dsra_acm7p3_leechriverfullfault_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_acm7p3_leechriverfullfault_shakemap_hexbin_5km: function ( properties ) {
+          dsra_acm7p3_leechriverfullfault_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -629,14 +629,14 @@ crossorigin=""></script>
     else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
       if ( z == 1 ) {
         return {
-          dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexbin_1km: function ( properties ) {
+          dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexbin_5km: function ( properties ) {
+          dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -645,14 +645,14 @@ crossorigin=""></script>
     else if ( lcScenario == "scm7p5_valdesbois" ) {
       if ( z == 1 ) {
         return {
-          dsra_scm7p5_valdesbois_shakemap_hexbin_1km: function ( properties ) {
+          dsra_scm7p5_valdesbois_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_scm7p5_valdesbois_shakemap_hexbin_5km: function ( properties ) {
+          dsra_scm7p5_valdesbois_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -661,14 +661,14 @@ crossorigin=""></script>
     else if ( lcScenario == "idm7p1_sidney" ) {
       if ( z == 1 ) {
         return {
-          dsra_idm7p1_sidney_shakemap_hexbin_1km: function ( properties ) {
+          dsra_idm7p1_sidney_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_idm7p1_sidney_shakemap_hexbin_5km: function ( properties ) {
+          dsra_idm7p1_sidney_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -677,14 +677,14 @@ crossorigin=""></script>
     else if ( lcScenario == "acm4p9_capilano5" ) {
       if ( z == 1 ) {
         return {
-          dsra_acm4p9_capilano5_shakemap_hexbin_1km: function ( properties ) {
+          dsra_acm4p9_capilano5_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_acm4p9_capilano5_shakemap_hexbin_5km: function ( properties ) {
+          dsra_acm4p9_capilano5_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -693,14 +693,14 @@ crossorigin=""></script>
     else if ( lcScenario == "acm7p4_burwashlanding" ) {
       if ( z == 1 ) {
         return {
-          dsra_acm7p4_burwashlanding_shakemap_hexbin_1km: function ( properties ) {
+          dsra_acm7p4_burwashlanding_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_acm7p4_burwashlanding_shakemap_hexbin_5km: function ( properties ) {
+          dsra_acm7p4_burwashlanding_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -709,14 +709,14 @@ crossorigin=""></script>
     else if ( lcScenario == "acm5p3_duncan" ) {
       if ( z == 1 ) {
         return {
-          dsra_acm5p3_duncan_shakemap_hexbin_1km: function ( properties ) {
+          dsra_acm5p3_duncan_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_acm5p3_duncan_shakemap_hexbin_5km: function ( properties ) {
+          dsra_acm5p3_duncan_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -725,14 +725,14 @@ crossorigin=""></script>
     else if ( lcScenario == "scm5p0_montreal" ) {
       if ( z == 1 ) {
         return {
-          dsra_scm5p0_montreal_shakemap_hexbin_1km: function ( properties ) {
+          dsra_scm5p0_montreal_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_scm5p0_montreal_shakemap_hexbin_5km: function ( properties ) {
+          dsra_scm5p0_montreal_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
@@ -741,14 +741,14 @@ crossorigin=""></script>
     else if ( lcScenario == "scm5p5_ottawa" ) {
       if ( z == 1 ) {
         return {
-          dsra_scm5p5_ottawa_shakemap_hexbin_1km: function ( properties ) {
+          dsra_scm5p5_ottawa_shakemap_hexgrid_1km: function ( properties ) {
             return shakeStyle( properties );
           }
         }
       }
       else {
         return {
-          dsra_scm5p5_ottawa_shakemap_hexbin_5km: function ( properties ) {
+          dsra_scm5p5_ottawa_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }

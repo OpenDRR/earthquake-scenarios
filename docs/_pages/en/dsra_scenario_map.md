@@ -494,6 +494,7 @@ crossorigin=""></script>
       bounds = L.latLngBounds( southWest, northEast );
       epicenter = L.circleMarker( [ 61.200 , -138.780 ], circleStyle() ).addTo( map );
       map.setView(new L.LatLng( 61.200 , -138.780 ), 7);
+    }
     else if ( lcScenario == "scm5p0_montreal" ) {
       southWest = L.latLng( 42.53884243059241, -86.54942531485392 );
       northEast = L.latLng( 55.00064603767294, -65.94908207524423 );

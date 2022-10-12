@@ -494,14 +494,6 @@ crossorigin=""></script>
       bounds = L.latLngBounds( southWest, northEast );
       epicenter = L.circleMarker( [ 61.200 , -138.780 ], circleStyle() ).addTo( map );
       map.setView(new L.LatLng( 61.200 , -138.780 ), 7);
-    }
-    else if ( lcScenario == "acm5p3_duncan" ) {
-      southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
-      northEast = L.latLng( 53.30903267135562, -118.0460229197708 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 48.640 , -123.740 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 48.640 , -123.740 ), 7);
-    }
     else if ( lcScenario == "scm5p0_montreal" ) {
       southWest = L.latLng( 42.53884243059241, -86.54942531485392 );
       northEast = L.latLng( 55.00064603767294, -65.94908207524423 );
@@ -565,13 +557,6 @@ crossorigin=""></script>
     else if ( lcScenario == "acm7p4_burwashlanding" ) {
       return {
         dsra_acm7p4_burwashlanding_indicators_s: function ( properties ) {
-          return tileStyle( properties );
-        }
-      }
-    }
-    else if ( lcScenario == "acm5p3_duncan" ) {
-      return {
-        dsra_acm5p3_duncan_indicators_s: function ( properties ) {
           return tileStyle( properties );
         }
       }
@@ -701,22 +686,6 @@ crossorigin=""></script>
       else {
         return {
           dsra_acm7p4_burwashlanding_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
-          }
-        }
-      }
-    }
-    else if ( lcScenario == "acm5p3_duncan" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_acm5p3_duncan_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
-          }
-        }
-      }
-      else {
-        return {
-          dsra_acm5p3_duncan_shakemap_hexgrid_5km: function ( properties ) {
             return shakeStyle( properties );
           }
         }

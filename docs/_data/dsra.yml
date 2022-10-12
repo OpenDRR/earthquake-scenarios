@@ -4,6 +4,16 @@ collection:
 id: dsra_bc_indicators
 scenarios:
 - description:
+    en: Scenario for a magnitude 5.3 shallow crustal earthquake based on a 10 percent in 50 years seismic hazard deaggregation and on Cassidy et al. 2020 Georgia strait fault documented in their paper titled Characterization of Active Faulting Beneath the Strait of Georgia, British Columbia
+    fr: ''
+  name: ACM4p9_Capilano5
+  title: Capilano5 - Magnitude 4.9
+- description:
+    en: Scenario for a magnitude 5.3 shallow crustal earthquake along the Leech River Fault based on a 10 percent in 50 years seismic hazard deaggregation and kinematics from paleoseismic trenching by Harrichhausen et al 2021 and dip from seismicity relocation by Li et al 2018
+    fr: ''
+  name: ACM5p3_Duncan
+  title: Duncan - Magnitude 5.3
+- description:
     en: Georgia Strait Rupture Scenarios using the 1997 Georgia Strait earthquake hypocentre and fault plane geometry from Cassidy, Rogers, & Waldhauser (2000, BSSA).
       These scenarios use a mapped crustal marine fault near Vancouver, but consider larger magnitude events than those that have been observed to date for that location.
       Maximum magnitude (7.5) is obtained from CanSHM6 for PUGET SOUND SHALLOW.
@@ -16,12 +26,27 @@ scenarios:
   name: ACM7p3_LeechRiverFullFault
   title: Leech River Full Fault - Magnitude 7.3
 - description:
-    en: Evaluating impact of increasing magnitude using the 2015 Mw 4.7 Sidney, BC,
-      Earthquake hypocentre. More info at https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
+    en: Magnitude 7.4 rupture along the Denali Fault based on 10 percent in 50 years deaggregation and based on kinematics documented by Bostwick 1984 in their paper titled A re-examination of the August 22, 1949 Queen Charlotte earthquake and depth constraints based on paper by Wang et al 2015 titled Thermal Condition of the 27 October 2012 Mw 7.8 Haida Gwaii Subduction Earthquake at the Obliquely Convergent Queen Charlotte Margin
+    fr: ''
+  name: ACM7p4_BurwashLanding
+  title: Burwash Landing - Magnitude 7.4
+- description:
+    en: Evaluating impact of increasing magnitude using the 2015 Mw 4.7 Sidney, BC, Earthquake hypocentre. More info at https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
       - Strike selected to approximately parallel the strike of the subducting slab for this deep intraslab extensional event.
-    fr: Évaluation de l'impact de l'augmentation de la magnitude à l'aide de l'hypocentre du tremblement de terre de 2015 Mw 4,7 de Sidney, en Colombie-Britannique. Plus d'informations sur https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php - La direction choisie est approximativement parallèle à la direction de la dalle subductrice. pour cet événement d'extension intraslab profond.
+    fr: Évaluation de l'impact de l'augmentation de la magnitude à l'aide de l'hypocentre du tremblement de terre de 2015 Mw 4,7 de Sidney, en Colombie-Britannique. Plus d'informations sur https://earthquakescanada.nrcan.gc.ca/recent/2015/20151230.0739/index-en.php
+      - La direction choisie est approximativement parallèle à la direction de la dalle subductrice. pour cet événement d'extension intraslab profond.
   name: IDM7p1_Sidney
   title: Sidney - Magnitude 7.1
+- description:
+    en: Montreal City scenario using the 1732 EQ epicentre, and assuming oblique-reverse slip on a rupture plane parallel to the Ile Bizard or Rapide-du-Cheval Blanc faults under current stress field based on slip tendency analysis by Rimando and Peace 2021
+    fr: ''
+  name: SCM5p0_Montreal
+  title: Montreal - Magnitude 5.0
+- description:
+    en: Magnitude 5.5 Ottawa City rupture scenario using a 10 percent in 50 years seismic hazard deaggregation, and assuming oblique-reverse slip along or on a rupture plane parallel to the along the Gloucester fault under current stress field based on slip tendency analysis by Rimando and Peace 2021
+    fr: ''
+  name: SCM5p5_Ottawa
+  title: Ottawa - Magnitude 5.5
 - description:
     en: Ottawa planning scenario using the 2010 Val-de-bois, QC earthquake hypocentre and fault plane geometry from Ma & Motazedian, 2012 and Atkinson & Assatourians, 2010.
       This scenario uses a larger magnitude event than those that have been observed to date for that location, within bounds of the national seismic hazard model.

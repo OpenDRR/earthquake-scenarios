@@ -27,7 +27,7 @@ breadcrumbs:
     <p><strong>The National Earthquake Scenario Catalogue, presents the probable shaking, damage, loss and consequences from hypothetical earthquakes that could impact Canadians.</strong></p>
     <p>It considers only damage to buildings, and their inhabitants, from earthquake shaking, and therefore does not include damage to critical infrastructure or vehicles. Losses from secondary hazards, such as aftershocks, liquefaction, landslides, or fire following are also not currently included.</p>
     <p>The information is provided at the approximate scale of Census dissemination areas, and is intended to support planning and emergency management activities in earthquake prone regions.</p>
-    <p>This project is run by the Geological Survey of Canada's Public Safety Geoscience Program. For inquiries related to the National Earthquake Scenario Catalogue, please contact Tiegan E. Hobbs at <a href="mailto:tiegan.hobbs@canada.ca">tiegan.hobbs@canada.ca</a>.</p>
+    <p>This project is run by the Geological Survey of Canada's Public Safety Geoscience Program. For inquiries related to the National Earthquake Scenario Catalogue, please contact Tiegan E. Hobbs at <a href="mailto:tiegan.hobbs@nrcan-rncan.gc.ca">tiegan.hobbs@nrcan-rncan.gc.ca</a>.</p>
     <section class="jumbotron">
       <p>All products are released under the Open Government Licence - Canada.</p>
       <p><a href="https://open.canada.ca/en/open-government-licence-canada" class="btn btn-info btn-lg" role="button">Learn more</a></p>

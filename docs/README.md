@@ -39,9 +39,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Nicky Hastings, Project Lead - nicky.hastings@canada.ca
+Nicky Hastings, Project Lead - nicky.hastings@nrcan-rncan.gc.ca
 
-Joost van Ulden, Technical Lead - [jvanulde](https://github.com/jvanulde) - joost.vanulden@canada.ca
+Joost van Ulden, Technical Lead - [jvanulde](https://github.com/jvanulde) - joost.vanulden@nrcan-rncan.gc.ca
 
 Project Link: [https://opendrr.github.io](https://opendrr.github.io)
 
@@ -93,9 +93,9 @@ Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
 
 ## Contact
 
-Nicky Hastings, chef de projet - nicky.hastings@canada.ca
+Nicky Hastings, chef de projet - nicky.hastings@nrcan-rncan.gc.ca
 
-Joost van Ulden, responsable technique - [jvanulde](https://github.com/jvanulde) - joost.vanulden@canada.ca
+Joost van Ulden, responsable technique - [jvanulde](https://github.com/jvanulde) - joost.vanulden@nrcan-rncan.gc.ca
 
 Lien vers le projet : [https://opendrr.github.io](https://opendrr.github.io)
 

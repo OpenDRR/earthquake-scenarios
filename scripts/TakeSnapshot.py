@@ -1,8 +1,14 @@
-#! python3
-# Script to produce a pager-style output for scenario earthquakes. 
-# You need to have created the rupture, damage, consequence, and loss files 
+#!/usr/bin/python3
+# SPDX-License-Identifier: MIT
+#
+# Copyright (C) 2020-2023 Government of Canada
+#
+# Script to produce a pager-style output for scenario earthquakes.
+# You need to have created the rupture, damage, consequence, and loss files
 # already. Run from in FINISHED dir. Written by Tiegan E. Hobbs on 3 November 2020.
-# Seems you need to be out of openquake virtual env. 
+#
+# Seems you need to be out of openquake virtual env.
+#
 # Usage: python3 ../scripts/TakeSnapshot.py NAME EXPO HAZ DMGb0 DMGr1 LOSSb0 LOSSr1
 #       where NAME is the tectonic indicator and name (Ex: IDM7p1_JdF)
 #       and EXPO is the exposure file type (b or s)
@@ -21,8 +27,12 @@ from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
 import numpy as np
 
 if len(sys.argv) == 1:
-    print("No arguments passed. Run from FINISHED directory. Please include NAME exposure_string SHAKEcalc DMGcalc_b0 DMGcalc_r1 LOSScalc_b0 LOSScalc_r1.")
-    print("EX: python3 ../scripts/TakeSnapshot.py SIM9p0_CSZlockedtrans b 222 140 141 142 143")
+    print(
+        "No arguments passed. Run from FINISHED directory. Please include NAME exposure_string SHAKEcalc DMGcalc_b0 DMGcalc_r1 LOSScalc_b0 LOSScalc_r1."
+    )
+    print(
+        "EX: python3 ../scripts/TakeSnapshot.py SIM9p0_CSZlockedtrans b 222 140 141 142 143"
+    )
     exit()
 
 NAME = sys.argv[1]
@@ -40,16 +50,16 @@ LOSSr1 = sys.argv[7]
 FINISHEDdir = '.'
 RUPTUREdir = '../ruptures/'
 INITdir = '../initializations/'
-shakename = str(FINISHEDdir)+'/s_shakemap_'+str(NAME)+'_'+str(SHAKE)+'.csv'
-dmg_basename = str(FINISHEDdir)+'/s_dmgbyasset_'+str(NAME)+'_b0_'+str(DMGb0)+'_'+str(EXPO)+'.csv'
-cons_basename = str(FINISHEDdir)+'/s_consequences_'+str(NAME)+'_b0_'+str(DMGb0)+'_'+str(EXPO)+'.csv'
-loss_basename = str(FINISHEDdir)+'/s_lossesbyasset_'+str(NAME)+'_b0_'+str(LOSSb0)+'_'+str(EXPO)+'.csv'
-dmg_retroname = str(FINISHEDdir)+'/s_dmgbyasset_'+str(NAME)+'_r1_'+str(DMGr1)+'_'+str(EXPO)+'.csv'
-cons_retroname = str(FINISHEDdir)+'/s_consequences_'+str(NAME)+'_r1_'+str(DMGr1)+'_'+str(EXPO)+'.csv'
-loss_retroname = str(FINISHEDdir)+'/s_lossesbyasset_'+str(NAME)+'_r1_'+str(LOSSr1)+'_'+str(EXPO)+'.csv'
-haz_in = str(INITdir)+'/s_Hazard_'+str(NAME)+'.ini'
-dmg_in = str(INITdir)+'/s_Damage_'+str(NAME)+'_b0_'+str(EXPO)+'.ini'
-rsk_in = str(INITdir)+'/s_Risk_'+str(NAME)+'_b0_'+str(EXPO)+'.ini'
+shakename = f'{FINISHEDdir}/s_shakemap_{NAME}_{SHAKE}.csv'
+dmg_basename = f'{FINISHEDdir}/s_dmgbyasset_{NAME}_b0_{DMGb0}_{EXPO}.csv'
+cons_basename = f'{FINISHEDdir}/s_consequences_{NAME}_b0_{DMGb0}_{EXPO}.csv'
+loss_basename = f'{FINISHEDdir}/s_lossesbyasset_{NAME}_b0_{LOSSb0}_{EXPO}.csv'
+dmg_retroname = f'{FINISHEDdir}/s_dmgbyasset_{NAME}_r1_{DMGr1}_{EXPO}.csv'
+cons_retroname = f'{FINISHEDdir}/s_consequences_{NAME}_r1_{DMGr1}_{EXPO}.csv'
+loss_retroname = f'{FINISHEDdir}/s_lossesbyasset_{NAME}_r1_{LOSSr1}_{EXPO}.csv'
+haz_in = f'{INITdir}/s_Hazard_{NAME}.ini'
+dmg_in = f'{INITdir}/s_Damage_{NAME}_b0_{EXPO}.ini'
+rsk_in = f'{INITdir}/s_Risk_{NAME}_b0_{EXPO}.ini'
 
 # Read in data
 loss = pd.read_csv(loss_basename)
@@ -57,7 +67,7 @@ cons = pd.read_csv(cons_basename)
 damg = pd.read_csv(dmg_basename)
 shake = pd.read_csv(shakename)
 
-# Grab input configs 
+# Grab input configs
 args = [haz_in, dmg_in, rsk_in]
 os.system('')
 configParser = configparser.ConfigParser()
@@ -65,37 +75,47 @@ configParser.read(args[0])
 site_model_file = configParser.get('site_params', 'site_model_file')
 rupture_model_file = configParser.get('Rupture information', 'rupture_model_file')
 rupture_mesh_spacing = configParser.get('Rupture information', 'rupture_mesh_spacing')
-gsim_logic_tree_file = configParser.get('Calculation parameters', 'gsim_logic_tree_file')
+gsim_logic_tree_file = configParser.get(
+    'Calculation parameters', 'gsim_logic_tree_file'
+)
 configParser.read(args[2])
 truncation_level_risk = configParser.get('Calculation parameters', 'truncation_level')
 maximum_distance = configParser.get('Calculation parameters', 'maximum_distance')
-number_of_ground_motion_fields_risk = configParser.get('Calculation parameters', 'number_of_ground_motion_fields')
+number_of_ground_motion_fields_risk = configParser.get(
+    'Calculation parameters', 'number_of_ground_motion_fields'
+)
 exposure_file = configParser.get('Exposure model', 'exposure_file')
 taxonomy_mapping_baseline = configParser.get('Vulnerability', 'taxonomy_mapping_csv')
-structural_vulnerability_file = configParser.get('Vulnerability', 'structural_vulnerability_file')
-nonstructural_vulnerability_file = configParser.get('Vulnerability', 'nonstructural_vulnerability_file')
-contents_vulnerability_file = configParser.get('Vulnerability', 'contents_vulnerability_file')
+structural_vulnerability_file = configParser.get(
+    'Vulnerability', 'structural_vulnerability_file'
+)
+nonstructural_vulnerability_file = configParser.get(
+    'Vulnerability', 'nonstructural_vulnerability_file'
+)
+contents_vulnerability_file = configParser.get(
+    'Vulnerability', 'contents_vulnerability_file'
+)
 configParser.read(args[1])
 structural_fragility_file = configParser.get('fragility', 'structural_fragility_file')
 description = configParser.get('general', 'description')
 
 
 # Merge consequences to damage and create calculated fields
-data = damg.merge(cons,left_on='asset_id', right_on='asset_ref')
-data['hospital'] = data['casualties_day_severity_2']+data['casualties_day_severity_3']
-data['debris'] = data['debris_brick_wood_tons']+data['debris_concrete_steel_tons']
+data = damg.merge(cons, left_on='asset_id', right_on='asset_ref')
+data['hospital'] = data['casualties_day_severity_2'] + data['casualties_day_severity_3']
+data['debris'] = data['debris_brick_wood_tons'] + data['debris_concrete_steel_tons']
 
 # Group by DAUID, ADAUID, etc. (for RDM)
-#lossout = loss.groupby('csduid')['totalLoss'].sum().reset_index()
-#entrapmentsout = data.groupby('dauid')['casualties_day_severity_3'].sum().reset_index()
-#hospitalout = data.groupby('adauid')['hospital'].sum().reset_index()
-#debrisout = data.groupby('dauid')['debris'].sum().reset_index()
-#carelocalout = data.groupby('dauid')['sc_Displ90'].sum().reset_index()
-#caremuniout = data.groupby('csduid')['sc_Displ90'].sum().reset_index()
+# lossout = loss.groupby('csduid')['totalLoss'].sum().reset_index()
+# entrapmentsout = data.groupby('dauid')['casualties_day_severity_3'].sum().reset_index()
+# hospitalout = data.groupby('adauid')['hospital'].sum().reset_index()
+# debrisout = data.groupby('dauid')['debris'].sum().reset_index()
+# carelocalout = data.groupby('dauid')['sc_Displ90'].sum().reset_index()
+# caremuniout = data.groupby('csduid')['sc_Displ90'].sum().reset_index()
 
 # Items of Interest
-mag = float(NAME[3]+'.'+NAME[5])
-rup = minidom.parse(RUPTUREdir+rupture_model_file)
+mag = float(NAME[3] + '.' + NAME[5])
+rup = minidom.parse(RUPTUREdir + rupture_model_file)
 hypo = rup.getElementsByTagName('hypocenter')
 lat = hypo[0].attributes['lat'].value
 lon = hypo[0].attributes['lon'].value
@@ -105,43 +125,56 @@ displaced = data['sc_Displ90'].sum()
 deaths = data['casualties_day_severity_4'].sum()
 critical = data['casualties_day_severity_3'].sum()
 hospital = data['hospital'].sum()
-try: 
+try:
     max_PGA = shake['gmv_PGA'].max()
 except:
     max_PGA = -999999999999
 
-    
 
 #######################################################################################
 ### GENERATE A MAP
 #######################################################################################
 lon, lat = float(lon), float(lat)
 
-extents = [lon - 2, lon + 2, lat - 1.3, lat + 1.3] # Map extents
+extents = [lon - 2, lon + 2, lat - 1.3, lat + 1.3]  # Map extents
 request = cimgt.OSM()
 
 # Plot map
-fig = plt.figure(figsize=(5, 5), frameon=True) #figure size
+fig = plt.figure(figsize=(5, 5), frameon=True)  # figure size
 
-ax = plt.axes(projection=ccrs.LambertConformal(central_longitude=lon,
-                central_latitude=lat, standard_parallels=(lat, lat))) # Proj is Lambert Conformal Conic (GSC convention)
+ax = plt.axes(
+    projection=ccrs.LambertConformal(
+        central_longitude=lon, central_latitude=lat, standard_parallels=(lat, lat)
+    )
+)  # Proj is Lambert Conformal Conic (GSC convention)
 
-ax.set_extent(extents) # Set map extent using extents
-ax.add_image(request, 7, interpolation='spline36') # Add image overlay
+ax.set_extent(extents)  # Set map extent using extents
+ax.add_image(request, 7, interpolation='spline36')  # Add image overlay
 
 # Add map features
-gl = ax.gridlines(crs=ccrs.PlateCarree(), x_inline=False, y_inline=False, draw_labels=True,
-                  linewidth=1, color='gray', alpha=0.5, linestyle='-')
+gl = ax.gridlines(
+    crs=ccrs.PlateCarree(),
+    x_inline=False,
+    y_inline=False,
+    draw_labels=True,
+    linewidth=1,
+    color='gray',
+    alpha=0.5,
+    linestyle='-',
+)
 gl.top_labels = False
 gl.left_labels = False
-gl.xlocator = mticker.FixedLocator(np.arange(-160, -40, 2).tolist()) #lon gridlines every 2deg
-gl.ylocator = mticker.FixedLocator(np.arange(44, 80, 1).tolist()) #lat gridlines every deg
+gl.xlocator = mticker.FixedLocator(
+    np.arange(-160, -40, 2).tolist()
+)  # lon gridlines every 2deg
+gl.ylocator = mticker.FixedLocator(
+    np.arange(44, 80, 1).tolist()
+)  # lat gridlines every deg
 
-plt.plot(lon, lat, 35, markersize=6, marker = 'o', color='r', zorder=5)
+plt.plot(lon, lat, 35, markersize=6, marker='o', color='r', zorder=5)
 plt.title(NAME)
-plt.savefig(str(FINISHEDdir)+'/'+str(NAME)+'.png')
-#plt.show()
-
+plt.savefig(str(FINISHEDdir) + '/' + str(NAME) + '.png')
+# plt.show()
 
 
 #######################################################################################
@@ -157,32 +190,37 @@ plt.savefig(str(FINISHEDdir)+'/'+str(NAME)+'.png')
 ### Setup
 from shapely.geometry import Point, Polygon, LineString
 import shapely.wkt
+
 tectregionnames = {
     "activecrust": "Active Shallow Crust",
     "stablecrust": "Stable Shallow Crust",
     "interface": "Subduction Interface",
     "intraslab55": "Subduction IntraSlab55",
-    "intraslab30": "Subduction IntraSlab30"
+    "intraslab30": "Subduction IntraSlab30",
 }
 
 
 ### Grab Scenario Information
-epi = Point(float(lon), float(lat)) #epicenter of scenario - want to check which source region this is in
-tectonicRegion = tectregionnames[gsim_logic_tree_file.split('NGASa0p3weights_')[1].strip('.xml')] #get the tectonic region from gsim logic tree called
+epi = Point(
+    float(lon), float(lat)
+)  # epicenter of scenario - want to check which source region this is in
+tectonicRegion = tectregionnames[
+    gsim_logic_tree_file.split('NGASa0p3weights_')[1].strip('.xml')
+]  # get the tectonic region from gsim logic tree called
 # COMMENTED OUT ABOVE (actual code) TO SEND WORKABLE MINIMUM CODE FOR REVIEW
 # TEST SCENARIO 1 - Georgia Strait event
-#epi = Point(-123.409919,49.27266143); mag = float(7.3)
-#tectonicRegion = tectregionnames['activecrust']
+# epi = Point(-123.409919,49.27266143); mag = float(7.3)
+# tectonicRegion = tectregionnames['activecrust']
 # TEST SCENARIO 2 - Beaufort-Mackenzie Convergence event
-#epi = Point(-139.572,70.002); mag=float(7.3)  
-#tectonicRegion = tectregionnames['interface']
-# TEST SCENARIO 3 - 
-#epi = Point(-77.25, 47.42); mag=float(6)
-#tectonicRegion = tectregionnames['stablecrust']
+# epi = Point(-139.572,70.002); mag=float(7.3)
+# tectonicRegion = tectregionnames['interface']
+# TEST SCENARIO 3 -
+# epi = Point(-77.25, 47.42); mag=float(6)
+# tectonicRegion = tectregionnames['stablecrust']
 # TEST SCENARIO - TELECHICK
-#NAME='M6p1_Telachick'
-#epi = Point(-123.1792, 53.8633); mag=float(6.1)
-#tectonicRegion = tectregionnames['activecrust']
+# NAME='M6p1_Telachick'
+# epi = Point(-123.1792, 53.8633); mag=float(6.1)
+# tectonicRegion = tectregionnames['activecrust']
 
 ### Find scenario source region and determine rate
 if 'Cascadia' in NAME:
@@ -191,20 +229,51 @@ elif 'LeechRiver' in NAME:
     wRR = [3500]
 else:
     filepath = "../../CanadaSHM6/source_summary_csv/simplifiedModel/"
-    W = pd.read_csv(filepath+"W_CANADA_UPDATED_simplified_collapsedRates.csv"); W['regWt'] = 1; W['regName'] = 'W'
-    SE_R2 = pd.read_csv(filepath+"SE_CANADA_R2_simplified_collapsedRates.csv"); SE_R2['regWt'] = 0.2; SE_R2['regName'] = 'SE_R2'
-    SE_H2 = pd.read_csv(filepath+"SE_CANADA_H2_simplified_collapsedRates.csv"); SE_H2['regWt'] = 0.4; SE_H2['regName'] ='SE_H2'
-    SE_HY = pd.read_csv(filepath+"SE_CANADA_HY_simplified_collapsedRates.csv"); SE_HY['regWt'] = 0.4; SE_HY['regName'] = 'SE_HY'
-    EA_R = pd.read_csv(filepath+"EasternArctic_R_simplified_collapsedRates.csv"); EA_R['regWt'] = 0.4; EA_R['regName'] = 'EA_R'
-    EA_H = pd.read_csv(filepath+"EasternArctic_H_simplified_collapsedRates.csv"); EA_H['regWt'] = 0.6; EA_H['regName'] = 'EA_H'
+    W = pd.read_csv(filepath + "W_CANADA_UPDATED_simplified_collapsedRates.csv")
+    W['regWt'] = 1
+    W['regName'] = 'W'
+    SE_R2 = pd.read_csv(filepath + "SE_CANADA_R2_simplified_collapsedRates.csv")
+    SE_R2['regWt'] = 0.2
+    SE_R2['regName'] = 'SE_R2'
+    SE_H2 = pd.read_csv(filepath + "SE_CANADA_H2_simplified_collapsedRates.csv")
+    SE_H2['regWt'] = 0.4
+    SE_H2['regName'] = 'SE_H2'
+    SE_HY = pd.read_csv(filepath + "SE_CANADA_HY_simplified_collapsedRates.csv")
+    SE_HY['regWt'] = 0.4
+    SE_HY['regName'] = 'SE_HY'
+    EA_R = pd.read_csv(filepath + "EasternArctic_R_simplified_collapsedRates.csv")
+    EA_R['regWt'] = 0.4
+    EA_R['regName'] = 'EA_R'
+    EA_H = pd.read_csv(filepath + "EasternArctic_H_simplified_collapsedRates.csv")
+    EA_H['regWt'] = 0.6
+    EA_H['regName'] = 'EA_H'
     df = pd.concat([W, SE_R2, SE_H2, SE_HY, EA_R, EA_H]).reset_index()
-    df2 = df.loc[df['tectReg'] == tectonicRegion] #only scenario tectonic region
-    thresh = 0.01; rate = pd.DataFrame(columns = ['srcWeight','srcName','regWeight','regName','maxMagCentral','N0Central','bCentral','betaC','NC','RP'])
-    #for each row 
+    df2 = df.loc[df['tectReg'] == tectonicRegion]  # only scenario tectonic region
+    thresh = 0.01
+    rate = pd.DataFrame(
+        columns=[
+            'srcWeight',
+            'srcName',
+            'regWeight',
+            'regName',
+            'maxMagCentral',
+            'N0Central',
+            'bCentral',
+            'betaC',
+            'NC',
+            'RP',
+        ]
+    )
+    # for each row
     for index, row in df2.iterrows():
         coords = row['shape']
         if 'POLYGON' in coords:
-            newcoords = (coords.split('))')[0])+', '+(coords.split('((')[1].split(',')[0])+'))' #append first point to end
+            newcoords = (
+                (coords.split('))')[0])
+                + ', '
+                + (coords.split('((')[1].split(',')[0])
+                + '))'
+            )  # append first point to end
             poly = shapely.wkt.loads(newcoords)
             if epi.within(poly.buffer(thresh)):
                 weightIn = row['srcWt']
@@ -214,12 +283,28 @@ else:
                 maxMagCentralIn = row['maxMagCentral']
                 N0CentralIn = row['N0Central']
                 bCentralIn = row['bCentral']
-                beta_CIn = row['bCentral']*np.log(10)
-                NCIn = row['N0Central']*(np.exp(-beta_CIn*mag))*(1-np.exp(-beta_CIn*(row['maxMagCentral']-mag)))
-                RPIn = 1/NCIn
-                rate = rate.append({'srcWeight': weightIn, 'srcName': srcNameIn, 'regWeight': regWtIn, 'regName': regNameIn,
-                                    'maxMagCentral': maxMagCentralIn,'N0Central': N0CentralIn,
-                                    'bCentral': bCentralIn, 'betaC': beta_CIn, 'NC': NCIn, 'RP': RPIn}, ignore_index=True)
+                beta_CIn = row['bCentral'] * np.log(10)
+                NCIn = (
+                    row['N0Central']
+                    * (np.exp(-beta_CIn * mag))
+                    * (1 - np.exp(-beta_CIn * (row['maxMagCentral'] - mag)))
+                )
+                RPIn = 1 / NCIn
+                rate = rate.append(
+                    {
+                        'srcWeight': weightIn,
+                        'srcName': srcNameIn,
+                        'regWeight': regWtIn,
+                        'regName': regNameIn,
+                        'maxMagCentral': maxMagCentralIn,
+                        'N0Central': N0CentralIn,
+                        'bCentral': bCentralIn,
+                        'betaC': beta_CIn,
+                        'NC': NCIn,
+                        'RP': RPIn,
+                    },
+                    ignore_index=True,
+                )
         if 'LINESTRING' in coords:
             poly = shapely.wkt.loads(coords)
             if poly.distance(epi) < thresh:
@@ -230,55 +315,82 @@ else:
                 maxMagCentralIn = row['maxMagCentral']
                 N0CentralIn = row['N0Central']
                 bCentralIn = row['bCentral']
-                beta_CIn = row['bCentral']*np.log(10)
-                NCIn = row['N0Central']*(np.exp(-beta_CIn*mag))*(1-np.exp(-beta_CIn*(row['maxMagCentral']-mag)))
-                RPIn = 1/NCIn
-                rate = rate.append({'srcWeight': weightIn, 'srcName': srcNameIn, 'regWeight': regWtIn, 'regName': regNameIn,
-                                    'maxMagCentral': maxMagCentralIn,'N0Central': N0CentralIn,
-                                    'bCentral': bCentralIn, 'betaC': beta_CIn, 'NC': NCIn, 'RP': RPIn}, ignore_index=True)
+                beta_CIn = row['bCentral'] * np.log(10)
+                NCIn = (
+                    row['N0Central']
+                    * (np.exp(-beta_CIn * mag))
+                    * (1 - np.exp(-beta_CIn * (row['maxMagCentral'] - mag)))
+                )
+                RPIn = 1 / NCIn
+                rate = rate.append(
+                    {
+                        'srcWeight': weightIn,
+                        'srcName': srcNameIn,
+                        'regWeight': regWtIn,
+                        'regName': regNameIn,
+                        'maxMagCentral': maxMagCentralIn,
+                        'N0Central': N0CentralIn,
+                        'bCentral': bCentralIn,
+                        'betaC': beta_CIn,
+                        'NC': NCIn,
+                        'RP': RPIn,
+                    },
+                    ignore_index=True,
+                )
 
-    print(rate)            
+    print(rate)
 
-    # for each region (SE_H2, SE_HY, etc) find recurrence rate for any of the sources 
-    wRR = list(); 
+    # for each region (SE_H2, SE_HY, etc) find recurrence rate for any of the sources
+    wRR = list()
     for r in rate['regName'].unique():
         dftemp = rate.loc[rate['regName'] == r]
         if any(dftemp['srcWeight'] != 1.0):
-            #weight the non-1's by their source branch weighting
-            dftemp['NC'] = dftemp['NC']*dftemp['srcWeight']
-        RR = 1/(dftemp['NC'].sum())
-        print("The recurrence rate for "+str(r)+" is "+str(RR)+" years")
-        wRR.append(np.multiply(RR,dftemp['regWeight'].max()))
+            # weight the non-1's by their source branch weighting
+            dftemp['NC'] = dftemp['NC'] * dftemp['srcWeight']
+        RR = 1 / (dftemp['NC'].sum())
+        print(f"The recurrence rate for {r} is {RR} years")
+        wRR.append(np.multiply(RR, dftemp['regWeight'].max()))
 
     # find weighted average between regions
-    print("Weighted recurrence rate is "+str(sum(wRR)))
+    print("Weighted recurrence rate is " + str(sum(wRR)))
 wRRprint = sum(wRR)
 
 # unanswered pieces
-#- is it ok that the regions overlap / choice of buffer?
-#- will things on linestring also be within polygon?
-#- will there be cases where something is in Arctic and East, or other overlap?
-#- how to include cascadia and leech river in W_CANADA_UPDATED_simplified_collapsedRates_Fitted and W_CANADA_UPDATED_simplified_collapsedRates_Characteristic
-
+# - is it ok that the regions overlap / choice of buffer?
+# - will things on linestring also be within polygon?
+# - will there be cases where something is in Arctic and East, or other overlap?
+# - how to include cascadia and leech river in W_CANADA_UPDATED_simplified_collapsedRates_Fitted and W_CANADA_UPDATED_simplified_collapsedRates_Characteristic
 
 
 #######################################################################################
 ######## SAVE MARKDOWN
 #######################################################################################
 
+
 # Function to generate github link and download button markdown
 def link_markdown(link):
     if link.startswith('../../openquake-inputs'):
-        gh_link = link.replace('../../openquake-inputs', 'https://github.com/OpenDRR/openquake-inputs/blob/main')
+        gh_link = link.replace(
+            '../../openquake-inputs',
+            'https://github.com/OpenDRR/openquake-inputs/blob/main',
+        )
         display_link = link.replace('../', '', 2)
     elif link.startswith('../../CanadaSHM6'):
-        gh_link = link.replace('../../CanadaSHM6', 'https://github.com/OpenDRR/CanadaSHM6/blob/master')
+        gh_link = link.replace(
+            '../../CanadaSHM6', 'https://github.com/OpenDRR/CanadaSHM6/blob/master'
+        )
         display_link = link.replace('../', '', 2)
     elif link.startswith('../'):
-        gh_link = link.replace('..', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master', 1)
+        gh_link = link.replace(
+            '..', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master', 1
+        )
         display_link = link.replace('../', '', 1)
     elif link.startswith('.'):
-        gh_link = link.replace('.', 'https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED', 1)
+        gh_link = link.replace(
+            '.',
+            'https://github.com/OpenDRR/earthquake-scenarios/blob/master/FINISHED',
+            1,
+        )
         display_link = link.replace('./', '', 1)
     download_link = gh_link.replace('blob', 'raw', 1)
     # Markdown for link - [link text](link url)
@@ -340,35 +452,31 @@ metadata = {
     "structural_vulnerability_file": sv_file,
     "nonstructural_vulnerability_file": nv_file,
     "contents_vulnerability_file": cv_file,
-    "description": description
+    "description": description,
 }
 
 # Save markdown file
-md_file = str(FINISHEDdir)+'/'+str(NAME)+'.md'
-df = pd.DataFrame(list(metadata.items()),columns = ['Name',NAME]) 
+md_file = f'{FINISHEDdir}/{NAME}.md'
+df = pd.DataFrame(list(metadata.items()), columns=['Name', NAME])
 pd.options.display.max_colwidth = 200
 with open(md_file, 'w') as f:
-    f.write(
-        df.to_markdown(index=False)
-    )    
+    f.write(df.to_markdown(index=False))
 
 
 ################################################## OLD SCRAPS
 
 # Print statements
-#print('Total cost: ${0:,.0f}'.format(cost))
-#print('Total red tags: {0:,.0f}'.format(redtag))
-#print('Total displaced: {0:,.0f}'.format(displaced))
-#print('Total deaths: {0:,.0f}'.format(deaths))
-#print('Total criticalinjuries/entrap: {0:,.0f}'.format(critical))
-#print('Total hospital surge: {0:,.0f}'.format(hospital))
+# print('Total cost: ${0:,.0f}'.format(cost))
+# print('Total red tags: {0:,.0f}'.format(redtag))
+# print('Total displaced: {0:,.0f}'.format(displaced))
+# print('Total deaths: {0:,.0f}'.format(deaths))
+# print('Total criticalinjuries/entrap: {0:,.0f}'.format(critical))
+# print('Total hospital surge: {0:,.0f}'.format(hospital))
 
 # Write out csv data (for RDM)
-#lossout.to_csv('loss.csv', index=False)
-#entrapmentsout.to_csv('entrapment.csv', index=False)
-#hospitalout.to_csv('hospital.csv', index=False)
-#debrisout.to_csv('debris.csv', index=False)
-#carelocalout.to_csv('carelocal.csv', index=False)
-#caremuniout.to_csv('caremuni.csv', index=False)
-
-
+# lossout.to_csv('loss.csv', index=False)
+# entrapmentsout.to_csv('entrapment.csv', index=False)
+# hospitalout.to_csv('hospital.csv', index=False)
+# debrisout.to_csv('debris.csv', index=False)
+# carelocalout.to_csv('carelocal.csv', index=False)
+# caremuniout.to_csv('caremuni.csv', index=False)

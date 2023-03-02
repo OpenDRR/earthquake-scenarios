@@ -43,10 +43,10 @@ scenarios:
   name: SCM5p5_ConstanceBay
   title: M5.5 Constance Bay (ON)
 - description:
-    en: Ottawa planning scenario using the 2010 Val-des-bois, QC earthquake hypocentre and fault plane geometry from Ma & Motazedian, 2012 and Atkinson & Assatourians, 2010.
+    en: Ottawa planning scenario using the 2010 Val-des-Bois, QC earthquake hypocentre and fault plane geometry from Ma & Motazedian, 2012 and Atkinson & Assatourians, 2010.
       This scenario uses a larger magnitude event than those that have been observed to date for that location, within bounds of the national seismic hazard model.
       Maximum magnitude of 7.95 is obtained from CanSHM6 for GATINEAU region.
-    fr: Scénario de planification pour Ottawa utilisant la géométrie de l’hypocentre et du plan de faille du tremblement de terre de 2010 à Val-des-bois, QC, d’après Ma & Motazedian, 2012 et Atkinson & Assatourians, 2010. Ce scénario utilise un événement de plus grande magnitude que ceux qui ont été observés à ce jour pour cet endroit, dans les limites du modèle national d’aléa sismique. La magnitude maximale de 7,95 est obtenue de CanSHM6 pour la région de la GATINEAU.
+    fr: Scénario de planification pour Ottawa utilisant la géométrie de l’hypocentre et du plan de faille du tremblement de terre de 2010 à Val-des-Bois, QC, d’après Ma & Motazedian, 2012 et Atkinson & Assatourians, 2010. Ce scénario utilise un événement de plus grande magnitude que ceux qui ont été observés à ce jour pour cet endroit, dans les limites du modèle national d’aléa sismique. La magnitude maximale de 7,95 est obtenue de CanSHM6 pour la région de la GATINEAU.
   name: SCM7p5_ValDesBois
   title: M7.5 Val-des-Bois (QC)
 - description:

@@ -48,7 +48,7 @@ for i in range(len(data)):
             "magnitude": str(point.mag),
             "cost": '$' + str("{:,}".format(point.cost)),
             "redtag buildings": "{:,}".format(point.redtag),
-            "URL": f'<a href="http://opendrr.github.io/earthquake-scenarios/en/#{point.title.strip()}">Additional info and resources</a>',
+            "URL": f'<a href="https://opendrr.github.io/earthquake-scenarios/en/#{point.title.strip()}">Additional info and resources</a>',
             "marker-color": color,
             "marker-size": size,
         },
@@ -60,7 +60,7 @@ for i in range(len(data)):
             "magnitude": str(point.mag),
             "prix": '$' + str("{:,}".format(point.cost)),
             "bâtiments détruits": "{:,}".format(point.redtag),
-            "URL": f'<a href="http://opendrr.github.io/earthquake-scenarios/fr/#{point.title.strip()}">Informations complémentaires</a>',
+            "URL": f'<a href="https://opendrr.github.io/earthquake-scenarios/fr/#{point.title.strip()}">Informations complémentaires</a>',
             "marker-color": color,
             "marker-size": size,
         },
@@ -76,10 +76,12 @@ dump_fr = geojson.dumps(collection_fr, sort_keys=False)
 geo_file = 'FinishedScenarios.geojson'
 with open(geo_file, 'w') as f:
     f.write(dump)
+    f.write('\n')
 
 geo_file_fr = 'FinishedScenariosFr.geojson'
 with open(geo_file_fr, 'w') as f:
     f.write(dump_fr)
+    f.write('\n')
 
 
 # Save Markdown file
@@ -90,5 +92,6 @@ md_file = 'FinishedScenarios.md'
 pd.options.display.max_colwidth = 200
 with open(md_file, 'a') as f:
     f.write(data.to_markdown(index=False))
+    f.write('\n')
 
 # Add legend

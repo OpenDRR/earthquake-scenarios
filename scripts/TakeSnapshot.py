@@ -9,7 +9,7 @@
 #
 # Seems you need to be out of openquake virtual env.
 #
-# Usage: python3 ../scripts/TakeSnapshot.py NAME EXPO HAZ DMGb0 DMGr1 LOSSb0 LOSSr1
+# Usage: python3 ../scripts/TakeSnapshot.py NAME EXPO SHAKE DMGb0 DMGr1 LOSSb0 LOSSr1
 #       where NAME is the tectonic indicator and name (Ex: IDM7p1_JdF)
 #       and EXPO is the exposure file type (b or s)
 #       and DMG/LOSS are the run numbers for the baseline/retro damage and loss calcs
@@ -70,34 +70,34 @@ shake = pd.read_csv(shakename)
 # Grab input configs
 args = [haz_in, dmg_in, rsk_in]
 os.system('')
-configParser = configparser.ConfigParser()
-configParser.read(args[0])
-site_model_file = configParser.get('site_params', 'site_model_file')
-rupture_model_file = configParser.get('Rupture information', 'rupture_model_file')
-rupture_mesh_spacing = configParser.get('Rupture information', 'rupture_mesh_spacing')
-gsim_logic_tree_file = configParser.get(
+config = configparser.ConfigParser()
+config.read(args[0])
+site_model_file = config.get('site_params', 'site_model_file')
+rupture_model_file = config.get('Rupture information', 'rupture_model_file')
+rupture_mesh_spacing = config.get('Rupture information', 'rupture_mesh_spacing')
+gsim_logic_tree_file = config.get(
     'Calculation parameters', 'gsim_logic_tree_file'
 )
-configParser.read(args[2])
-truncation_level_risk = configParser.get('Calculation parameters', 'truncation_level')
-maximum_distance = configParser.get('Calculation parameters', 'maximum_distance')
-number_of_ground_motion_fields_risk = configParser.get(
+config.read(args[2])
+truncation_level_risk = config.get('Calculation parameters', 'truncation_level')
+maximum_distance = config.get('Calculation parameters', 'maximum_distance')
+number_of_ground_motion_fields_risk = config.get(
     'Calculation parameters', 'number_of_ground_motion_fields'
 )
-exposure_file = configParser.get('Exposure model', 'exposure_file')
-taxonomy_mapping_baseline = configParser.get('Vulnerability', 'taxonomy_mapping_csv')
-structural_vulnerability_file = configParser.get(
+exposure_file = config.get('Exposure model', 'exposure_file')
+taxonomy_mapping_baseline = config.get('Vulnerability', 'taxonomy_mapping_csv')
+structural_vulnerability_file = config.get(
     'Vulnerability', 'structural_vulnerability_file'
 )
-nonstructural_vulnerability_file = configParser.get(
+nonstructural_vulnerability_file = config.get(
     'Vulnerability', 'nonstructural_vulnerability_file'
 )
-contents_vulnerability_file = configParser.get(
+contents_vulnerability_file = config.get(
     'Vulnerability', 'contents_vulnerability_file'
 )
-configParser.read(args[1])
-structural_fragility_file = configParser.get('fragility', 'structural_fragility_file')
-description = configParser.get('general', 'description')
+config.read(args[1])
+structural_fragility_file = config.get('fragility', 'structural_fragility_file')
+description = config.get('general', 'description')
 
 
 # Merge consequences to damage and create calculated fields
@@ -461,6 +461,7 @@ df = pd.DataFrame(list(metadata.items()), columns=['Name', NAME])
 pd.options.display.max_colwidth = 200
 with open(md_file, 'w') as f:
     f.write(df.to_markdown(index=False))
+    f.write('\n')
 
 
 ################################################## OLD SCRAPS

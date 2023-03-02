@@ -16,8 +16,10 @@ import yaml
 def name_to_sentence(name):
     end = name.split('_')[1]
     title = ''.join(' ' + x if x.isupper() else x for x in end).strip()
+    title = title.replace('Val Des Bois', 'Val-des-Bois')
     mag = name[3] + '.' + name[5]
-    return f'{title} - Magnitude {mag}'
+    # return f'{title} - Magnitude {mag}'
+    return f'M{mag} {title}'
 
 
 path = '../FINISHED/'
@@ -29,9 +31,9 @@ scenarios = []
 for file in list_of_files:
     name = file[:-3]
     long_name = name_to_sentence(name)
-    configParser = configparser.ConfigParser()
-    configParser.read_file(open(f'../initializations/s_Hazard_{name}.ini'))
-    description = configParser.get('general', 'description')
+    config = configparser.ConfigParser()
+    config.read_file(open(f'../initializations/s_Hazard_{name}.ini'))
+    description = config.get('general', 'description')
     scenario = {
         'name': name,
         'description': {'en': description, 'fr': ''},

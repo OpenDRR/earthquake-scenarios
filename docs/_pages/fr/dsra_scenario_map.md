@@ -481,14 +481,14 @@ crossorigin=""></script>
       epicenter = L.circleMarker( [ 48.618961, -123.299385 ], circleStyle() ).addTo( map );
       map.setView(new L.LatLng( 48.618961, -123.299385 ), 7);
     }
-    else if ( lcScenario == "acm4p9_capilano5" ) {
+    else if ( lcScenario == "acm4p9_georgiastraitfault" ) {
       southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
       northEast = L.latLng( 53.53110877480622, -117.3589501128889 );
       bounds = L.latLngBounds( southWest, northEast );
       epicenter = L.circleMarker( [ 49.280, -123.340 ], circleStyle() ).addTo( map );
       map.setView(new L.LatLng( 49.280, -123.340 ), 7);
     }
-    else if ( lcScenario == "acm7p4_burwashlanding" ) {
+    else if ( lcScenario == "acm7p4_denalifault" ) {
       southWest = L.latLng( 60.00000000710405, -141.0180731580253 );
       northEast = L.latLng( 69.64745530351352, -123.7893248352215 );
       bounds = L.latLngBounds( southWest, northEast );
@@ -502,7 +502,7 @@ crossorigin=""></script>
       epicenter = L.circleMarker( [ 45.500 , -73.600 ], circleStyle() ).addTo( map );
       map.setView(new L.LatLng( 45.500 , -73.600 ), 7);
     }
-    else if ( lcScenario == "scm5p5_ottawa" ) {
+    else if ( lcScenario == "scm5p5_constancebay" ) {
       southWest = L.latLng( 42.06164244999297, -86.54942531485392 );
       northEast = L.latLng( 55.00064603767294, -68.38243594858385 );
       bounds = L.latLngBounds( southWest, northEast );

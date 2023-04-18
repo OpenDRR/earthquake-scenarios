@@ -1,7 +1,7 @@
 ---
 authorName: Natural Resources Canada
 authorUrl:
-dateModified: 2022-10-14
+dateModified: 2023-04-18
 pageclass: wb-prettify all-pre
 subject:
   en: [GV Government and Politics, Government services]
@@ -58,7 +58,7 @@ breadcrumbs:
       </div>
       <ul class="list-group">
         <li class="list-group-item">
-          <b>Nom de l'organisation:</b><br>
+          <b>Nom de l’organisation:</b><br>
           Gouvernement du Canada;Ressources naturelles Canada;Secteur des terres et des minéraux, Commission géologique du Canada
         </li>
         <li class="list-group-item">
@@ -70,18 +70,18 @@ breadcrumbs:
   </div>
 </div>
 
-<!-- <div class="row">
+<div class="row">
   <div class="col-md-12">
-    <iframe width="100%" height="480" frameborder="0" src="https://viewscreen.githubusercontent.com/view/geojson?url=https%3a%2f%2fraw.githubusercontent.com%2fDamonU2%2fearthquake-scenarios%2fauto-updates-for-pages%2fFINISHED%2fFinishedScenariosFr.geojson" title="FinishedScenariosFr.geojson"></iframe>
+    <iframe width="100%" height="480" frameborder="0" src="https://viewscreen.githubusercontent.com/view/geojson?url=https%3a%2f%2fraw.githubusercontent.com%2fOpenDRR%2fearthquake-scenarios%2fmaster%2fFINISHED%2fFinishedScenariosFr.geojson" title="FinishedScenariosFr.geojson"></iframe>
     <table style="width:100%; font-size:14px;">
       <tr>
-        <td><img src="../assets/img/small.png" width='20'> Magnitude < 6.0</td>
-        <td><img src="../assets/img/medium.png" width='25'> Magnitude 6.0 - 7.9</td>
-        <td><img src="../assets/img/large.png" width='30'> Magnitude 8.0+</td>
+        <td><img src="../assets/img/small.png" width='20'> Magnitude moins de 6,0</td>
+        <td><img src="../assets/img/medium.png" width='25'> Magnitude 6,0 à 7,9</td>
+        <td><img src="../assets/img/large.png" width='30'> Magnitude 8,0 et plus</td>
       </tr>
     </table>
   </div>
-</div> -->
+</div>
 
 {% assign header = '' %}
 {% if page.lang == 'fr' %}

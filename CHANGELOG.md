@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.2] - 2023-04-20
+
+### Fixed
+
+- Update FINISHED/geopackages/shakemap_scenario_extents.zip
+  to match the current 9 scenarios with the 3 renames
+- Fix automated upload of release assets
+
 ## [1.2.1] - 2023-04-18
 
 ### Added
@@ -51,7 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ACM7p3_LeechRiverFullFault
   - IDM7p1_Sidney
 
-[Unreleased]: https://github.com/OpenDRR/earthquake-scenarios/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/OpenDRR/earthquake-scenarios/compare/v1.2.2...HEAD
+[1.2.2]: https://github.com/OpenDRR/earthquake-scenarios/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/OpenDRR/earthquake-scenarios/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/OpenDRR/earthquake-scenarios/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/OpenDRR/earthquake-scenarios/compare/v1.0...v1.1.0

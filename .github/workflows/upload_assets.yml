@@ -14,20 +14,28 @@ jobs:
   upload-release-assets:
     runs-on: ubuntu-latest
     steps:
-      - name: Make more room by deleting unused software
-        run: |
-          set -x
-          df -h
-          du -csh /usr/share/dotnet
-          du -csh /usr/local/lib/android
-          sudo eatmydata rm -f -r /usr/share/dotnet
-          sudo eatmydata rm -f -r /usr/local/lib/android
-          df -h
+      - name: Maximize build space
+        uses: easimon/maximize-build-space@master
+        with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
 
       - name: Checkout earthquake-scenarios repository
         uses: actions/checkout@v3
         with:
           lfs: 'true'
+
+      - name: Check disk usage
+        run: |
+          du -csh .git/*
+          du -csh FINISHED/geopackages/*
+          du -csh FINISHED/*.csv
+          du -csh .
 
       - name: Upload FINISHED CSV and GeoPackage files as release assets
         uses: xresloader/upload-to-github-release@v1

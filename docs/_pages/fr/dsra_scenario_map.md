@@ -1,7 +1,7 @@
 ---
 authorName: Natural Resources Canada
 authorUrl:
-dateModified: 2023-04-18
+dateModified: 2024-01-23
 noContentTitle: true
 pageclass: wb-prettify all-pre
 subject:
@@ -55,7 +55,7 @@ crossorigin=""></script>
   <h5>{% if page.lang == 'en' %}Available scenarios:{% else %}Scénarios disponibles:{% endif %}</h5>
   <ul>
     {% for scenario in site.data.dsra.scenarios %}
-      <li><a href="{{ context.environments.first["page"]["url"] }}?scenario={{scenario.name}}"><small>{{ scenario.title }}</small></a></li>
+      <li><a href="{{ context.environments.first["page"]["url"] }}?scenario={{scenario.name}}"><small>{{ scenario.title[page.lang] }}</small></a></li>
     {% endfor %}
   </ul>
 </div>

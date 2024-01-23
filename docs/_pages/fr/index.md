@@ -1,7 +1,7 @@
 ---
 authorName: Natural Resources Canada
 authorUrl:
-dateModified: 2023-04-18
+dateModified: 2024-01-23
 pageclass: wb-prettify all-pre
 subject:
   en: [GV Government and Politics, Government services]
@@ -47,7 +47,7 @@ breadcrumbs:
       <ul class="list-group">
       {% for scenario in site.data.dsra.scenarios %}
         <li class="list-group-item">
-          <a href="#{{ scenario.name }}" style="display:block; width:inherit; overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">{{ scenario.title }}</a>
+          <a href="#{{ scenario.name }}" style="display:block; width:inherit; overflow:hidden; white-space:nowrap; text-overflow: ellipsis;">{{ scenario.title[page.lang] }}</a>
         </li>
         {% endfor %}
       </ul>
@@ -104,7 +104,7 @@ breadcrumbs:
 
 {% for scenario in site.data.dsra.scenarios %}
   <a name="{{ scenario.name }}"></a>
-  <h2 id={{ scenario.name }}>{{ scenario.title }}</h2>
+  <h2 id={{ scenario.name }}>{{ scenario.title[page.lang] }}</h2>
   <p>
     <div class="card" style="float:left;margin:10px 20px 0px 0px;">
       <a href="dsra_scenario_map.html?scenario={{ scenario.name }}">
@@ -144,23 +144,23 @@ breadcrumbs:
                   <td><a href="https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_{{ scenario.name | downcase }}_indicators_s?lang=fr-CA" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>-->
               <tr>
-                  <td>{{ scenario.title }} (Bâtiments agrégés)</td>
+                  <td>{{ scenario.title[page.lang] }} (Bâtiments agrégés)</td>
                   <td class="hidden-xs">Dataset</td>
                   <td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_b.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
               <tr>
-                  <td>{{ scenario.title }} (Subdivision du recensement)</td>
+                  <td>{{ scenario.title[page.lang] }} (Subdivision du recensement)</td>
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_csd.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
               <tr>
-                  <td>{{ scenario.title }} (Zone de peuplement)</td>
+                  <td>{{ scenario.title[page.lang] }} (Zone de peuplement)</td>
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_indicators_s.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>
               <tr>
-                  <td>{{ scenario.title }} ShakeMap</td>
+                  <td>{{ scenario.title[page.lang] }} ShakeMap</td>
                   <td class="hidden-xs">Dataset</td><td><span class="label GPKG">GPKG</span></td>
                   <td><a href="{{site.github.releases_url}}/download/{{site.github.releases[0].tag_name}}/dsra_{{ scenario.name }}_shakemap.zip" class="btn btn-primary">{{ btntxt }}</a></td>
               </tr>

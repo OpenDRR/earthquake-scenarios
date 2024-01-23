@@ -3,273 +3,273 @@ collection:
   fr: Scénarios de séismes
 id: dsra_bc_indicators
 scenarios:
-  - name: SIM9p0_CascadiaInterfaceBestFault
-    title: 
-      en: M9.0 Cascadia Full Rupture Subduction Earthquake (BC)
-      fr: M9,0 rupture complète de la faille de Cascadia (C.-B.)
-    description:
-      en: Full rupture of the Cascadia interface fault, the fault defining the
-        boundary between the North American and Pacific Ocean plates. This
-        magnitude 9.0 event, often referred to as ‘The Big One’, affects most
-        communities in southwestern British Columbia.
-      fr: Rupture complète de la faille de l’interface de Cascadia, la faille
-        définissant la frontière entre la plaque nord-américaine et la plaque
-        du Pacifique. Cet événement de magnitude 9,0, souvent qualifié de «
-        séisme de méga-chevauchement », touche la plupart des collectivités du
-        sud-ouest de la Colombie-Britannique.
-  - name: ACM7p3_LeechRiverFullFault
-    title:
-      en: M7.3 Leech River Fault (BC)
-      fr: M7,3 dans la faille de Leech River (C.-B.)
-    description:
-      en: Full rupture of the Leech River Fault, a fault that cuts southern
-        Vancouver Island and extends beneath Greater Victoria. Based on current
-        science, this magnitude 7.3 earthquake scenario represents the
-        strongest ground shaking event that could strike the region, and is one
-        of Greater Victoria’s most severe events.
-      fr: Rupture complète de la faille de Leech River, une faille qui coupe le
-        sud de l’île de Vancouver et s’étend sous la région métropolitaine de
-        Victoria. Selon les données scientifiques actuelles, ce scénario de
-        séisme de magnitude 7,3 représente l’événement sismique le plus
-        important qui pourrait frapper la région, et il s’agit de l’un des
-        événements les plus graves pour la région métropolitaine de Victoria.
-  - name: IDM7p1_Sidney
-    title:
-      en: M7.1 Sidney (BC)
-      fr: M7,1 à Sidney (C.-B.)
-    description:
-      en: In 2015, a magnitude 4.7 earthquake occurred 60 km beneath Sidney,
-        BC. This scenario visualizes the effects of that event if it had a
-        magnitude of 7.1.
-      fr: En 2015, un séisme de magnitude 4,7 s’est produit à 60 kilomètres
-        sous Sidney (C.-B.). Ce scénario visualise les effets de cet événement
-        s’il avait eu une magnitude de 7,1.
-  - name: ACM7p0_GeorgiaStraitFault
-    title:
-      en: M7.0 Georgia Strait (BC)
-      fr: M7,0 dans le détroit de Georgia (C.-B.)
-    description:
-      en: In 1997, a magnitude 4.6 earthquake occurred 3 to 4 km beneath the
-        Strait of Georgia. This scenario visualizes the effects of that event
-        if it had a magnitude of 7.0, and represents a strong ground shaking
-        event that could strike Metro Vancouver.
-      fr: En 1997, un séisme de magnitude 4,6 s’est produit à 3 ou 4 kilomètres
-        sous le détroit de Georgia, près de Vancouver. Ce scénario visualise
-        les effets de cet événement s’il se produisait aujourd’hui à une
-        magnitude de 7,0, et représente une forte secousse tellurique qui
-        pourrait frapper Metro Vancouver.
-  - name: SCM7p5_ValDesBois
-    title:
-      en: M7.5 Val-des-Bois (QC)
-      fr: M7,5 Val-des-Bois (Qc)
-    description:
-      en: In 2010 a magnitude 5.0 earthquake occurred near Val-des-Bois,
-        Quebec, and it produced the strongest shaking ever felt in Ottawa.
-        Based on current science, the maximum possible size that an event like
-        this could reach is about a magnitude of 7.5. This scenario visualizes
-        the effects of that largest earthquake, and represents a very severe
-        case for Ottawa.
-      fr: En 2010, un séisme de magnitude 5,0 s’est produit près de Val des
-        Bois, au Québec, et il a produit les secousses les plus fortes jamais
-        ressenties à Ottawa. Selon les données scientifiques actuelles, la
-        magnitude maximale qu’un événement comme celui là pourrait atteindre
-        est d’environ 7,5. Ce scénario permet de visualiser les effets d’un tel
-        séisme de plus grande magnitude et représente un cas très grave pour
-        Ottawa.
-  - name: ACM4p9_GeorgiaStraitFault
-    title:
-      en: M4.9 Georgia Strait (BC)
-      fr: M4,9 dans le détroit de Georgia (C.-B.)
-    description:
-      en: In 1997, a magnitude 4.6 earthquake occurred 3 to 4 km beneath the
-        Strait of Georgia, near Vancouver. This scenario visualizes the effects
-        of that event if it occurred today with a magnitude of 4.9. A magnitude
-        7.0 Georgia Strait scenario is also provided, and represents a less
-        likely but more consequential case for comparison.
-      fr: En 1997, un séisme de magnitude 4,6 s’est produit à 3 ou 4 kilomètres
-        sous le détroit de Georgia, près de Vancouver. Ce scénario visualise
-        les effets de cet événement s’il se produisait aujourd’hui à une
-        magnitude de 4,9. Un scénario de magnitude 7,0 dans le détroit de
-        Georgia est également fourni et représente un cas moins probable, mais
-        plus substantiel, aux fins de comparaison.
-  - name: ACM7p4_DenaliFault
-    title:
-      en: M7.4 Denali Fault (YT)
-      fr: M7,4 dans la faille de Denali (Yn)
-    description:
-      en: The Denali Fault spans over 200km of the Yukon Territory, and is a
-        significant source of seismic hazard. This magnitude 7.4 earthquake
-        scenario, centered near small communities along the Alaska Highway,
-        visualizes the effects of a severe earthquake that could be produced by
-        this fault.
-      fr: La faille de Denali s’étend sur plus de 200 kilomètres sur le
-        territoire du Yukon et constitue une source importante de risque
-        sismique. Ce scénario de séisme de magnitude 7,4, dont l’épicentre se
-        trouve près de petites collectivités réparties le long de la route de
-        l’Alaska, visualise les effets d’un séisme grave qui pourrait être
-        causé par cette faille.
-  - name: SCM5p0_Montreal
-    title:
-      en: M5.0 Montréal (QC)
-      fr: M5,0 Montréal (Qc)
-    description:
-      en: In September 1732 a damaging earthquake occurred immediately beneath
-        the Island of Montréal. This scenario visualizes the effects of that
-        event if it occurred today with a magnitude of 5.0, and represents a
-        strong ground shaking event that could strike Montréal.
-      fr: En septembre 1732, un séisme dévastateur s’est produit immédiatement
-        sous l’île de Montréal. Ce scénario visualise les effets de cet
-        événement s’il se produisait aujourd’hui à une magnitude de 5,0, et
-        représente une forte secousse sismique qui pourrait frapper Montréal.
-  - name: SCM5p5_ConstanceBay
-    title:
-      en: M5.5 near Ottawa (ON)
-      fr: M5,5 près d’Ottawa (Ont.)
-    description:
-      en: Faults in the valleys near Ottawa could rupture and produce strong,
-        shallow earthquakes. This magnitude 5.5 scenario visualizes the effects
-        of such an event. It does not represent the most severe earthquake that
-        could occur, but one that is more likely and could still cause damage.
-      fr: Les failles dans les vallées à proximité d’Ottawa pourraient se
-        rompre et produire des séismes forts et peu profonds. Ce scénario de
-        magnitude 5,5 visualise les effets d’un tel événement. Il ne s’agit pas
-        du séisme le plus grave qui puisse se produire, mais d’un séisme qui
-        est plus probable et qui pourrait quand même causer des dommages.
-  - name: ACM5p2_VedderFault
-    title:
-      en: M5.2 Vedder Fault (BC)
-      fr: M5,2 sur la faille de Vedder (C.-B.)
-    description:
-      en: Magnitude 5.2 earthquake scenario along the Vedder Fault which runs
-        northeast along Vedder Mountain. This earthquake is located about 18 km
-        east of Abbotsford City Hall. This fault is not known to be active, but
-        this scenario represents a small but damaging event near Abbotsford
-        town centre.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,2 survenant le long
-        de la faille de Vedder, une faille qui s’étend vers le nord est le long
-        de la montagne Vedder. L’épicentre de ce séisme se situe à environ 18
-        km à l’est de l’hôtel de ville d’Abbotsford. Cette faille n’est pas
-        reconnue comme étant active, mais ce scénario indique qu’un événement
-        de faible envergure pourrait s’avérer destructeur près du centre ville
-        d’Abbotsford.
-  - name: ACM5p0_MysteryLake
-    title:
-      en: M5.0 Mystery Lake (BC)
-      fr: M5,0 au lac Mystery (C.-B.)
-    description:
-      en: A magnitude 5 earthquake scenario along an unnamed fault located
-        about 15 km north-northeast of Burnaby City Hall and directly south of
-        Mt Elsay. This fault is not known to be active, but this scenario
-        represents a small but damaging event in the North Shore Mountains.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5 survenant le long
-        d’une faille sans nom située à environ 15 km au nord nord est de
-        l’hôtel de ville de Burnaby, directement au sud du mont Elsay. Cette
-        faille n’est pas reconnue comme étant active, mais ce scénario indique
-        qu’un événement de faible envergure pourrait s’avérer destructeur dans
-        les montagnes du North Shore.
-  - name: ACM5p7_SoutheyPoint
-    title:
-      en: M5.7 Southey Point (BC)
-      fr: M5,7 à la pointe Southey (C.-B.)
-    description:
-      en: Magnitude 5.7 earthquake scenario located directly southeast of
-        Ladysmith Town Centre. This fault is not known to be active, but this
-        scenario represents a small but damaging event near Ladysmith and
-        Burleith Arm.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,7 dont l’épicentre
-        se situe directement au sud est du centre ville de Ladysmith. Cette
-        faille n’est pas reconnue comme étant active, mais ce scénario indique
-        qu’un événement de faible envergure pourrait s’avérer destructeur près
-        de Ladysmith et du bras Burleith.
-  - name: ACM4p9_VedderFault
-    title:
-      en: M4.9 Vedder Fault (BC)
-      fr: M4,9 sur la faille de Vedder (C.-B.)
-    description:
-      en: Magnitude 4.9 earthquake scenario along the Vedder Fault which runs
-        northeast along Vedder Mountain. This earthquake is located about 18 km
-        east of Abbotsford City Hall. This fault is not known to be active, but
-        this scenario represents a small but damaging event near Abbotsford
-        town centre.
-      fr: Il s’agit d’un scénario de séisme de magnitude 4,9 survenant le long
-        de la faille de Vedder, une faille qui s’étend vers le nord est le long
-        de la montagne Vedder. L’épicentre de ce séisme se situe à environ 18
-        km à l’est de l’hôtel de ville d’Abbotsford. Cette faille n’est pas
-        reconnue comme étant active, mais ce scénario indique qu’un événement
-        de faible envergure pourrait s’avérer destructeur près du centre ville
-        d’Abbotsford.
-  - name: SCM5p9_MillesIlesFault
-    title:
-      en: M5.9 Milles-ÎIes Fault (QC)
-      fr: M5,9 sur la faille des Mille ÎIes (Qc)
-    description:
-      en: A magnitude 5.9 earthquake near Montreal, along the Milles-Îles
-        Fault. This fault is not known to be active, but this scenario
-        represents a small but damaging event near the City of Montreal.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,9 survenant près de
-        Montréal, le long de la faille des Mille ÎIes. Cette faille n’est pas
-        reconnue comme étant active, mais ce scénario indique qu’un événement
-        de faible envergure pourrait s’avérer destructeur près de la ville de
-        Montréal.
-  - name: SCM5p6_GloucesterFault
-    title:
-      en: M5.6 Gloucester Fault (ON)
-      fr: M5,6 sur la faille de Gloucester (Ont.)
-    description:
-      en: A magnitude 5.6 rupture scenario near Ottawa along the Gloucester
-        Fault in the south of the city. This fault is not known to be active,
-        but this scenario is representative of seismicity in the Ottawa Valley.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,6 causé par une
-        rupture survenant près d’Ottawa le long de la faille de Gloucester,
-        dans le sud de la ville. Cette faille n’est pas reconnue comme étant
-        active, mais ce scénario est représentatif de l’activité sismique de la
-        vallée de l’Outaouais.
-  - name: ACM5p2_BeaufortFault
-    title:
-      en: M5.2 Beaufort Fault (BC)
-      fr: M5,2 sur la faille de Beaufort (C.-B.)
-    description:
-      en: The Beaufort fault in Eastern Vancouver Island is probably an active fault, near Courtenay/Comox/Cumberland. Based on current science, this fault may have ruptured in the 1946 magnitude 7.3 Vancouver Island Earthquake. This scenario represents a smaller magnitude 5.2 event.
-      fr: La faille de Beaufort, située dans l’est de l’île de Vancouver, est probablement active près de Courtenay Comox Cumberland. Selon les données scientifiques actuelles, une rupture de cette faille pourrait s’être produite lors du séisme de magnitude 7,3 survenu en 1946 sur l’île de Vancouver. Ce scénario représente un événement de plus faible envergure de magnitude 5,2.
-  - name: ACM7p7_QueenCharlotteFault
-    title:
-      en: M7.7 Queen Charlotte Fault (BC)
-      fr: M7,7 sur la faille de la Reine-Charlotte (C.-B.)
-    description:
-      en: In 1949 a magnitude 8.1 earthquake occurred on the Queen Charlotte Fault, off the west coast of the Haida Gwaii archipelago. This magnitude 7.7 scenario along the Queen Charlotte Fault is slightly different and closer to population centres than the magnitude 7.8 earthquake that occurred in 2012.
-      fr: En 1949, un séisme de magnitude 8,1 s’est produit sur la faille de la Reine Charlotte, au large de la côte ouest de l’archipel Haida Gwaii. Ce scénario de séisme de magnitude 7,7 survenant le long de la faille de la Reine Charlotte est légèrement différent; le séisme surviendrait plus près des agglomérations que celui de magnitude 7,8 survenu en 2012.
-  - name: ACM5p0_GeorgiaStraitFault
-    title:
-      en: M5.0 Georgia Strait Fault (BC)
-      fr: M4,9 sur la faille du détroit de Georgia (C.-B.)
-    description:
-      en: In 1997, a magnitude 4.6 earthquake occurred 3 to 4 km beneath the Strait of Georgia, near Vancouver. This scenario visualizes the effects of that event if it occurred today with a magnitude of 5.0. A magnitude 7.0 Georgia Strait scenario is also provided, and represents a less likely but more consequential case for comparison.
-      fr: En 1997, un séisme de magnitude 4,6 s’est produit à 3 ou 4 km sous la surface du détroit de Georgia, près de Vancouver. Ce scénario permet de visualiser les effets de cet événement s’il se produisait aujourd’hui à une magnitude de 5,0. Un scénario de séisme de magnitude 7,0 dans le détroit de Georgia est également fourni; il représente un cas moins probable, mais plus lourd de conséquences, aux fins de comparaison.
-  - name: ACM8p0_QueenCharlotteFault
-    title:
-      en: M8.0 Queen Charlotte Fault (BC)
-      fr: M8,0 sur la faille de la Reine-Charlotte (C.-B.)
-    description:
-      en: In 1949 a magnitude 8.1 earthquake occurred on the Queen Charlotte Fault, off the west coast of the Haida Gwaii archipelago. This magnitude 8.0 scenario along the Queen Charlotte Fault is slightly different and closer to population centres than the magnitude 7.8 earthquake that occurred in 2012.
-      fr: En 1949, un séisme de magnitude 8,1 s’est produit sur la faille de la Reine Charlotte, au large de la côte ouest de l’archipel Haida Gwaii. Ce scénario de séisme de magnitude 8,0 survenant le long de la faille de la Reine Charlotte est légèrement différent; le séisme surviendrait plus près des agglomérations que celui de magnitude 7,8 survenu en 2012.
-  - name: SCM5p0_BurlingtonTorontoStructuralZone
-    title:
-      en: M5.0 Burlington Toronto Structural Zone (ON)
-      fr: M5,0 dans la zone structurale de Burlington Toronto (Ont.)
-    description:
-      en: This is a magnitude 5.0 earthquake scenario along the Burlington Toronto Structural Zone — a fault near Toronto and its surrounding region. This fault is not known to be active but demonstrates a plausible earthquake scenario for the Toronto region.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,0 survenant le long de la zone structurale de Burlington Toronto, une faille située près de Toronto et de la région environnante. Cette faille n’est pas reconnue comme étant active, ce scénario sismique est plausible pour la région de Toronto.
-  - name: SCM5p0_RougeBeach
-    title:
-      en: M5.0 Rouge Beach (ON)
-      fr: M5,0 à la plage de la Rouge (Ont.)
-    description:
-      en: This is a magnitude 5.0 earthquake scenario under Lake Ontario, very close to Toronto. This fault is not known to be active but demonstrates a plausible earthquake scenario for Toronto region.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,0 survenant sous le lac Ontario, très près de Toronto. Cette faille n’est pas reconnue comme étant active, mais ce scénario sismique est plausible pour la région de Toronto.
-  - name: ACM5p5_SoutheyPoint
-    title:
-      en: M5.5 Southey Point (BC)
-      fr: M5,5 à la pointe Southey (C.-B.)
-    description:
-      en: Magnitude 5.0 earthquake scenario located directly southeast of Ladysmith Town Centre. This fault is not known to be active, but this scenario represents a small but damaging event near Ladysmith and Burleith Arm.
-      fr: Il s’agit d’un scénario de séisme de magnitude 5,0 dont l’épicentre se situe directement au sud est du centre ville de Ladysmith. Cette faille n’est pas reconnue comme étant active, mais ce scénario indique qu’un événement de faible envergure pourrait s’avérer destructeur près de Ladysmith et du bras Burleith.
+- name: SIM9p0_CascadiaInterfaceBestFault
+  title:
+    en: M9.0 Cascadia Full Rupture Subduction Earthquake (BC)
+    fr: M9,0 rupture complète de la faille de Cascadia (C.-B.)
+  description:
+    en: Full rupture of the Cascadia interface fault, the fault defining the
+      boundary between the North American and Pacific Ocean plates. This
+      magnitude 9.0 event, often referred to as ‘The Big One’, affects most
+      communities in southwestern British Columbia.
+    fr: Rupture complète de la faille de l’interface de Cascadia, la faille
+      définissant la frontière entre la plaque nord-américaine et la plaque
+      du Pacifique. Cet événement de magnitude 9,0, souvent qualifié de «
+      séisme de méga-chevauchement », touche la plupart des collectivités du
+      sud-ouest de la Colombie-Britannique.
+- name: ACM7p3_LeechRiverFullFault
+  title:
+    en: M7.3 Leech River Fault (BC)
+    fr: M7,3 dans la faille de Leech River (C.-B.)
+  description:
+    en: Full rupture of the Leech River Fault, a fault that cuts southern
+      Vancouver Island and extends beneath Greater Victoria. Based on current
+      science, this magnitude 7.3 earthquake scenario represents the
+      strongest ground shaking event that could strike the region, and is one
+      of Greater Victoria’s most severe events.
+    fr: Rupture complète de la faille de Leech River, une faille qui coupe le
+      sud de l’île de Vancouver et s’étend sous la région métropolitaine de
+      Victoria. Selon les données scientifiques actuelles, ce scénario de
+      séisme de magnitude 7,3 représente l’événement sismique le plus
+      important qui pourrait frapper la région, et il s’agit de l’un des
+      événements les plus graves pour la région métropolitaine de Victoria.
+- name: IDM7p1_Sidney
+  title:
+    en: M7.1 Sidney (BC)
+    fr: M7,1 à Sidney (C.-B.)
+  description:
+    en: In 2015, a magnitude 4.7 earthquake occurred 60 km beneath Sidney,
+      BC. This scenario visualizes the effects of that event if it had a
+      magnitude of 7.1.
+    fr: En 2015, un séisme de magnitude 4,7 s’est produit à 60 kilomètres
+      sous Sidney (C.-B.). Ce scénario visualise les effets de cet événement
+      s’il avait eu une magnitude de 7,1.
+- name: ACM7p0_GeorgiaStraitFault
+  title:
+    en: M7.0 Georgia Strait (BC)
+    fr: M7,0 dans le détroit de Georgia (C.-B.)
+  description:
+    en: In 1997, a magnitude 4.6 earthquake occurred 3 to 4 km beneath the
+      Strait of Georgia. This scenario visualizes the effects of that event
+      if it had a magnitude of 7.0, and represents a strong ground shaking
+      event that could strike Metro Vancouver.
+    fr: En 1997, un séisme de magnitude 4,6 s’est produit à 3 ou 4 kilomètres
+      sous le détroit de Georgia, près de Vancouver. Ce scénario visualise
+      les effets de cet événement s’il se produisait aujourd’hui à une
+      magnitude de 7,0, et représente une forte secousse tellurique qui
+      pourrait frapper Metro Vancouver.
+- name: SCM7p5_ValDesBois
+  title:
+    en: M7.5 Val-des-Bois (QC)
+    fr: M7,5 Val-des-Bois (Qc)
+  description:
+    en: In 2010 a magnitude 5.0 earthquake occurred near Val-des-Bois,
+      Quebec, and it produced the strongest shaking ever felt in Ottawa.
+      Based on current science, the maximum possible size that an event like
+      this could reach is about a magnitude of 7.5. This scenario visualizes
+      the effects of that largest earthquake, and represents a very severe
+      case for Ottawa.
+    fr: En 2010, un séisme de magnitude 5,0 s’est produit près de Val des
+      Bois, au Québec, et il a produit les secousses les plus fortes jamais
+      ressenties à Ottawa. Selon les données scientifiques actuelles, la
+      magnitude maximale qu’un événement comme celui là pourrait atteindre
+      est d’environ 7,5. Ce scénario permet de visualiser les effets d’un tel
+      séisme de plus grande magnitude et représente un cas très grave pour
+      Ottawa.
+- name: ACM4p9_GeorgiaStraitFault
+  title:
+    en: M4.9 Georgia Strait (BC)
+    fr: M4,9 dans le détroit de Georgia (C.-B.)
+  description:
+    en: In 1997, a magnitude 4.6 earthquake occurred 3 to 4 km beneath the
+      Strait of Georgia, near Vancouver. This scenario visualizes the effects
+      of that event if it occurred today with a magnitude of 4.9. A magnitude
+      7.0 Georgia Strait scenario is also provided, and represents a less
+      likely but more consequential case for comparison.
+    fr: En 1997, un séisme de magnitude 4,6 s’est produit à 3 ou 4 kilomètres
+      sous le détroit de Georgia, près de Vancouver. Ce scénario visualise
+      les effets de cet événement s’il se produisait aujourd’hui à une
+      magnitude de 4,9. Un scénario de magnitude 7,0 dans le détroit de
+      Georgia est également fourni et représente un cas moins probable, mais
+      plus substantiel, aux fins de comparaison.
+- name: ACM7p4_DenaliFault
+  title:
+    en: M7.4 Denali Fault (YT)
+    fr: M7,4 dans la faille de Denali (Yn)
+  description:
+    en: The Denali Fault spans over 200km of the Yukon Territory, and is a
+      significant source of seismic hazard. This magnitude 7.4 earthquake
+      scenario, centered near small communities along the Alaska Highway,
+      visualizes the effects of a severe earthquake that could be produced by
+      this fault.
+    fr: La faille de Denali s’étend sur plus de 200 kilomètres sur le
+      territoire du Yukon et constitue une source importante de risque
+      sismique. Ce scénario de séisme de magnitude 7,4, dont l’épicentre se
+      trouve près de petites collectivités réparties le long de la route de
+      l’Alaska, visualise les effets d’un séisme grave qui pourrait être
+      causé par cette faille.
+- name: SCM5p0_Montreal
+  title:
+    en: M5.0 Montréal (QC)
+    fr: M5,0 Montréal (Qc)
+  description:
+    en: In September 1732 a damaging earthquake occurred immediately beneath
+      the Island of Montréal. This scenario visualizes the effects of that
+      event if it occurred today with a magnitude of 5.0, and represents a
+      strong ground shaking event that could strike Montréal.
+    fr: En septembre 1732, un séisme dévastateur s’est produit immédiatement
+      sous l’île de Montréal. Ce scénario visualise les effets de cet
+      événement s’il se produisait aujourd’hui à une magnitude de 5,0, et
+      représente une forte secousse sismique qui pourrait frapper Montréal.
+- name: SCM5p5_ConstanceBay
+  title:
+    en: M5.5 near Ottawa (ON)
+    fr: M5,5 près d’Ottawa (Ont.)
+  description:
+    en: Faults in the valleys near Ottawa could rupture and produce strong,
+      shallow earthquakes. This magnitude 5.5 scenario visualizes the effects
+      of such an event. It does not represent the most severe earthquake that
+      could occur, but one that is more likely and could still cause damage.
+    fr: Les failles dans les vallées à proximité d’Ottawa pourraient se
+      rompre et produire des séismes forts et peu profonds. Ce scénario de
+      magnitude 5,5 visualise les effets d’un tel événement. Il ne s’agit pas
+      du séisme le plus grave qui puisse se produire, mais d’un séisme qui
+      est plus probable et qui pourrait quand même causer des dommages.
+- name: ACM5p2_VedderFault
+  title:
+    en: M5.2 Vedder Fault (BC)
+    fr: M5,2 sur la faille de Vedder (C.-B.)
+  description:
+    en: Magnitude 5.2 earthquake scenario along the Vedder Fault which runs
+      northeast along Vedder Mountain. This earthquake is located about 18 km
+      east of Abbotsford City Hall. This fault is not known to be active, but
+      this scenario represents a small but damaging event near Abbotsford
+      town centre.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,2 survenant le long
+      de la faille de Vedder, une faille qui s’étend vers le nord est le long
+      de la montagne Vedder. L’épicentre de ce séisme se situe à environ 18
+      km à l’est de l’hôtel de ville d’Abbotsford. Cette faille n’est pas
+      reconnue comme étant active, mais ce scénario indique qu’un événement
+      de faible envergure pourrait s’avérer destructeur près du centre ville
+      d’Abbotsford.
+- name: ACM5p0_MysteryLake
+  title:
+    en: M5.0 Mystery Lake (BC)
+    fr: M5,0 au lac Mystery (C.-B.)
+  description:
+    en: A magnitude 5 earthquake scenario along an unnamed fault located
+      about 15 km north-northeast of Burnaby City Hall and directly south of
+      Mt Elsay. This fault is not known to be active, but this scenario
+      represents a small but damaging event in the North Shore Mountains.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5 survenant le long
+      d’une faille sans nom située à environ 15 km au nord nord est de
+      l’hôtel de ville de Burnaby, directement au sud du mont Elsay. Cette
+      faille n’est pas reconnue comme étant active, mais ce scénario indique
+      qu’un événement de faible envergure pourrait s’avérer destructeur dans
+      les montagnes du North Shore.
+- name: ACM5p7_SoutheyPoint
+  title:
+    en: M5.7 Southey Point (BC)
+    fr: M5,7 à la pointe Southey (C.-B.)
+  description:
+    en: Magnitude 5.7 earthquake scenario located directly southeast of
+      Ladysmith Town Centre. This fault is not known to be active, but this
+      scenario represents a small but damaging event near Ladysmith and
+      Burleith Arm.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,7 dont l’épicentre
+      se situe directement au sud est du centre ville de Ladysmith. Cette
+      faille n’est pas reconnue comme étant active, mais ce scénario indique
+      qu’un événement de faible envergure pourrait s’avérer destructeur près
+      de Ladysmith et du bras Burleith.
+- name: ACM4p9_VedderFault
+  title:
+    en: M4.9 Vedder Fault (BC)
+    fr: M4,9 sur la faille de Vedder (C.-B.)
+  description:
+    en: Magnitude 4.9 earthquake scenario along the Vedder Fault which runs
+      northeast along Vedder Mountain. This earthquake is located about 18 km
+      east of Abbotsford City Hall. This fault is not known to be active, but
+      this scenario represents a small but damaging event near Abbotsford
+      town centre.
+    fr: Il s’agit d’un scénario de séisme de magnitude 4,9 survenant le long
+      de la faille de Vedder, une faille qui s’étend vers le nord est le long
+      de la montagne Vedder. L’épicentre de ce séisme se situe à environ 18
+      km à l’est de l’hôtel de ville d’Abbotsford. Cette faille n’est pas
+      reconnue comme étant active, mais ce scénario indique qu’un événement
+      de faible envergure pourrait s’avérer destructeur près du centre ville
+      d’Abbotsford.
+- name: SCM5p9_MillesIlesFault
+  title:
+    en: M5.9 Milles-ÎIes Fault (QC)
+    fr: M5,9 sur la faille des Mille ÎIes (Qc)
+  description:
+    en: A magnitude 5.9 earthquake near Montreal, along the Milles-Îles
+      Fault. This fault is not known to be active, but this scenario
+      represents a small but damaging event near the City of Montreal.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,9 survenant près de
+      Montréal, le long de la faille des Mille ÎIes. Cette faille n’est pas
+      reconnue comme étant active, mais ce scénario indique qu’un événement
+      de faible envergure pourrait s’avérer destructeur près de la ville de
+      Montréal.
+- name: SCM5p6_GloucesterFault
+  title:
+    en: M5.6 Gloucester Fault (ON)
+    fr: M5,6 sur la faille de Gloucester (Ont.)
+  description:
+    en: A magnitude 5.6 rupture scenario near Ottawa along the Gloucester
+      Fault in the south of the city. This fault is not known to be active,
+      but this scenario is representative of seismicity in the Ottawa Valley.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,6 causé par une
+      rupture survenant près d’Ottawa le long de la faille de Gloucester,
+      dans le sud de la ville. Cette faille n’est pas reconnue comme étant
+      active, mais ce scénario est représentatif de l’activité sismique de la
+      vallée de l’Outaouais.
+- name: ACM5p2_BeaufortFault
+  title:
+    en: M5.2 Beaufort Fault (BC)
+    fr: M5,2 sur la faille de Beaufort (C.-B.)
+  description:
+    en: The Beaufort fault in Eastern Vancouver Island is probably an active fault, near Courtenay/Comox/Cumberland. Based on current science, this fault may have ruptured in the 1946 magnitude 7.3 Vancouver Island Earthquake. This scenario represents a smaller magnitude 5.2 event.
+    fr: La faille de Beaufort, située dans l’est de l’île de Vancouver, est probablement active près de Courtenay Comox Cumberland. Selon les données scientifiques actuelles, une rupture de cette faille pourrait s’être produite lors du séisme de magnitude 7,3 survenu en 1946 sur l’île de Vancouver. Ce scénario représente un événement de plus faible envergure de magnitude 5,2.
+- name: ACM7p7_QueenCharlotteFault
+  title:
+    en: M7.7 Queen Charlotte Fault (BC)
+    fr: M7,7 sur la faille de la Reine-Charlotte (C.-B.)
+  description:
+    en: In 1949 a magnitude 8.1 earthquake occurred on the Queen Charlotte Fault, off the west coast of the Haida Gwaii archipelago. This magnitude 7.7 scenario along the Queen Charlotte Fault is slightly different and closer to population centres than the magnitude 7.8 earthquake that occurred in 2012.
+    fr: En 1949, un séisme de magnitude 8,1 s’est produit sur la faille de la Reine Charlotte, au large de la côte ouest de l’archipel Haida Gwaii. Ce scénario de séisme de magnitude 7,7 survenant le long de la faille de la Reine Charlotte est légèrement différent; le séisme surviendrait plus près des agglomérations que celui de magnitude 7,8 survenu en 2012.
+- name: ACM5p0_GeorgiaStraitFault
+  title:
+    en: M5.0 Georgia Strait Fault (BC)
+    fr: M4,9 sur la faille du détroit de Georgia (C.-B.)
+  description:
+    en: In 1997, a magnitude 4.6 earthquake occurred 3 to 4 km beneath the Strait of Georgia, near Vancouver. This scenario visualizes the effects of that event if it occurred today with a magnitude of 5.0. A magnitude 7.0 Georgia Strait scenario is also provided, and represents a less likely but more consequential case for comparison.
+    fr: En 1997, un séisme de magnitude 4,6 s’est produit à 3 ou 4 km sous la surface du détroit de Georgia, près de Vancouver. Ce scénario permet de visualiser les effets de cet événement s’il se produisait aujourd’hui à une magnitude de 5,0. Un scénario de séisme de magnitude 7,0 dans le détroit de Georgia est également fourni; il représente un cas moins probable, mais plus lourd de conséquences, aux fins de comparaison.
+- name: ACM8p0_QueenCharlotteFault
+  title:
+    en: M8.0 Queen Charlotte Fault (BC)
+    fr: M8,0 sur la faille de la Reine-Charlotte (C.-B.)
+  description:
+    en: In 1949 a magnitude 8.1 earthquake occurred on the Queen Charlotte Fault, off the west coast of the Haida Gwaii archipelago. This magnitude 8.0 scenario along the Queen Charlotte Fault is slightly different and closer to population centres than the magnitude 7.8 earthquake that occurred in 2012.
+    fr: En 1949, un séisme de magnitude 8,1 s’est produit sur la faille de la Reine Charlotte, au large de la côte ouest de l’archipel Haida Gwaii. Ce scénario de séisme de magnitude 8,0 survenant le long de la faille de la Reine Charlotte est légèrement différent; le séisme surviendrait plus près des agglomérations que celui de magnitude 7,8 survenu en 2012.
+- name: SCM5p0_BurlingtonTorontoStructuralZone
+  title:
+    en: M5.0 Burlington Toronto Structural Zone (ON)
+    fr: M5,0 dans la zone structurale de Burlington Toronto (Ont.)
+  description:
+    en: This is a magnitude 5.0 earthquake scenario along the Burlington Toronto Structural Zone — a fault near Toronto and its surrounding region. This fault is not known to be active but demonstrates a plausible earthquake scenario for the Toronto region.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,0 survenant le long de la zone structurale de Burlington Toronto, une faille située près de Toronto et de la région environnante. Cette faille n’est pas reconnue comme étant active, ce scénario sismique est plausible pour la région de Toronto.
+- name: SCM5p0_RougeBeach
+  title:
+    en: M5.0 Rouge Beach (ON)
+    fr: M5,0 à la plage de la Rouge (Ont.)
+  description:
+    en: This is a magnitude 5.0 earthquake scenario under Lake Ontario, very close to Toronto. This fault is not known to be active but demonstrates a plausible earthquake scenario for Toronto region.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,0 survenant sous le lac Ontario, très près de Toronto. Cette faille n’est pas reconnue comme étant active, mais ce scénario sismique est plausible pour la région de Toronto.
+- name: ACM5p5_SoutheyPoint
+  title:
+    en: M5.5 Southey Point (BC)
+    fr: M5,5 à la pointe Southey (C.-B.)
+  description:
+    en: Magnitude 5.0 earthquake scenario located directly southeast of Ladysmith Town Centre. This fault is not known to be active, but this scenario represents a small but damaging event near Ladysmith and Burleith Arm.
+    fr: Il s’agit d’un scénario de séisme de magnitude 5,0 dont l’épicentre se situe directement au sud est du centre ville de Ladysmith. Cette faille n’est pas reconnue comme étant active, mais ce scénario indique qu’un événement de faible envergure pourrait s’avérer destructeur près de Ladysmith et du bras Burleith.

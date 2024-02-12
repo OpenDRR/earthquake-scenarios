@@ -23,21 +23,14 @@ breadcrumbs:
   - title: "Earthquake Scenario Map"
 ---
 <!-- Load Leaflet from CDN -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-crossorigin=""/>
-
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <!-- Load Esri Leaflet from CDN -->
-<script src="https://unpkg.com/esri-leaflet@3.0.2/dist/esri-leaflet.js"
-integrity="sha512-myckXhaJsP7Q7MZva03Tfme/MSF5a6HC2xryjAM4FxPLHGqlh5VALCbywHnzs2uPoF/4G/QVXyYDDSkp5nPfig=="
-crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js" integrity="sha512-i9mZ/0lnBMdKZjkVQXImtZbWzrhomyyQzXarfT4ki1eD/Bi+rcV4lFyzX52lbRQtqj070JQea4p8QNCMrHzuYg==" crossorigin=""></script>
 
 <!-- Load Esri Leaflet Renderers plugin to use feature service symbology -->
-<script src="https://unpkg.com/esri-leaflet-renderers@2.1.2" crossorigin=""></script>
+<script src="https://unpkg.com/esri-leaflet-renderers@3.0.0/dist/esri-leaflet-renderers.js" integrity="sha512-tqY7QUz7UHKLqhBX1SVYBsn6EKeadkSqYXsdj3RbzZdY8jUq1t0Hi+CS7vylbMIM/jcmN4PgelBhiKvCjTJ7GQ==" crossorigin=""></script>
 
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet'/>
@@ -446,283 +439,329 @@ crossorigin=""></script>
 
   function setBounds() {
 
-    if ( lcScenario == "acm7p0_georgiastraitfault" ) {
-      southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
-      northEast = L.latLng( 53.53110877480622, -117.3589501128889 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 49.243365, -123.62296 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 49.243365, -123.62296 ), 7);
-    }
-    else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
-      southWest = L.latLng( 48.30891568624434, -129.0949439967106 );
-      northEast = L.latLng( 53.30903267135562, -117.4908738038378 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 48.407017, -123.412134 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 48.407017, -123.412134 ), 7);
-    }
-    else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
-      southWest = L.latLng( 48.30891568684188, -139.0522010412872 );
-      northEast = L.latLng( 60.00006153221153, -114.05375826483 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 48.251246, -125.215269 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 48.251246, -125.215269 ), 7);
-    }
-    else if ( lcScenario == "scm7p5_valdesbois" ) {
-      southWest = L.latLng( 42.47260780141163, -86.54942531485392 );
-      northEast = L.latLng( 55.00064603767294, -67.44787497495167 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 45.905377, -75.494669 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 45.905377, -75.494669 ), 7);
-    }
-    else if ( lcScenario == "idm7p1_sidney" ) {
-      southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
-      northEast = L.latLng( 53.30903267135562, -117.3589501128889 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 48.618961, -123.299385 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 48.618961, -123.299385 ), 7);
-    }
-    else if ( lcScenario == "acm4p9_georgiastraitfault" ) {
-      southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
-      northEast = L.latLng( 53.53110877480622, -117.3589501128889 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 49.280, -123.340 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 49.280, -123.340 ), 7);
-    }
-    else if ( lcScenario == "acm7p4_denalifault" ) {
-      southWest = L.latLng( 60.00000000710405, -141.0180731580253 );
-      northEast = L.latLng( 69.64745530351352, -123.7893248352215 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 61.200 , -138.780 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 61.200 , -138.780 ), 7);
-    }
-    else if ( lcScenario == "scm5p0_montreal" ) {
-      southWest = L.latLng( 42.53884243059241, -86.54942531485392 );
-      northEast = L.latLng( 55.00064603767294, -65.94908207524423 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 45.500 , -73.600 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 45.500 , -73.600 ), 7);
-    }
-    else if ( lcScenario == "scm5p5_constancebay" ) {
-      southWest = L.latLng( 42.06164244999297, -86.54942531485392 );
-      northEast = L.latLng( 55.00064603767294, -68.38243594858385 );
-      bounds = L.latLngBounds( southWest, northEast );
-      epicenter = L.circleMarker( [ 45.500 , -76.060 ], circleStyle() ).addTo( map );
-      map.setView(new L.LatLng( 45.500 , -76.060 ), 7);
+    switch (lcScenario) {
+      case "acm7p0_georgiastraitfault":
+        southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
+        northEast = L.latLng( 53.53110877480622, -117.3589501128889 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 49.243365, -123.62296 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 49.243365, -123.62296 ), 7);
+        break;
+      case "acm7p3_leechriverfullfault":
+        southWest = L.latLng( 48.30891568624434, -129.0949439967106 );
+        northEast = L.latLng( 53.30903267135562, -117.4908738038378 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 48.407017, -123.412134 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 48.407017, -123.412134 ), 7);
+        break;
+      case "sim9p0_cascadiainterfacebestfault":
+        southWest = L.latLng( 48.30891568684188, -139.0522010412872 );
+        northEast = L.latLng( 60.00006153221153, -114.05375826483 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 48.251246, -125.215269 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 48.251246, -125.215269 ), 7);
+        break;
+      case "scm7p5_valdesbois":
+        southWest = L.latLng( 42.47260780141163, -86.54942531485392 );
+        northEast = L.latLng( 55.00064603767294, -67.44787497495167 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 45.905377, -75.494669 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 45.905377, -75.494669 ), 7);
+        break;
+      case "idm7p1_sidney":
+        southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
+        northEast = L.latLng( 53.30903267135562, -117.3589501128889 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 48.618961, -123.299385 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 48.618961, -123.299385 ), 7);
+        break;
+      case "acm4p9_georgiastraitfault":
+        southWest = L.latLng( 48.30891568684188, -129.0949439967106 );
+        northEast = L.latLng( 53.53110877480622, -117.3589501128889 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 49.280, -123.340 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 49.280, -123.340 ), 7);
+        break;
+      case "acm7p4_denalifault":
+        southWest = L.latLng( 60.00000000710405, -141.0180731580253 );
+        northEast = L.latLng( 69.64745530351352, -123.7893248352215 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 61.200 , -138.780 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 61.200 , -138.780 ), 7);
+        break;
+      case "scm5p0_montreal":
+        southWest = L.latLng( 42.53884243059241, -86.54942531485392 );
+        northEast = L.latLng( 55.00064603767294, -65.94908207524423 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 45.500 , -73.600 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 45.500 , -73.600 ), 7);
+        break;
+      case "scm5p5_constancebay":
+        southWest = L.latLng( 42.06164244999297, -86.54942531485392 );
+        northEast = L.latLng( 55.00064603767294, -68.38243594858385 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 45.500 , -76.060 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 45.500 , -76.060 ), 7);
+        break;
+
+      // afok test 2024-02-12
+      // Fetch the extents (CSD Extents) from https://github.com/OpenDRR/riskprofiler/wiki/RiskProfiler-Datasets
+      // Fetch the epicentre from OpenDRR/earthquake-scenarios/FINISHED/FinishedScenarios.md
+      // After editing, wait for Jekyll to finish generating the new pages (up to 5 seconds) and then check again.
+      // The epicentre (red round dot) should show.
+      case "acm4p9_vedderfault":
+        southWest = L.latLng( 48.30891418, -127.9421387 );
+        northEast = L.latLng( 53.53110886, -116.2564392 );
+        bounds = L.latLngBounds( southWest, northEast );
+        epicenter = L.circleMarker( [ 49.04, -122.08 ], circleStyle() ).addTo( map );
+        map.setView(new L.LatLng( 49.04, -122.08 ), 7);
+        break;
+
+
+
     }
   }
 
   function setTileLayerStyles() {
 
-    if ( lcScenario == "acm7p0_georgiastraitfault" ) {
-      return {
-        dsra_acm7p0_georgiastraitfault_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+    switch (lcScenario) {
+      case "acm7p0_georgiastraitfault":
+        return {
+          dsra_acm7p0_georgiastraitfault_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
-      return {
-        dsra_acm7p3_leechriverfullfault_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "acm7p3_leechriverfullfault":
+        return {
+          dsra_acm7p3_leechriverfullfault_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
-      return {
-        dsra_sim9p0_cascadiainterfacebestfault_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "sim9p0_cascadiainterfacebestfault":
+        return {
+          dsra_sim9p0_cascadiainterfacebestfault_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "scm7p5_valdesbois" ) {
-      return {
-        dsra_scm7p5_valdesbois_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "scm7p5_valdesbois":
+        return {
+          dsra_scm7p5_valdesbois_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "idm7p1_sidney" ) {
-      return {
-        dsra_idm7p1_sidney_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "idm7p1_sidney":
+        return {
+          dsra_idm7p1_sidney_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "acm4p9_capilano5" ) {
-      return {
-        dsra_acm4p9_capilano5_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "acm4p9_capilano5":
+        return {
+          dsra_acm4p9_capilano5_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "acm7p4_burwashlanding" ) {
-      return {
-        dsra_acm7p4_burwashlanding_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "acm7p4_burwashlanding":
+        return {
+          dsra_acm7p4_burwashlanding_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "scm5p0_montreal" ) {
-      return {
-        dsra_scm5p0_montreal_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "scm5p0_montreal":
+        return {
+          dsra_scm5p0_montreal_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
-    }
-    else if ( lcScenario == "scm5p5_ottawa" ) {
-      return {
-        dsra_scm5p5_ottawa_indicators_s: function ( properties ) {
-          return tileStyle( properties );
+        break;
+      case "scm5p5_ottawa":
+        return {
+          dsra_scm5p5_ottawa_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
         }
-      }
+        break;
+      // afok 2024-02-12
+      case "acm4p9_vedderfault":
+        return {
+          dsra_acm4p9_vedderfault_indicators_s: function ( properties ) {
+            return tileStyle( properties );
+          }
+        }
+        break;
     }
   }
 
   function setShakeLayerStyles( z ) {
 
-    if ( lcScenario == "acm7p0_georgiastraitfault" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_acm7p0_georgiastraitfault_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+    switch (lcScenario) {
+      case "acm7p0_georgiastraitfault":
+        if ( z == 1 ) {
+          return {
+            dsra_acm7p0_georgiastraitfault_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_acm7p0_georgiastraitfault_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_acm7p0_georgiastraitfault_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "acm7p3_leechriverfullfault" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_acm7p3_leechriverfullfault_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "acm7p3_leechriverfullfault":
+        if ( z == 1 ) {
+          return {
+            dsra_acm7p3_leechriverfullfault_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_acm7p3_leechriverfullfault_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_acm7p3_leechriverfullfault_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "sim9p0_cascadiainterfacebestfault" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "sim9p0_cascadiainterfacebestfault":
+        if ( z == 1 ) {
+          return {
+            dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_sim9p0_cascadiainterfacebestfault_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "scm7p5_valdesbois" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_scm7p5_valdesbois_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "scm7p5_valdesbois":
+        if ( z == 1 ) {
+          return {
+            dsra_scm7p5_valdesbois_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_scm7p5_valdesbois_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_scm7p5_valdesbois_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "idm7p1_sidney" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_idm7p1_sidney_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "idm7p1_sidney":
+        if ( z == 1 ) {
+          return {
+            dsra_idm7p1_sidney_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_idm7p1_sidney_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_idm7p1_sidney_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "acm4p9_capilano5" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_acm4p9_capilano5_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "acm4p9_capilano5":
+        if ( z == 1 ) {
+          return {
+            dsra_acm4p9_capilano5_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_acm4p9_capilano5_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_acm4p9_capilano5_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "acm7p4_burwashlanding" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_acm7p4_burwashlanding_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "acm7p4_burwashlanding":
+        if ( z == 1 ) {
+          return {
+            dsra_acm7p4_burwashlanding_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_acm7p4_burwashlanding_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_acm7p4_burwashlanding_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "scm5p0_montreal" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_scm5p0_montreal_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "scm5p0_montreal":
+        if ( z == 1 ) {
+          return {
+            dsra_scm5p0_montreal_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_scm5p0_montreal_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_scm5p0_montreal_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-    }
-    else if ( lcScenario == "scm5p5_ottawa" ) {
-      if ( z == 1 ) {
-        return {
-          dsra_scm5p5_ottawa_shakemap_hexgrid_1km: function ( properties ) {
-            return shakeStyle( properties );
+        break;
+      case "scm5p5_ottawa":
+        if ( z == 1 ) {
+          return {
+            dsra_scm5p5_ottawa_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
-      else {
-        return {
-          dsra_scm5p5_ottawa_shakemap_hexgrid_5km: function ( properties ) {
-            return shakeStyle( properties );
+        else {
+          return {
+            dsra_scm5p5_ottawa_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
           }
         }
-      }
+        break;
+      case "acm4p9_vedderfault":
+        if ( z == 1 ) {
+          return {
+            dsra_acm4p9_vedderfault_shakemap_hexgrid_1km: function ( properties ) {
+              return shakeStyle( properties );
+            }
+          }
+        }
+        else {
+          return {
+            dsra_acm4p9_vedderfault_shakemap_hexgrid_5km: function ( properties ) {
+              return shakeStyle( properties );
+            }
+          }
+        }
+        break;
     }
   }
 

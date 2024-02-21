@@ -62,8 +62,8 @@ logicweights = {
 
 
 ### Grab Scenario Information
-#epi = Point(float(lon), float(lat)) #epicenter of scenario - want to check which source region this is in
-#tectonicRegion = tectregionnames[gsim_logic_tree_file.split('NGASa0p3weights_')[1].strip('.xml')] #get the tectonic region from gsim logic tree called
+#epi = Point(float(lon), float(lat))  # epicentre of scenario - want to check which source region this is in
+#tectonicRegion = tectregionnames[gsim_logic_tree_file.split('NGASa0p3weights_')[1].strip('.xml')]  # get the tectonic region from gsim logic tree called
 
 # COMMENTED OUT ABOVE (actual code) TO SEND WORKABLE MINIMUM CODE FOR REVIEW
 # TEST SCENARIO 1 - Georgia Strait event

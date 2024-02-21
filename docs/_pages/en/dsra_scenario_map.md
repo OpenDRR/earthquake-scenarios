@@ -1,7 +1,7 @@
 ---
 authorName: Natural Resources Canada
 authorUrl:
-dateModified: 2024-02-20
+dateModified: 2024-02-21
 noContentTitle: true
 pageclass: wb-prettify all-pre
 subject:
@@ -91,9 +91,9 @@ crossorigin=""></script>
       shakemapProp = 'sH_PGA_max', // Property for shakemap popup
       scenarioProp = 'sCt_Res90_b0', // Property for popup and feature colour
       shakeCurrent = true,
-      epicenter,
+      epicentre,
       selection = 0; // Id of a selected feature
-    
+
 
   L.tileLayer( 'https://osm-{s}.gs.mil/tiles/default_pc/{z}/{x}/{y}.png', {
       subdomains: '1234',
@@ -168,7 +168,7 @@ crossorigin=""></script>
       }).on( 'load', function () {
         // Remove loading modal
         $( '#modal' ).remove();
-        epicenter.bringToFront();
+        epicentre.bringToFront();
       });
 
     var shakeLayer1km = L.vectorGrid.protobuf( shakemapUrl1, shakeTileOptions( 1 ) )
@@ -179,7 +179,7 @@ crossorigin=""></script>
       }).on( 'load', function () {
         // Remove loading modal
         $( '#modal' ).remove();
-        epicenter.bringToFront();
+        epicentre.bringToFront();
       }).on( 'click', function ( e ) {
     	  L.popup().setContent( "<strong>{% if page.lang == 'en' %}PGA: {% else %}AMS: {% endif %}</strong>" + e.layer.properties.sH_PGA_max.toLocaleString( undefined, { maximumFractionDigits: 2 }) )
           .setLatLng( e.latlng )
@@ -194,7 +194,7 @@ crossorigin=""></script>
       }).on( 'load', function () {
         // Remove loading modal
         $( '#modal' ).remove();
-        epicenter.bringToFront();
+        epicentre.bringToFront();
       }).on( 'click', function ( e ) {
     	  L.popup().setContent( "<strong>{% if page.lang == 'en' %}PGA: {% else %}AMS: {% endif %}</strong>" + e.layer.properties.sH_PGA_max.toLocaleString( undefined, { maximumFractionDigits: 2 }) )
           .setLatLng( e.latlng )
@@ -382,7 +382,7 @@ crossorigin=""></script>
         }
 
         div.innerHTML +=
-            '<br><div>🔴 <b>{% if page.lang == 'en' %}Epicenter{% else %}Épicentre{% endif %}</b></div>';
+            '<br><div>🔴 <b>{% if page.lang == 'en' %}Epicentre{% else %}Épicentre{% endif %}</b></div>';
       }
 
       else {
@@ -399,7 +399,7 @@ crossorigin=""></script>
         }
 
         div.innerHTML +=
-            '<br><div>🔴 <b>{% if page.lang == 'en' %}Epicenter{% else %}Épicentre{% endif %}</b></div>';
+            '<br><div>🔴 <b>{% if page.lang == 'en' %}Epicentre{% else %}Épicentre{% endif %}</b></div>';
       }
 
       return div;
@@ -457,122 +457,122 @@ function setBounds() {
         "acm7p0_georgiastraitfault": {
             southWest: [48.30891568684188, -129.0949439967106],
             northEast: [53.53110877480622, -117.3589501128889],
-            epicenter: [49.243365, -123.62296]
+            epicentre: [49.243365, -123.62296]
         },
         "acm7p3_leechriverfullfault": {
             southWest: [48.30891568624434, -129.0949439967106],
             northEast: [53.30903267135562, -117.4908738038378],
-            epicenter: [48.407017, -123.412134]
+            epicentre: [48.407017, -123.412134]
         },
         "sim9p0_cascadiainterfacebestfault": {
             southWest: [48.30891568684188, -139.0522010412872],
             northEast: [60.00006153221153, -114.05375826483],
-            epicenter: [48.251246, -125.215269]
+            epicentre: [48.251246, -125.215269]
         },
         "scm7p5_valdesbois": {
             southWest: [42.47260780141163, -86.54942531485392],
             northEast: [55.00064603767294, -67.44787497495167],
-            epicenter: [45.905377, -75.494669]   
+            epicentre: [45.905377, -75.494669]
         },
         "idm7p1_sidney": {
             southWest: [48.30891568684188, -129.0949439967106],
             northEast: [53.30903267135562, -117.3589501128889],
-            epicenter: [48.618961, -123.299385] 
+            epicentre: [48.618961, -123.299385]
         },
         "acm4p9_georgiastraitfault": {
             southWest: [48.30891568684188, -129.0949439967106],
             northEast: [53.53110877480622, -117.3589501128889],
-            epicenter: [49.280, -123.340] 
-        },    
+            epicentre: [49.280, -123.340]
+        },
         "acm7p4_denalifault": {
             southWest: [60.00000000710405, -141.0180731580253],
             northEast: [69.64745530351352, -123.7893248352215],
-            epicenter: [61.200 , -138.780] 
-        },  
+            epicentre: [61.200 , -138.780]
+        },
         "scm5p0_montreal": {
             southWest: [42.53884243059241, -86.54942531485392],
             northEast: [55.00064603767294, -65.94908207524423],
-            epicenter: [45.500 , -73.600] 
-        }, 
+            epicentre: [45.500 , -73.600]
+        },
         "scm5p5_constancebay": {
             southWest: [42.06164244999297, -86.54942531485392],
             northEast: [55.00064603767294, -68.38243594858385],
-            epicenter: [45.500 , -76.060] 
-        },              
+            epicentre: [45.500 , -76.060]
+        },
         "acm4p9_vedderfault": {
             southWest: [48.30891418, -127.9421387],
             northEast: [53.53110886, -116.2564392],
-            epicenter: [49.04, -122.08] 
-        },  
+            epicentre: [49.04, -122.08]
+        },
         "acm5p0_georgiastraitfault": {
             southWest: [48.30891418, -129.0949554],
             northEast: [53.53110886, -117.2290878],
-            epicenter: [49.28, -123.34] 
+            epicentre: [49.28, -123.34]
         },
         "acm5p0_mysterylake": {
             southWest: [48.30891418, -129.0949554],
             northEast: [53.53110877, -116.8056259],
-            epicenter: [49.37, -122.92] 
-        },   
+            epicentre: [49.37, -122.92]
+        },
         "acm5p2_beaufortfault": {
             southWest: [48.30891569, -129.094944],
             northEast: [53.53110877, -118.7975574],
-            epicenter: [49.33, -124.84] 
-        },    
+            epicentre: [49.33, -124.84]
+        },
         "acm5p2_vedderfault": {
             southWest: [48.30891569, -127.9421269],
             northEast: [53.53110877, -116.2564537],
-            epicenter: [49.04, -122.08] 
-        },      
+            epicentre: [49.04, -122.08]
+        },
         "acm5p5_southeypoint": {
             southWest: [48.30891569, -129.094944],
             northEast: [53.53110877, -117.4908738],
-            epicenter: [48.95, -123.61] 
-        },        
+            epicentre: [48.95, -123.61]
+        },
         "acm5p7_southeypoint": {
             southWest: [48.30891569, -129.094944],
             northEast: [53.53110877, -117.4908738],
-            epicenter: [48.95, -123.61] 
-        },     
+            epicentre: [48.95, -123.61]
+        },
         "acm7p7_queencharlottefault": {
             southWest: [50.11540505, -133.1977449],
             northEast: [56.27162148, -124.9961029],
-            epicenter: [53, -132.62] 
-        },   
+            epicentre: [53, -132.62]
+        },
         "acm8p0_queencharlottefault": {
             southWest: [49.51322353, -133.1977449],
             northEast: [58.00055135, -124.9961029],
-            epicenter: [53, -132.62] 
-        },  
+            epicentre: [53, -132.62]
+        },
         "scm5p0_burlingtontorontostructuralzone": {
             southWest: [41.68143543, -86.54942531],
             northEast: [52.29313064, -71.892560649],
-            epicenter: [43.49, -79.47] 
-        },  
+            epicentre: [43.49, -79.47]
+        },
         "scm5p0_rougebeach": {
             southWest: [41.68143543, -86.54942531],
             northEast: [55.00064604, -69.99999997],
-            epicenter: [43.78, -79.09] 
-        },  
+            epicentre: [43.78, -79.09]
+        },
         "scm5p6_gloucesterfault": {
             southWest: [42.06164245, -86.54942531],
             northEast: [55.00064604, -68.38243595],
-            epicenter: [43.78, -79.09] 
-        },  
+            epicentre: [43.78, -79.09]
+        },
         "scm5p9_millesilesfault": {
             southWest: [42.53884243, -86.54942531],
             northEast: [55.00064604, -65.94908208],
-            epicenter: [45.607, -73.82] 
-        },  
+            epicentre: [45.607, -73.82]
+        },
     };
 
     const config = scenarioConfig[lcScenario];
     if (config) {
-        const { southWest, northEast, epicenter } = config;
+        const { southWest, northEast, epicentre } = config;
 
         const bounds = L.latLngBounds(L.latLng(...southWest), L.latLng(...northEast));
-        const epicenterMarker = L.circleMarker(epicenter, circleStyle()).addTo(map);
-        map.setView(L.latLng(...epicenter), 7);
+        const epicentreMarker = L.circleMarker(epicentre, circleStyle()).addTo(map);
+        map.setView(L.latLng(...epicentre), 7);
     }
 }
 
@@ -641,71 +641,71 @@ function setShakeLayerStyles(z) {
         "acm4p9_georgiastraitfault": {
             1: "dsra_acm4p9_georgiastraitfault_shakemap_hexgrid_1km",
             5: "dsra_acm4p9_georgiastraitfault_shakemap_hexgrid_5km"
-        },        
+        },
         "acm7p4_denalifault": {
             1: "dsra_acm7p4_denalifault_shakemap_hexgrid_1km",
             5: "dsra_acm7p4_denalifault_shakemap_hexgrid_5km"
-        },        
+        },
         "scm5p0_montreal": {
             1: "dsra_scm5p0_montreal_shakemap_hexgrid_1km",
             5: "dsra_scm5p0_montreal_shakemap_hexgrid_5km"
-        },        
+        },
         "scm5p5_constancebay": {
             1: "dsra_scm5p5_constancebay_shakemap_hexgrid_1km",
             5: "dsra_scm5p5_constancebay_shakemap_hexgrid_5km"
-        },        
+        },
         "acm4p9_vedderfault": {
             1: "dsra_acm4p9_vedderfault_shakemap_hexgrid_1km",
             5: "dsra_acm4p9_vedderfault_shakemap_hexgrid_5km"
-        },        
+        },
         "acm5p0_georgiastraitfault": {
             1: "dsra_acm5p0_georgiastraitfault_shakemap_hexgrid_1km",
             5: "dsra_acm5p0_georgiastraitfault_shakemap_hexgrid_5km"
-        },        
+        },
         "acm5p0_mysterylake": {
             1: "dsra_acm5p0_mysterylake_shakemap_hexgrid_1km",
             5: "dsra_acm5p0_mysterylake_shakemap_hexgrid_5km"
-        },        
+        },
         "acm5p2_beaufortfault": {
             1: "dsra_acm5p2_beaufortfault_shakemap_hexgrid_1km",
             5: "dsra_acm5p2_beaufortfault_shakemap_hexgrid_5km"
-        },        
+        },
         "acm5p2_vedderfault": {
             1: "dsra_acm5p2_vedderfault_shakemap_hexgrid_1km",
             5: "dsra_acm5p2_vedderfault_shakemap_hexgrid_5km"
-        },        
+        },
         "acm5p5_southeypoint": {
             1: "dsra_acm5p5_southeypoint_shakemap_hexgrid_1km",
             5: "dsra_acm5p5_southeypoint_shakemap_hexgrid_5km"
-        },        
+        },
         "acm5p7_southeypoint": {
             1: "dsra_acm5p7_southeypoint_shakemap_hexgrid_1km",
             5: "dsra_acm5p7_southeypoint_shakemap_hexgrid_5km"
-        },        
+        },
         "acm7p7_queencharlottefault": {
             1: "dsra_acm7p7_queencharlottefault_shakemap_hexgrid_1km",
             5: "dsra_acm7p7_queencharlottefault_shakemap_hexgrid_5km"
-        },        
+        },
         "acm8p0_queencharlottefault": {
             1: "dsra_acm8p0_queencharlottefault_shakemap_hexgrid_1km",
             5: "dsra_acm8p0_queencharlottefault_shakemap_hexgrid_5km"
-        },    
+        },
         "scm5p0_burlingtontorontostructuralzone": {
             1: "dsra_scm5p0_burlingtontorontostructuralzone_shakemap_hexgrid_1km",
             5: "dsra_scm5p0_burlingtontorontostructuralzone_shakemap_hexgrid_5km"
-        },            
+        },
         "scm5p0_rougebeach": {
             1: "dsra_scm5p0_rougebeach_shakemap_hexgrid_1km",
             5: "dsra_scm5p0_rougebeach_shakemap_hexgrid_5km"
-        },        
+        },
         "scm5p6_gloucesterfault": {
             1: "dsra_scm5p6_gloucesterfault_shakemap_hexgrid_1km",
             5: "dsra_scm5p6_gloucesterfault_shakemap_hexgrid_5km"
-        },        
+        },
         "scm5p9_millesilesfault": {
             1: "dsra_scm5p9_millesilesfault_shakemap_hexgrid_1km",
             5: "dsra_scm5p9_millesilesfault_shakemap_hexgrid_5km"
-        },   
+        },
     };
 
     const scenarioStyles = scenarios[lcScenario];

@@ -1,7 +1,7 @@
 ---
 authorName: Natural Resources Canada
 authorUrl:
-dateModified: 2024-02-16
+dateModified: 2024-02-20
 noContentTitle: true
 pageclass: wb-prettify all-pre
 subject:
@@ -84,7 +84,8 @@ crossorigin=""></script>
       bounds, // Bounds for the tileset, set according to scenario
       legend = L.control( { position: 'bottomright' } ),
       params = new URLSearchParams( window.location.search ), // Get query paramaters
-      baseUrl = "https://riskprofiler.ca/dsra_",
+      // baseUrl = "https://riskprofiler.ca/dsra_",
+      baseUrl = "https://riskprofiler-ca.github.io/dsra_",
       shakeBaseUrl = "https://geo-api.stage.riskprofiler.ca/collections/opendrr_dsra_",
       eqScenario = params.get( 'scenario' ), // Scenario name
       shakemapProp = 'sH_PGA_max', // Property for shakemap popup
@@ -577,44 +578,25 @@ function setTileLayerStyles() {
         "acm7p0_georgiastraitfault": "dsra_acm7p0_georgiastraitfault_indicators_s",
         "acm7p3_leechriverfullfault": "dsra_acm7p3_leechriverfullfault_indicators_s",
         "sim9p0_cascadiainterfacebestfault": "dsra_sim9p0_cascadiainterfacebestfault_indicators_s",
-        "scm7p5_valdesbois":
-        "dsra_scm7p5_valdesbois_indicators_s",
-        "idm7p1_sidney":
-        "dsra_idm7p1_sidney_indicators_s",
-        "acm4p9_capilano5":
-        "dsra_acm4p9_capilano5_indicators_s",
-        "acm7p4_burwashlanding":
-        "ddsra_acm7p4_burwashlanding_indicators_s",
-        "scm5p0_montreal":
-        "dsra_scm5p0_montreal_indicators_s",
-        "scm5p5_ottawa":
-        "dsra_scm5p5_ottawa_indicators_s",
-        "acm4p9_vedderfault":
-        "dsra_acm4p9_vedderfault_indicators_s",
-        "acm5p0_georgiastraitfault":
-        "acm5p0_georgiastraitfault_indicators_s",
-        "acm5p0_mysterylake":
-        "acm5p0_mysterylake_indicators_s",
-        "acm5p2_beaufortfault":
-        "acm5p2_beaufortfault_indicators_s",
-        "acm5p2_vedderfault":
-        "acm5p2_vedderfault_indicators_s",
-        "acm5p5_southeypoint":
-        "acm5p5_southeypoint_indicators_s",
-        "acm5p7_southeypoint":
-        "acm5p7_southeypoint_indicators_s",
-        "acm7p7_queencharlottefault":
-        "acm7p7_queencharlottefault_indicators_s",
-        "acm8p0_queencharlottefault":
-        "acm8p0_queencharlottefault_indicators_s",
-        "scm5p0_burlingtontorontostructuralzone":
-        "scm5p0_burlingtontorontostructuralzone_indicators_s",
-        "scm5p0_rougebeach":
-        "scm5p0_rougebeach_indicators_s",
-        "scm5p6_gloucesterfault":
-        "scm5p6_gloucesterfault_indicators_s",
-        "scm5p9_millesilesfault":
-        "scm5p9_millesilesfault_indicators_s"
+        "scm7p5_valdesbois": "dsra_scm7p5_valdesbois_indicators_s",
+        "idm7p1_sidney": "dsra_idm7p1_sidney_indicators_s",
+        "acm4p9_georgiastraitfault": "dsra_acm4p9_georgiastraitfault_indicators_s",
+        "acm7p4_denalifault": "dsra_acm7p4_denalifault_indicators_s",
+        "scm5p0_montreal": "dsra_scm5p0_montreal_indicators_s",
+        "scm5p5_constancebay": "dsra_scm5p5_constancebay_indicators_s",
+        "acm4p9_vedderfault": "dsra_acm4p9_vedderfault_indicators_s",
+        "acm5p0_georgiastraitfault": "dsra_acm5p0_georgiastraitfault_indicators_s",
+        "acm5p0_mysterylake": "dsra_acm5p0_mysterylake_indicators_s",
+        "acm5p2_beaufortfault": "dsra_acm5p2_beaufortfault_indicators_s",
+        "acm5p2_vedderfault": "dsra_acm5p2_vedderfault_indicators_s",
+        "acm5p5_southeypoint": "dsra_acm5p5_southeypoint_indicators_s",
+        "acm5p7_southeypoint": "dsra_acm5p7_southeypoint_indicators_s",
+        "acm7p7_queencharlottefault": "dsra_acm7p7_queencharlottefault_indicators_s",
+        "acm8p0_queencharlottefault": "dsra_acm8p0_queencharlottefault_indicators_s",
+        "scm5p0_burlingtontorontostructuralzone": "dsra_scm5p0_burlingtontorontostructuralzone_indicators_s",
+        "scm5p0_rougebeach": "dsra_scm5p0_rougebeach_indicators_s",
+        "scm5p6_gloucesterfault": "dsra_scm5p6_gloucesterfault_indicators_s",
+        "scm5p9_millesilesfault": "dsra_scm5p9_millesilesfault_indicators_s"
     };
 
     const tileLayerStyleKey = tileLayerStyles[lcScenario];
@@ -651,21 +633,21 @@ function setShakeLayerStyles(z) {
             1: "dsra_idm7p1_sidney_shakemap_hexgrid_1km",
             5: "dsra_idm7p1_sidney_shakemap_hexgrid_5km"
         },
-        "acm4p9_capilano5": {
-            1: "dsra_acm4p9_capilano5_shakemap_hexgrid_1km",
-            5: "dsra_acm4p9_capilano5_shakemap_hexgrid_5km"
+        "acm4p9_georgiastraitfault": {
+            1: "dsra_acm4p9_georgiastraitfault_shakemap_hexgrid_1km",
+            5: "dsra_acm4p9_georgiastraitfault_shakemap_hexgrid_5km"
         },        
-        "acm7p4_burwashlanding": {
-            1: "dsra_acm7p4_burwashlanding_shakemap_hexgrid_1km",
-            5: "dsra_acm7p4_burwashlanding_shakemap_hexgrid_5km"
+        "acm7p4_denalifault": {
+            1: "dsra_acm7p4_denalifault_shakemap_hexgrid_1km",
+            5: "dsra_acm7p4_denalifault_shakemap_hexgrid_5km"
         },        
         "scm5p0_montreal": {
             1: "dsra_scm5p0_montreal_shakemap_hexgrid_1km",
             5: "dsra_scm5p0_montreal_shakemap_hexgrid_5km"
         },        
-        "scm5p5_ottawa": {
-            1: "dsra_scm5p5_ottawa_shakemap_hexgrid_1km",
-            5: "dsra_scm5p5_ottawa_shakemap_hexgrid_5km"
+        "scm5p5_constancebay": {
+            1: "dsra_scm5p5_constancebay_shakemap_hexgrid_1km",
+            5: "dsra_scm5p5_constancebay_shakemap_hexgrid_5km"
         },        
         "acm4p9_vedderfault": {
             1: "dsra_acm4p9_vedderfault_shakemap_hexgrid_1km",
@@ -733,7 +715,4 @@ function setShakeLayerStyles(z) {
         }
     }
 }
-
-
-
 </script>

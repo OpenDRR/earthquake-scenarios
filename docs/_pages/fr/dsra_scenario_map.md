@@ -147,7 +147,12 @@ crossorigin=""></script>
     const mag = eqScenario[ 3 ] + '.' + eqScenario[ 5 ],
           full_name = title + ' - Magnitude ' + mag;
     // Replace generic title with scenario name
-    $( '#wb-cont' ).html( full_name );
+    // $( '#wb-cont' ).html( full_name );
+    {% for scenario in site.data.dsra.scenarios %}
+      if ( eqScenario === '{{ scenario.name }}' ) {
+        $( '#wb-cont' ).html( '{{ scenario.title[page.lang] }}' );
+      }
+    {% endfor %}
 
     var vectorUrl = baseUrl + lcScenario + "_indicators_s/EPSG_4326/{z}/{x}/{y}.pbf",
         shakemapUrl1 = baseUrl + lcScenario + "_shakemap_hexgrid_1km/EPSG_4326/{z}/{x}/{y}.pbf",

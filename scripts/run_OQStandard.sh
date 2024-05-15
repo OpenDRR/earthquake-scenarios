@@ -29,6 +29,14 @@ USAGE: run_OQStandard.sh NAME [-h -d -r -[b/o] -[s] -[l]]
 EOF
 }
 
+run_consequences_in_parallel() {
+    # Use GNU parallel to run consequences processing in parallel.
+    local calc_id num_rlzs
+    calc_id="$1"
+    num_rlzs=$(python3 -c 'import sys; from openquake.baselib import datastore; calc_id = datastore.get_last_calc_id() if sys.argv[1] == "-1" else int(sys.argv[1]); dstore = datastore.read(calc_id); print(len(dstore["weights"]));' "${calc_id}" 2>/dev/null)
+    parallel --keep-order --tag --ungroup "python3 scripts/consequences-v3.10.0-one-realization.py \"${calc_id}\" {}" ::: $(seq -s ' ' 0 $((num_rlzs - 1)))
+}
+
 #if [[ $LAPTOP != 'True' ]]; then
 ### SETUP AWS KILL
 #shut_down_ec2_instance() {
@@ -184,7 +192,7 @@ if [[ $DMGFLAG == "1" ]]; then
         oq export realizations -2 -e csv -d temp
         CALCID=$(ls -t temp/avg_damages-rlz-???_* | head -1 | awk -F'[_.]' '{print $(NF-1)}')
         python3 "$AVG_LOC" "$NAME" "${arr[0]}" "$CALCID" $expoSuffix damage
-        python3 "$CONSQ_LOC" -2
+        run_consequences_in_parallel -2
         declare -a files=($(ls consequences-rlz-???_-2.csv)) #conseq script doesn't know real calc id, so need to replace the "-2"
         for file in "${files[@]}"; do mv "$file" "temp/$(basename "$file" "-2.csv")${CALCID}.csv"; done
         python3 "$AVG_LOC" "$NAME" "${arr[0]}" "$CALCID" $expoSuffix consequence
@@ -195,7 +203,7 @@ if [[ $DMGFLAG == "1" ]]; then
         oq export realizations -1 -e csv -d temp
         CALCID=$(ls -t temp/avg_damages-rlz-???_* | head -1 | awk -F'[_.]' '{print $(NF-1)}')
         python3 "$AVG_LOC" "$NAME" "${arr[1]}" "$CALCID" $expoSuffix damage
-        python3 "$CONSQ_LOC" -1
+        run_consequences_in_parallel -1
         mv consequences-rlz-???_"${CALCID}".csv temp/
         python3 "$AVG_LOC" "$NAME" "${arr[1]}" "$CALCID" $expoSuffix consequence
         rm -f temp/consequences-rlz-???_"${CALCID}".csv temp/realizations_"${CALCID}".csv temp/avg_damages-rlz-???_"${CALCID}".csv #clear temp dir
@@ -207,7 +215,7 @@ if [[ $DMGFLAG == "1" ]]; then
         oq export realizations -1 -e csv -d temp
         CALCID=$(ls -t temp/avg_damages-rlz-???_* | head -1 | awk -F'[_.]' '{print $(NF-1)}')
         python3 $AVG_LOC "$NAME" "${arr[0]}" "$CALCID" $expoSuffix damage
-        python3 $CONSQ_LOC -1
+        run_consequences_in_parallel -1
         mv consequences-rlz-???_"${CALCID}".csv temp/
         python3 $AVG_LOC "$NAME" "${arr[0]}" "$CALCID" $expoSuffix consequence
         rm -f temp/consequences-rlz-???_"${CALCID}".csv temp/realizations_"${CALCID}".csv temp/avg_damages-rlz-???_"${CALCID}".csv #clear temp dir

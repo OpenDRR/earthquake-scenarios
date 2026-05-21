@@ -1,0 +1,13 @@
+.DS_Store
+.jekyll-cache/
+vendor/
+.ruby-version
+_site/
+.bundle/config
+Gemfile.lock
+venv
+.env
+outputs/
+temp/
+insuranceCalcs/
+FINISHED/
